@@ -4609,6 +4609,152 @@
    "verdict_math": "unproven"
   }
  ],
+ "plays": [
+  {
+   "id": "E1",
+   "family": "Economic",
+   "name": "Price and the royalty ladder",
+   "status": "off",
+   "gate": "none, but test it, do not roll it out",
+   "why": "Each dollar of list price is 60c of headroom per click. $9.99 affords a $0.24 click, $12.99 affords $0.42, and the cheapest click we ever won cost $0.50. This is the whole game in one line.",
+   "judge": "CVR held vs matched controls over 30 days"
+  },
+  {
+   "id": "E2",
+   "family": "Economic",
+   "name": "The $9.99 cliff and the Kindle window",
+   "status": "partial",
+   "gate": "format decides which rule applies",
+   "why": "Print pays 50% below $9.99 and 60% at or above. Kindle pays 70% ONLY between $2.99 and $9.99 and 35% outside. Opposite shapes; applying one to the other loses money both ways.",
+   "judge": "royalty per sale, read off KDP"
+  },
+  {
+   "id": "E3",
+   "family": "Economic",
+   "name": "Review velocity",
+   "status": "off",
+   "gate": "none",
+   "why": "29 of 43 advertised books have zero reviews. Reviews set conversion, conversion sets what a click is worth, and that sets every bid. Also the gate on every attack play. Three 5 star reviews take a 2.0 to 4.25.",
+   "judge": "CVR before and after crossing 5 reviews"
+  },
+  {
+   "id": "E4",
+   "family": "Economic",
+   "name": "The organic flywheel",
+   "status": "on",
+   "gate": "none",
+   "why": "A sale bought at a loss still moves rank, and rank is not rented. This is the honest argument for tolerating Stage 1 tuition.",
+   "judge": "BSR improving while ad spend stays flat"
+  },
+  {
+   "id": "E5",
+   "family": "Economic",
+   "name": "Concentration over breadth",
+   "status": "on",
+   "gate": "none",
+   "why": "Tranches of 8 to 10, never all at once. Spreading thin means every book gets too few clicks to say anything. Statistical power, not thrift.",
+   "judge": "clicks per book reaching the 40 click verdict"
+  },
+  {
+   "id": "D1",
+   "family": "Defence",
+   "name": "Own-ASIN product targeting",
+   "status": "off",
+   "gate": "none",
+   "why": "Your own detail pages currently show competitors' ads. A reader on your page already chose your subject: the cheapest qualified traffic there is. The highest-value defensive play we are not running.",
+   "judge": "share of our own carousel, NOT ACOS. Accept up to 1.5x breakeven"
+  },
+  {
+   "id": "D2",
+   "family": "Defence",
+   "name": "Negative keywords",
+   "status": "partial",
+   "gate": "none",
+   "why": "Three tiers: category noise (book bag, bookends, book nook), proven losers at 12+ clicks and no order, and self-competition. That last one is forgotten most: a term promoted to Exact must be negated in the campaign that found it or we pay twice for one click.",
+   "judge": "money not spent"
+  },
+  {
+   "id": "D3",
+   "family": "Defence",
+   "name": "Negative ASINs",
+   "status": "off",
+   "gate": "none",
+   "why": "Stop showing on pages of books that beat us on rating, reviews or price. We are paying for the privilege of losing a side-by-side comparison.",
+   "judge": "pure saving, no downside"
+  },
+  {
+   "id": "D4",
+   "family": "Defence",
+   "name": "Placement discipline",
+   "status": "done",
+   "gate": "earn it back only in Stage 3",
+   "why": "Final CPC is bid x dynamic x placement. 89 of 92 campaigns carried +70% at top of search, so a $0.55 bid really bid $0.94 where most clicks land.",
+   "judge": "+10% steps after 14 days under breakeven"
+  },
+  {
+   "id": "D5",
+   "family": "Defence",
+   "name": "Dynamic bidding, down only",
+   "status": "done",
+   "gate": "none",
+   "why": "Up-and-down hands Amazon permission to bid above our ceiling on its own judgement. Our ceiling is arithmetic, not a preference.",
+   "judge": "default on every campaign we create"
+  },
+  {
+   "id": "D6",
+   "family": "Defence",
+   "name": "The wallet guard",
+   "status": "done",
+   "gate": "none",
+   "why": "Warns at 80% of the monthly ceiling and pauses every enabled campaign at 100%. The only play that cannot be undone by a mistake in another play.",
+   "judge": "runs unattended at 9am"
+  },
+  {
+   "id": "D7",
+   "family": "Defence",
+   "name": "One edition per book",
+   "status": "done",
+   "gate": "none",
+   "why": "A paperback and its Kindle share reviews but bid against each other in the same auction, splitting the sales signal and raising the price of a click we would have won anyway.",
+   "judge": "enforced in activate and in the tranche picker"
+  },
+  {
+   "id": "A1",
+   "family": "Attack",
+   "name": "Competitor ASIN targeting",
+   "status": "blocked",
+   "gate": "ALL THREE: our rating >= theirs, our reviews >= half theirs, our price <= theirs",
+   "why": "The shopper sees both books side by side. Win that comparison and it is superb; lose it and we paid for them to choose the other book. Today exactly one title clears the gate.",
+   "judge": "reviews first, then attack. In that order, always"
+  },
+  {
+   "id": "A2",
+   "family": "Attack",
+   "name": "Category targeting with a price refinement",
+   "status": "off",
+   "gate": "none, and that is the point",
+   "why": "Target the category filtered to books priced ABOVE ours. Every shopper who sees us is looking at something more expensive, so we are the value option by construction. The best attack that does not need reviews.",
+   "judge": "cap the budget hard, category targets are broad"
+  },
+  {
+   "id": "A3",
+   "family": "Attack",
+   "name": "Search-term harvesting",
+   "status": "partial",
+   "gate": "needs auto campaigns delivering",
+   "why": "The ONLY play that compounds. Every other play rents traffic; this turns spend into a permanent asset. A phrase proven to convert is free intelligence for every book we launch after it.",
+   "judge": "converting terms promoted per dollar"
+  },
+  {
+   "id": "A4",
+   "family": "Attack",
+   "name": "Head-term conquesting",
+   "status": "off",
+   "gate": "royalty per sale would need to roughly triple",
+   "why": "'childrens books' costs about $1.01 a click. Our affordable click is $0.24. Four times our ceiling before we start.",
+   "judge": "not attempted"
+  }
+ ],
  "stages": {
   "counts": {
    "exploit": 0,
