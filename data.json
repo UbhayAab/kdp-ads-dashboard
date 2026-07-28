@@ -4799,6 +4799,89 @@
    "judge": "not attempted"
   }
  ],
+ "signals": [
+  {
+   "severity": 1,
+   "asin": "B0FS6WXP27",
+   "title": "What to Do with an Idea: A Children's Storybook abou",
+   "signal": "rating below 4.0",
+   "detail": "3.0 on 1 review(s)",
+   "action": "ads off, book to Rehab. Rework and republish, which makes a new ASIN; tell me both and I will move the campaign across",
+   "value": 3.0
+  },
+  {
+   "severity": 1,
+   "asin": "B0FSDB6Y4Y",
+   "title": "What to Do with a Mistake: A Children's Storybook ab",
+   "signal": "rating below 4.0",
+   "detail": "3.0 on 1 review(s)",
+   "action": "ads off, book to Rehab. Rework and republish, which makes a new ASIN; tell me both and I will move the campaign across",
+   "value": 3.0
+  },
+  {
+   "severity": 1,
+   "asin": "B0FWX3D9R3",
+   "title": "Melody's Sound Safari: Explore Animals and Spark Ear",
+   "signal": "rating below 4.0",
+   "detail": "2.0 on 1 review(s)",
+   "action": "ads off, book to Rehab. Rework and republish, which makes a new ASIN; tell me both and I will move the campaign across",
+   "value": 2.0
+  },
+  {
+   "severity": 1,
+   "asin": "B0FWX6HQG2",
+   "title": "Suzie &The Patience Petal: A Heartwarming Picture Bo",
+   "signal": "rating below 4.0",
+   "detail": "2.0 on 2 review(s)",
+   "action": "ads off, book to Rehab. Rework and republish, which makes a new ASIN; tell me both and I will move the campaign across",
+   "value": 2.0
+  },
+  {
+   "severity": 2,
+   "asin": "B0FS6WXP27",
+   "title": "What to Do with an Idea: A Children's Storybook abou",
+   "signal": "rating is fixable by dilution",
+   "detail": "3.0 on only 1 review(s)",
+   "action": "1 honest 5 star review(s) would take it back over 4.0. Cheaper and faster than any bid change",
+   "value": 1
+  },
+  {
+   "severity": 2,
+   "asin": "B0FSDB6Y4Y",
+   "title": "What to Do with a Mistake: A Children's Storybook ab",
+   "signal": "rating is fixable by dilution",
+   "detail": "3.0 on only 1 review(s)",
+   "action": "1 honest 5 star review(s) would take it back over 4.0. Cheaper and faster than any bid change",
+   "value": 1
+  },
+  {
+   "severity": 2,
+   "asin": "B0FWX3D9R3",
+   "title": "Melody's Sound Safari: Explore Animals and Spark Ear",
+   "signal": "rating is fixable by dilution",
+   "detail": "2.0 on only 1 review(s)",
+   "action": "2 honest 5 star review(s) would take it back over 4.0. Cheaper and faster than any bid change",
+   "value": 2
+  },
+  {
+   "severity": 2,
+   "asin": "B0FWX6HQG2",
+   "title": "Suzie &The Patience Petal: A Heartwarming Picture Bo",
+   "signal": "rating is fixable by dilution",
+   "detail": "2.0 on only 2 review(s)",
+   "action": "4 honest 5 star review(s) would take it back over 4.0. Cheaper and faster than any bid change",
+   "value": 4
+  }
+ ],
+ "reviewCoverage": {
+  "books": 43,
+  "zero_reviews": 29,
+  "under_5_reviews": 41,
+  "attack_eligible": 0,
+  "below_floor": 4,
+  "median_rating": 4.6,
+  "days_of_history": 1
+ },
  "stages": {
   "counts": {
    "exploit": 0,
