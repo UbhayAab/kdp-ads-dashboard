@@ -7,7 +7,7 @@
   "sales": 59.45,
   "books": 91,
   "advertised": 43,
-  "eligible": 72,
+  "eligible": 77,
   "priced": 55,
   "zeroReviews": 77,
   "acos": 91.5,
@@ -51,7 +51,14 @@
    "cvr": 6.2,
    "cpc": 0.67,
    "verdict": "far above breakeven",
-   "plan": []
+   "plan": [],
+   "stage": "harvest",
+   "stageLabel": "Harvest",
+   "stageWhy": "5 orders at 81 clicks and $54.37 spent and 30 days",
+   "endsWhen": "every 2+ order term is an exact keyword and the losers are negated",
+   "targetCpc": 0.135,
+   "targetCpcAtGoal": 0.219,
+   "trancheReady": false
   },
   {
    "asin": "B0DSVKYR5K",
@@ -87,7 +94,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "impressions only",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.149,
+   "targetCpcAtGoal": 0.24,
+   "trancheReady": false
   },
   {
    "asin": "B0F3D6X5FW",
@@ -123,20 +137,27 @@
    "cvr": null,
    "cpc": null,
    "verdict": "impressions only",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.219,
+   "targetCpcAtGoal": 0.353,
+   "trancheReady": false
   },
   {
    "asin": "B0FWYHFRG8",
    "title": "The Ocean Activity Book: A Fun and Educational Ocean-Themed Puzzle and Activity Book with Mermaids, Sea Creatures, Mazes, Word Searches, Coloring Pages, and More! for Kids Ages 4–8",
    "author": "ReadingPanda Publication",
    "format": "Paperback",
-   "type": "coloring",
+   "type": "activity",
    "group": "the ocean activity book",
    "siblings": [],
    "status": "Live",
    "advertised": true,
-   "eligible": false,
-   "excluded": "coloring book",
+   "eligible": true,
+   "excluded": "",
    "rating": null,
    "reviews": 0,
    "bsr": 5118625,
@@ -157,7 +178,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "impressions only",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.196,
+   "targetCpcAtGoal": 0.316,
+   "trancheReady": false
   },
   {
    "asin": "B0G27TQPG7",
@@ -193,7 +221,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "impressions only",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.217,
+   "targetCpcAtGoal": 0.35,
+   "trancheReady": false
   },
   {
    "asin": "B0FWX3ZCFB",
@@ -229,7 +264,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0G2C2QFYR",
@@ -265,7 +307,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.26,
+   "targetCpcAtGoal": 0.419,
+   "trancheReady": false
   },
   {
    "asin": "B0H94JSBBJ",
@@ -299,7 +348,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "rehab",
+   "stageLabel": "Rehab",
+   "stageWhy": "coloring book, excluded by the contract",
+   "endsWhen": "rating recovers above 4.0, or the book is republished",
+   "targetCpc": 0.112,
+   "targetCpcAtGoal": 0.18,
+   "trancheReady": false
   },
   {
    "asin": "B0H9Q92QDC",
@@ -333,7 +389,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "rehab",
+   "stageLabel": "Rehab",
+   "stageWhy": "coloring book, excluded by the contract",
+   "endsWhen": "rating recovers above 4.0, or the book is republished",
+   "targetCpc": null,
+   "targetCpcAtGoal": null,
+   "trancheReady": false
   },
   {
    "asin": "B0H9H7V4LN",
@@ -367,7 +430,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "rehab",
+   "stageLabel": "Rehab",
+   "stageWhy": "coloring book, excluded by the contract",
+   "endsWhen": "rating recovers above 4.0, or the book is republished",
+   "targetCpc": 0.112,
+   "targetCpcAtGoal": 0.18,
+   "trancheReady": false
   },
   {
    "asin": "B0G2BFZXS5",
@@ -401,7 +471,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.153,
+   "targetCpcAtGoal": 0.247,
+   "trancheReady": false
   },
   {
    "asin": "B0FY5VKMZ7",
@@ -435,7 +512,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.172,
+   "targetCpcAtGoal": 0.278,
+   "trancheReady": false
   },
   {
    "asin": "B0FX6L28QC",
@@ -471,7 +555,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0G27R37CQ",
@@ -507,7 +598,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "passes every machine check, waiting for a tranche slot",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.162,
+   "targetCpcAtGoal": 0.262,
+   "trancheReady": true
   },
   {
    "asin": "B0DPDLTFFV",
@@ -544,7 +642,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "list price unknown; royalty unknown",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": null,
+   "targetCpcAtGoal": null,
+   "trancheReady": false
   },
   {
    "asin": "B0DPYZXZM4",
@@ -581,7 +686,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "passes every machine check, waiting for a tranche slot",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.293,
+   "targetCpcAtGoal": 0.472,
+   "trancheReady": true
   },
   {
    "asin": "B0DPZ6B7C1",
@@ -618,7 +730,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.198,
+   "targetCpcAtGoal": 0.319,
+   "trancheReady": false
   },
   {
    "asin": "B0H9HTKKVD",
@@ -652,7 +771,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "rehab",
+   "stageLabel": "Rehab",
+   "stageWhy": "coloring book, excluded by the contract",
+   "endsWhen": "rating recovers above 4.0, or the book is republished",
+   "targetCpc": 0.112,
+   "targetCpcAtGoal": 0.18,
+   "trancheReady": false
   },
   {
    "asin": "B0H9B4TBGG",
@@ -686,7 +812,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "rehab",
+   "stageLabel": "Rehab",
+   "stageWhy": "coloring book, excluded by the contract",
+   "endsWhen": "rating recovers above 4.0, or the book is republished",
+   "targetCpc": 0.113,
+   "targetCpcAtGoal": 0.182,
+   "trancheReady": false
   },
   {
    "asin": "B0FWXDHMBG",
@@ -723,7 +856,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0FX6BYKM7",
@@ -760,7 +900,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.223,
+   "targetCpcAtGoal": 0.359,
+   "trancheReady": false
   },
   {
    "asin": "B0G28Q68FG",
@@ -797,7 +944,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0H9PXJZCV",
@@ -831,7 +985,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "rehab",
+   "stageLabel": "Rehab",
+   "stageWhy": "coloring book, excluded by the contract",
+   "endsWhen": "rating recovers above 4.0, or the book is republished",
+   "targetCpc": null,
+   "targetCpcAtGoal": null,
+   "trancheReady": false
   },
   {
    "asin": "B0F4D3KPRZ",
@@ -867,7 +1028,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0G27X5NJC",
@@ -903,7 +1071,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.347,
+   "targetCpcAtGoal": 0.56,
+   "trancheReady": false
   },
   {
    "asin": "B0DXBSHP1L",
@@ -939,7 +1114,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "passes every machine check, waiting for a tranche slot",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.135,
+   "targetCpcAtGoal": 0.217,
+   "trancheReady": true
   },
   {
    "asin": "B0G27TY8J5",
@@ -975,7 +1157,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.217,
+   "targetCpcAtGoal": 0.35,
+   "trancheReady": false
   },
   {
    "asin": "B0FWX7TZQY",
@@ -1011,7 +1200,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0G2BZ6CTZ",
@@ -1047,20 +1243,27 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.26,
+   "targetCpcAtGoal": 0.419,
+   "trancheReady": false
   },
   {
    "asin": "B0FSLQB2RN",
    "title": "Little Explorers Science Adventure Activity Book: A Fun and Educational STEM and STEAM Workbook for Kids Ages 4-8: Packed with Puzzles, Mazes, Coloring, and Simple Science Experiments about Animals, Space, Dinosaurs, and More!",
    "author": "ReadingPanda Publication",
    "format": "Paperback",
-   "type": "coloring",
+   "type": "activity",
    "group": "little explorers science adventure activity book",
    "siblings": [],
    "status": "Live",
    "advertised": true,
-   "eligible": false,
-   "excluded": "coloring book",
+   "eligible": true,
+   "excluded": "",
    "rating": null,
    "reviews": 0,
    "bsr": 5609349,
@@ -1081,7 +1284,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "listed at 9.49, under the 9.99 print royalty cliff",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.118,
+   "targetCpcAtGoal": 0.191,
+   "trancheReady": false
   },
   {
    "asin": "B0FXWF86F4",
@@ -1117,7 +1327,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0G2BYRZNR",
@@ -1153,7 +1370,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.26,
+   "targetCpcAtGoal": 0.419,
+   "trancheReady": false
   },
   {
    "asin": "B0FY61CFFM",
@@ -1189,7 +1413,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "passes every machine check, waiting for a tranche slot",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": true
   },
   {
    "asin": "B0G2BZK6KK",
@@ -1225,7 +1456,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.26,
+   "targetCpcAtGoal": 0.419,
+   "trancheReady": false
   },
   {
    "asin": "B0FWX3D9R3",
@@ -1261,7 +1499,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "rehab",
+   "stageLabel": "Rehab",
+   "stageWhy": "rated 2.0, under the 4.0 floor",
+   "endsWhen": "rating recovers above 4.0, or the book is republished",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0G27T2F4G",
@@ -1297,7 +1542,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.303,
+   "targetCpcAtGoal": 0.489,
+   "trancheReady": false
   },
   {
    "asin": "B0FTXF9XJV",
@@ -1333,7 +1585,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0G2C6NJ8P",
@@ -1369,7 +1628,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.26,
+   "targetCpcAtGoal": 0.419,
+   "trancheReady": false
   },
   {
    "asin": "B0DVRHM6YW",
@@ -1405,7 +1671,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.156,
+   "targetCpcAtGoal": 0.252,
+   "trancheReady": false
   },
   {
    "asin": "B0G2BMJVHC",
@@ -1441,7 +1714,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0DTF2VDY5",
@@ -1477,7 +1757,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.146,
+   "targetCpcAtGoal": 0.236,
+   "trancheReady": false
   },
   {
    "asin": "B0G2BL3W82",
@@ -1513,7 +1800,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0G2BKTDXD",
@@ -1549,7 +1843,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0H9HPS594",
@@ -1583,7 +1884,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "rehab",
+   "stageLabel": "Rehab",
+   "stageWhy": "coloring book, excluded by the contract",
+   "endsWhen": "rating recovers above 4.0, or the book is republished",
+   "targetCpc": 0.112,
+   "targetCpcAtGoal": 0.18,
+   "trancheReady": false
   },
   {
    "asin": "B0FWX3XKFG",
@@ -1619,7 +1927,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0G26XDSK4",
@@ -1655,7 +1970,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0FWX4P7BQ",
@@ -1691,7 +2013,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0G282BRWK",
@@ -1727,7 +2056,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0FWX3FKN6",
@@ -1763,7 +2099,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0G28RRZR1",
@@ -1799,7 +2142,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0FWYDQ5HF",
@@ -1833,7 +2183,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.005,
+   "targetCpcAtGoal": 0.008,
+   "trancheReady": false
   },
   {
    "asin": "B0FWYGV122",
@@ -1869,7 +2226,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.151,
+   "targetCpcAtGoal": 0.244,
+   "trancheReady": false
   },
   {
    "asin": "B0G28S8KRK",
@@ -1905,7 +2269,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "kdp status draft; royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0FWX3SM87",
@@ -1941,7 +2312,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0G2C2HDQX",
@@ -1977,7 +2355,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.26,
+   "targetCpcAtGoal": 0.419,
+   "trancheReady": false
   },
   {
    "asin": "B0DWK8P12N",
@@ -2015,7 +2400,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.14,
+   "targetCpcAtGoal": 0.225,
+   "trancheReady": false
   },
   {
    "asin": "B0G27X94R6",
@@ -2053,7 +2445,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0G2CMJT2N",
@@ -2091,7 +2490,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.217,
+   "targetCpcAtGoal": 0.35,
+   "trancheReady": false
   },
   {
    "asin": "B0GS4Z1HDG",
@@ -2129,7 +2535,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "passes every machine check, waiting for a tranche slot",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.167,
+   "targetCpcAtGoal": 0.269,
+   "trancheReady": true
   },
   {
    "asin": "B0F3D71WT3",
@@ -2165,7 +2578,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "passes every machine check, waiting for a tranche slot",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.154,
+   "targetCpcAtGoal": 0.249,
+   "trancheReady": true
   },
   {
    "asin": "B0G27R88YL",
@@ -2201,7 +2621,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0G27V2VQF",
@@ -2235,7 +2662,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.303,
+   "targetCpcAtGoal": 0.489,
+   "trancheReady": false
   },
   {
    "asin": "B0G29TFSBF",
@@ -2271,7 +2705,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.217,
+   "targetCpcAtGoal": 0.35,
+   "trancheReady": false
   },
   {
    "asin": "B0FS6TGV52",
@@ -2307,7 +2748,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.158,
+   "targetCpcAtGoal": 0.255,
+   "trancheReady": false
   },
   {
    "asin": "B0G2BY5V1K",
@@ -2343,7 +2791,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0FWX6HQG2",
@@ -2377,7 +2832,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "rehab",
+   "stageLabel": "Rehab",
+   "stageWhy": "rated 2.0, under the 4.0 floor",
+   "endsWhen": "rating recovers above 4.0, or the book is republished",
+   "targetCpc": 0.166,
+   "targetCpcAtGoal": 0.268,
+   "trancheReady": false
   },
   {
    "asin": "B0FWX4S2MX",
@@ -2413,7 +2875,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0G28WH2DW",
@@ -2449,7 +2918,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0H9FFW2HX",
@@ -2483,7 +2959,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "rehab",
+   "stageLabel": "Rehab",
+   "stageWhy": "coloring book, excluded by the contract",
+   "endsWhen": "rating recovers above 4.0, or the book is republished",
+   "targetCpc": 0.112,
+   "targetCpcAtGoal": 0.18,
+   "trancheReady": false
   },
   {
    "asin": "B0H99YQG2H",
@@ -2517,7 +3000,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "rehab",
+   "stageLabel": "Rehab",
+   "stageWhy": "coloring book, excluded by the contract",
+   "endsWhen": "rating recovers above 4.0, or the book is republished",
+   "targetCpc": 0.113,
+   "targetCpcAtGoal": 0.182,
+   "trancheReady": false
   },
   {
    "asin": "B0FWXKPSNZ",
@@ -2553,7 +3043,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0G2C246S9",
@@ -2589,7 +3086,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.26,
+   "targetCpcAtGoal": 0.419,
+   "trancheReady": false
   },
   {
    "asin": "B0FWWX7KKZ",
@@ -2625,7 +3129,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0G28PTGC8",
@@ -2661,7 +3172,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0F1LLQCNK",
@@ -2695,20 +3213,27 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.18,
+   "targetCpcAtGoal": 0.291,
+   "trancheReady": false
   },
   {
    "asin": "B0FXWR4RTR",
    "title": "The Spacebook: A Fun and Educational Space Adventure with Counting, Coloring, Addition, and Subtraction Activities for Smart Little Learners Ages 2–8",
    "author": "Sillicar White",
    "format": "Paperback",
-   "type": "coloring",
+   "type": "activity",
    "group": "the spacebook",
    "siblings": [],
    "status": "Live",
    "advertised": false,
-   "eligible": false,
-   "excluded": "coloring book",
+   "eligible": true,
+   "excluded": "",
    "rating": null,
    "reviews": 0,
    "bsr": null,
@@ -2729,7 +3254,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "passes every machine check, waiting for a tranche slot",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.128,
+   "targetCpcAtGoal": 0.207,
+   "trancheReady": true
   },
   {
    "asin": "B0G27VQS2Q",
@@ -2763,7 +3295,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0DRJLW4JD",
@@ -2799,7 +3338,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.144,
+   "targetCpcAtGoal": 0.233,
+   "trancheReady": false
   },
   {
    "asin": "B0DVGDS6H5",
@@ -2835,20 +3381,27 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "passes every machine check, waiting for a tranche slot",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.397,
+   "targetCpcAtGoal": 0.64,
+   "trancheReady": true
   },
   {
    "asin": "B0FY65BQTR",
    "title": "Unicorn Tales and Fairy Trails: A Magical Activity and Puzzle Book Packed with Unicorns, Fairies, Castles, Rainbows, Mazes, Word Searches, Coloring Pages, and Brain-Boosting Challenges to Spark Creativity, Imagination, and Confidence for Kids Ages 4–8:",
    "author": "ReadingPanda Publication",
    "format": "Paperback",
-   "type": "coloring",
+   "type": "activity",
    "group": "unicorn tales and fairy trails",
    "siblings": [],
    "status": "Live",
    "advertised": true,
-   "eligible": false,
-   "excluded": "coloring book",
+   "eligible": true,
+   "excluded": "",
    "rating": null,
    "reviews": 0,
    "bsr": null,
@@ -2869,7 +3422,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.169,
+   "targetCpcAtGoal": 0.273,
+   "trancheReady": false
   },
   {
    "asin": "B0FWX43Q5V",
@@ -2905,7 +3465,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.203,
+   "targetCpcAtGoal": 0.327,
+   "trancheReady": false
   },
   {
    "asin": "B0G28P5VG4",
@@ -2941,7 +3508,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0FSDB6Y4Y",
@@ -2979,7 +3553,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "rehab",
+   "stageLabel": "Rehab",
+   "stageWhy": "rated 3.0, under the 4.0 floor",
+   "endsWhen": "rating recovers above 4.0, or the book is republished",
+   "targetCpc": 0.167,
+   "targetCpcAtGoal": 0.269,
+   "trancheReady": false
   },
   {
    "asin": "B0FXWH18PB",
@@ -3017,7 +3598,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.167,
+   "targetCpcAtGoal": 0.269,
+   "trancheReady": false
   },
   {
    "asin": "B0G27TY1RK",
@@ -3055,7 +3643,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0G28S3TK9",
@@ -3093,7 +3688,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.303,
+   "targetCpcAtGoal": 0.489,
+   "trancheReady": false
   },
   {
    "asin": "B0FS6WXP27",
@@ -3129,7 +3731,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "rehab",
+   "stageLabel": "Rehab",
+   "stageWhy": "rated 3.0, under the 4.0 floor",
+   "endsWhen": "rating recovers above 4.0, or the book is republished",
+   "targetCpc": 0.162,
+   "targetCpcAtGoal": 0.262,
+   "trancheReady": false
   },
   {
    "asin": "B0G27TWXHG",
@@ -3165,20 +3774,27 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   },
   {
    "asin": "B0FWYH6DCD",
    "title": "Wild Wonder Activity Book: “Adventure Awaits in the Jungle! Educational Activity Book for Kids Ages 3–8 | Filled with Animal Coloring, Tracing, Puzzles, and Counting Games That Make Learning Fun and Interactive”",
    "author": "ReadingPanda Publication",
    "format": "Paperback",
-   "type": "coloring",
+   "type": "activity",
    "group": "wild wonder activity book",
    "siblings": [],
    "status": "Live",
    "advertised": true,
-   "eligible": false,
-   "excluded": "coloring book",
+   "eligible": true,
+   "excluded": "",
    "rating": null,
    "reviews": 0,
    "bsr": 4697510,
@@ -3199,7 +3815,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.178,
+   "targetCpcAtGoal": 0.287,
+   "trancheReady": false
   },
   {
    "asin": "B0FWX3GGBV",
@@ -3235,7 +3858,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "discovery",
+   "stageLabel": "Discovery",
+   "stageWhy": "has a product ad, no clicks recorded yet",
+   "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+   "targetCpc": 0.148,
+   "targetCpcAtGoal": 0.239,
+   "trancheReady": false
   },
   {
    "asin": "B0G27TYGWK",
@@ -3271,7 +3901,14 @@
    "cvr": null,
    "cpc": null,
    "verdict": "no data",
-   "plan": []
+   "plan": [],
+   "stage": "gate",
+   "stageLabel": "Gate",
+   "stageWhy": "royalty assumed, not read off KDP",
+   "endsWhen": "the listing passes every gate check and a tranche slot opens",
+   "targetCpc": 0.216,
+   "targetCpcAtGoal": 0.349,
+   "trancheReady": false
   }
  ],
  "series": [
@@ -3693,6 +4330,169 @@
    "action": "set_bid",
    "from": 0.55,
    "to": 0.5
+  }
+ ],
+ "guard": {
+  "month": "2026-07",
+  "spend_mtd": 50.77,
+  "days_reported": 27,
+  "projected_month_end": 58.29,
+  "ramped_cap_usd": 344.83,
+  "ceiling_usd": 344.83,
+  "ceiling_inr": 30000.0,
+  "share_of_ramped_cap": 14.7,
+  "state": "OK"
+ },
+ "stages": {
+  "counts": {
+   "exploit": 0,
+   "harvest": 1,
+   "discovery": 34,
+   "defend": 0,
+   "gate": 43,
+   "rehab": 13
+  },
+  "spec": {
+   "gate": {
+    "label": "Gate",
+    "objective": "earn the right to spend",
+    "judgedOn": "listing quality, not ads",
+    "endsWhen": "the listing passes every gate check and a tranche slot opens",
+    "acosRange": null,
+    "budget": 0.0,
+    "bidScale": null
+   },
+   "discovery": {
+    "label": "Discovery",
+    "objective": "find which phrases exist and which convert, not profit",
+    "judgedOn": "converting search terms found per dollar",
+    "endsWhen": "40 clicks or $15 or 14 days, whichever comes first",
+    "acosRange": [
+     100,
+     250
+    ],
+    "budget": 2.0,
+    "bidScale": 0.55
+   },
+   "harvest": {
+    "label": "Harvest",
+    "objective": "convert discovery into permanent structure",
+    "judgedOn": "converting terms promoted to exact",
+    "endsWhen": "every 2+ order term is an exact keyword and the losers are negated",
+    "acosRange": [
+     60,
+     120
+    ],
+    "budget": 3.0,
+    "bidScale": null
+   },
+   "exploit": {
+    "label": "Exploit",
+    "objective": "profit",
+    "judgedOn": "ACOS against this book's own breakeven",
+    "endsWhen": "it stops beating breakeven, or it saturates and moves to Defend",
+    "acosRange": null,
+    "budget": 5.0,
+    "bidScale": null
+   },
+   "defend": {
+    "label": "Defend",
+    "objective": "hold the shelf, cross-promote the series",
+    "judgedOn": "share of our own carousel",
+    "endsWhen": "reviewed weekly, not daily",
+    "acosRange": null,
+    "budget": 1.0,
+    "bidScale": 0.55
+   },
+   "rehab": {
+    "label": "Rehab",
+    "objective": "ads off, fix the listing or the book",
+    "judgedOn": "rating recovery",
+    "endsWhen": "rating recovers above 4.0, or the book is republished",
+    "acosRange": null,
+    "budget": 0.0,
+    "bidScale": null
+   }
+  },
+  "blockers": [
+   {
+    "reason": "royalty assumed, not read off KDP",
+    "books": 33
+   },
+   {
+    "reason": "coloring book",
+    "books": 9
+   },
+   {
+    "reason": "listed at 8.20, under the 9.99 print royalty cliff",
+    "books": 7
+   },
+   {
+    "reason": "royalty unknown",
+    "books": 3
+   },
+   {
+    "reason": "listed at 8.23, under the 9.99 print royalty cliff",
+    "books": 2
+   },
+   {
+    "reason": "rated 2.0",
+    "books": 2
+   },
+   {
+    "reason": "kdp status draft",
+    "books": 2
+   },
+   {
+    "reason": "rated 3.0",
+    "books": 2
+   },
+   {
+    "reason": "list price unknown",
+    "books": 1
+   },
+   {
+    "reason": "listed at 9.49, under the 9.99 print royalty cliff",
+    "books": 1
+   }
+  ],
+  "ready": 8,
+  "exit": {
+   "clicks": 40,
+   "spend": 15.0,
+   "days": 14
+  }
+ },
+ "ladder": [
+  {
+   "rung": 1,
+   "symptom": "Impressions near zero",
+   "means": "we are not winning auctions at all",
+   "fix": "keyword STATES first, then bid, then match type"
+  },
+  {
+   "rung": 2,
+   "symptom": "Impressions fine, CTR under 0.3%",
+   "means": "shoppers see us and scroll past",
+   "fix": "keyword relevance (free), then cover thumbnail (slow), then title"
+  },
+  {
+   "rung": 3,
+   "symptom": "CTR fine, CVR under 5%",
+   "means": "they click and the page loses them",
+   "fix": "reviews, then price, then the first two lines of the description"
+  },
+  {
+   "rung": 4,
+   "symptom": "CVR fine, ACOS above breakeven",
+   "means": "we are simply paying too much per click",
+   "fix": "bid to the ceiling, negate expensive non-converters, placements to 0%"
+  },
+  {
+   "rung": 5,
+   "symptom": "All fine, volume low",
+   "means": "budget or bid limited, which is a good problem",
+   "fix": "scale one lever at a time: budget +20-30% OR bid +10-15%, never both"
   }
  ]
 }
