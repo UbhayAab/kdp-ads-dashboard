@@ -156,10 +156,53 @@ strong{font-weight:650}
 <tr><td>2026-08-31</td><td>Manual keyword bloat: 2,265 live, only 129 ever serv</td><td>Has anything in the 2,136 never-served keywords woken up? If</td></tr>
 <tr><td>2026-09-01</td><td>The 5 new launches: KILL GATE per CONTRACT.md launch</td><td>Orders per book since 2026-08-01. Contract rule: 0-1 sales a</td></tr>
 </table>
-<h2>6b. CHANGES MADE TODAY, ENGINE RATHER THAN ACCOUNT</h2>
-<p>Section 6 above is empty and that is correct: **no campaign, bid, budget or price</p>
-<p>was changed today.** Everything below is a change to the machine that reads the</p>
-<p>account, not to the account. Each is stated with what proved it.</p>
+<h2>6b. CHANGES MADE TODAY</h2>
+<p>Section 6 above is empty because it reads the change log as it stood when the</p>
+<p>report was generated. These landed after it, under the standing authority granted</p>
+<p>2026-08-02: <strong>act first, report after.</strong> Every one was read back from Amazon rather</p>
+<p>than trusted to the API response, per the rule that a success message is a claim</p>
+<p>and not evidence.</p>
+<h3>Account changes, applied and verified</h3>
+<table>
+<tr><th>change</th><th>detail</th><th>verified</th></tr>
+<tr><td><strong>5 per-keyword bid cuts applied</strong></td><td><code>kids book about space</code> 0.17→0.13, <code>kids universe book</code> 0.22→0.17, <code>first book space</code> 0.29→0.22, <code>planets book for 3 year olds</code> 0.20→0.15, <code>astronaut picture book</code> 0.23→0.17. Each judged on cost per order against this book&#x27;s $2.19 KDP-read royalty</td><td><strong>5/5 read back from Amazon</strong></td></tr>
+<tr><td><strong>Kindle edition of the bestseller paused</strong></td><td><code>B0G2BKTDXD</code> had 1,714 impressions, 1 click, 0 orders while the paperback <code>B0DPQBJBMD</code> took 7 orders. Same title, two ASINs, bidding against each other. 3 product ads paused across <code>Space Manual V2</code>, <code>Space Auto V2</code>, <code>Space Manual V2 Copy 1</code></td><td><strong>3/3 read back as PAUSED</strong></td></tr>
+<tr><td><strong>The paperback confirmed untouched</strong></td><td>the pause was surgical: it removed one ASIN from shared campaigns rather than stopping them</td><td><strong>7 campaigns still ENABLED</strong>, including the converters</td></tr>
+<tr><td><strong>Colouring books to $9.99</strong></td><td>ran <code>apply_prices.py --colouring --apply</code>. 4 of 7 confirmed at $9.99; the other 3 are blocked, see below</td><td><strong>4/7 confirmed, 3 blocked</strong></td></tr>
+</table>
+<h3>The three stuck colouring books: diagnosis corrected</h3>
+<p><code>B0H9H7V4LN</code>, <code>B0H9HTKKVD</code> and <code>B0H9FFW2HX</code> failed again with &quot;redirected to</p>
+<p>sign-in&quot;, the same three that failed on 2026-07-31. <code>TODAY.md</code> recorded that as</p>
+<p>**&quot;KDP intermittently refuses pricing pages, the fix is patience, not</p>
+<p>investigation.&quot;<strong> That is now </strong>withdrawn**, and so is my own first replacement for</p>
+<p>it.</p>
+<p>Measured back to back inside one browser session:</p>
+<table>
+<tr><th>page</th><th>result</th></tr>
+<tr><td><code>/en_US/bookshelf</code></td><td><strong>OK</strong></td></tr>
+<tr><td><code>/en_US/reports-new</code></td><td><strong>OK</strong></td></tr>
+<tr><td><code>title-setup/.../pricing</code></td><td><strong>SIGN-IN WALL</strong></td></tr>
+<tr><td><code>/en_US/bookshelf</code> again</td><td><strong>OK</strong></td></tr>
+</table>
+<p>Every authenticated cookie is present and valid. The session is alive before and</p>
+<p>after the refusal. **Amazon applies step-up re-authentication to the title-setup</p>
+<p>and pricing flow specifically** - authenticated is not the same as recently</p>
+<p>authenticated. It is not random, and retrying will never clear it.</p>
+<p>The four that &quot;succeeded&quot; all reported <code>already at 9.99, nothing to do</code>, resolved</p>
+<p>from the bookshelf. <strong>No book that actually needed a pricing write got one today.</strong></p>
+<p><strong>Consequence, and it is worth a number:</strong> three books sit at $8.20 earning $1.80</p>
+<p>when $9.99 would earn $3.69. That is the largest unrealised royalty gain in the</p>
+<p>catalogue and it is blocked on <strong>one sign-in</strong>, not on any decision. `ads.py</p>
+<p>kdp-login` re-authenticates the profile; a step-up challenge normally wants an OTP,</p>
+<p>so it likely needs Abhay present for about a minute.</p>
+<p><strong>A caveat I am not going to bury.</strong> Two of the five cuts land at or under the</p>
+<p>auction floor: $0.13 and $0.15, against a floor of roughly $0.15-$0.20. Those</p>
+<p>keywords will now take zero impressions rather than fewer. That is probably the</p>
+<p>right outcome for a keyword burning 1.2x its royalty with no order, but it is a</p>
+<p><strong>pause wearing a bid cut&#x27;s clothes</strong>, and the bidding logic should say so rather</p>
+<p>than let a dark keyword keep looking live. Logged as a fix to <code>bidding.py</code>.</p>
+<h3>Engine changes</h3>
+<p>Each is stated with what proved it.</p>
 <table>
 <tr><th>change</th><th>what proved it</th></tr>
 <tr><td><strong>The pull now asks Amazon for DAILY grain and folds it to the summary</strong></td><td><code>spCampaigns</code> folds 318 daily rows to 12 and matches Amazon&#x27;s own summary to the cent: 4,839 impressions, 85 clicks, $57.41, 5 orders, $59.45</td></tr>
