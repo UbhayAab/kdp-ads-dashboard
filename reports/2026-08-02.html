@@ -390,6 +390,70 @@ strong{font-weight:650}
 <p>157 impressions and zero clicks**, while BROAD produced 57 of the account&#x27;s clicks</p>
 <p>from 427 targets. Promoting a winner into exact moves it into the only part of the</p>
 <p>estate with no evidence of working. Written into the tool so it is not re-proposed.</p>
+<h2>13. THE AUTO TO MANUAL PIPELINE, BUILT TODAY</h2>
+<p>An auto campaign&#x27;s four groups emit two different kinds of discovery, and only one</p>
+<p>of them had anywhere to go.</p>
+<table>
+<tr><th>auto group</th><th>emits</th><th>pipeline</th></tr>
+<tr><td><code>close-match</code>, <code>loose-match</code></td><td>search phrases</td><td><code>harvest.py</code>, already existed</td></tr>
+<tr><td><code>complements</code>, <code>substitutes</code></td><td><strong>ASINs</strong></td><td><strong><code>auto_pipeline.py</code>, new today</strong></td></tr>
+</table>
+<p>A <code>complements</code> row naming an ASIN is **Amazon telling us our ad appeared on that</p>
+<p>book&#x27;s detail page.** That is the most actionable thing auto produces and it was</p>
+<p>being dropped on the floor. It now becomes one of three things: <strong>attack</strong> it as a</p>
+<p>deliberate product target at a bid we choose, <strong>defend</strong> our own pages against the</p>
+<p>same treatment, or <strong>negate</strong> it if its shoppers are not ours.</p>
+<h3>What the pipeline says today: not yet, and that is the right answer</h3>
+<table>
+<tr><th></th><th>count</th></tr>
+<tr><td>search terms held, deduplicated</td><td><strong>183</strong> (178 phrases, 5 ASINs)</td></tr>
+<tr><td>phrases with 2+ orders, the promote bar</td><td><strong>0</strong></td></tr>
+<tr><td>ASINs with enough clicks to attack</td><td><strong>0</strong></td></tr>
+<tr><td><strong>our own pages with no defensive target</strong></td><td><strong>102</strong>, across nine markets</td></tr>
+</table>
+<p>Auto has not yet produced one proven winner. It has been running four days.</p>
+<h3>The double-count that nearly shipped, caught before it did</h3>
+<p>The first run reported <strong>8 phrases to promote and 2 ASINs to attack</strong>. Every one</p>
+<p>was false. The loader read the warehouse <strong>and</strong> the file on disk, which hold the</p>
+<p>same rows, so a one-order term appeared as two and cleared <code>PROMOTE_ORDERS = 2</code></p>
+<p>exactly. Eight noise terms would have been promoted as proven winners.</p>
+<p>Rows are now keyed on <code>(market, day, search term, campaign, matched keyword)</code>.</p>
+<p>Deduplicated the count falls <strong>267 to 183</strong> and the promotions fall to zero.</p>
+<p>This is the <code>(entity, day)</code> rule arriving through a third door today, and the</p>
+<p>pattern is worth naming: <strong>two sources of the same truth, summed.</strong> It produced</p>
+<p>the 30-day rollup stamped as a day this morning, the 29-of-31-day pull overlap at</p>
+<p>noon, and this. Confident nonsense every time, and never an error message.</p>
+<h3>The one thing here with real evidence behind it</h3>
+<p><strong>102 of our own detail pages have no defensive target.</strong> <code>PLAYS.md D1</code> has called</p>
+<p>own-ASIN targeting *&quot;the highest-value defensive play we are not doing&quot;* since the</p>
+<p>play list was written, and it needs no search-term evidence to justify: someone on</p>
+<p>our page has already chosen the subject, and if we do not buy that carousel slot a</p>
+<p>competitor does, advertising to a reader we paid to bring.</p>
+<p>Plans written to <code>brain/auto_pipeline/2026-08-02-{attack,defend,negate}.csv</code>.</p>
+<p>The write path is deliberately not wired yet: a product target is a standing claim</p>
+<p>on someone else&#x27;s page and this account has never run one.</p>
+<h2>14. WHEN MANUAL DIES, AND HOW</h2>
+<p>Three rules already existed and the one that mattered was missing. All four are now</p>
+<p>dated and in the register.</p>
+<table>
+<tr><th>when</th><th>what</th><th>rule</th></tr>
+<tr><td><strong>daily, already running</strong></td><td>individual bleeding keywords</td><td>one royalty burned with no order is a <strong>cut</strong>, two is a <strong>pause</strong></td></tr>
+<tr><td><strong>2026-08-08</strong></td><td>keywords that have earned a decision</td><td>8+ clicks, zero orders. <strong>Pause them</strong></td></tr>
+<tr><td><strong>2026-08-14</strong></td><td>the $12.99 read</td><td><strong>do not kill what the price is about to rescue</strong></td></tr>
+<tr><td><strong>2026-08-31</strong></td><td>the never-served estate</td><td>~2,108 keywords, 60 days, no impression. <strong>Archive</strong></td></tr>
+<tr><td><strong>2026-09-01, NEW</strong></td><td>the manual estate as a whole</td><td>if manual cost/order is still <strong>over 2x auto&#x27;s</strong>, manual stops being funded as a discovery channel</td></tr>
+</table>
+<p><strong>Why not kill it today</strong>, since that is the actual question:</p>
+<p>1. <strong>Manual is where the price test lands.</strong> $9.99 to $12.99 takes the affordable</p>
+<p>   bid $0.24 to $0.42, above the ~$0.35 delivery threshold. Keywords that cannot</p>
+<p>   pay today may pay at $12.99, and killing them first destroys the estate the</p>
+<p>   experiment needs.</p>
+<p>2. <strong>Killing it saves almost nothing.</strong> The entire Space Manual bloat cost **$2.72</p>
+<p>   in 30 days**. Manual is a signal-quality problem, not a money problem, and</p>
+<p>   dressing it up as a saving would be false.</p>
+<p><strong>Where manual does cost real money:</strong> <code>Campaign - 4/4/2026</code> takes **52% of all US</p>
+<p>spend at $10.26 per order against a $2.19 royalty**. That is handled per keyword by</p>
+<p>the daily tune, never by a blanket cut.</p>
 <h2>11. PER BOOK: RANK, REVIEWS AND WHAT TO DO</h2>
 <p><strong>3 book(s) improving, 22 worsening</strong> on US Best Sellers Rank. A positive <code>rank gain</code> means the BSR number fell, which is the good direction.</p>
 <p><strong>Reviews arrived on 2 book(s)</strong> in the window: <code>B0DPQBJBMD</code> +1, <code>B0G2BKTDXD</code> +1</p>
