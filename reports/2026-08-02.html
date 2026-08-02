@@ -328,6 +328,68 @@ strong{font-weight:650}
 </ul>
 <p>  real print costs decide which books can afford a delivering click, and no bid</p>
 <p>  change substitutes for that.</p>
+<ul>
+<li><strong>Amazon&#x27;s minimum daily budget differs by marketplace.</strong> AU refuses A$1.00 and</li>
+</ul>
+<p>  accepts A$1.50. Measured, not guessed, after it silently cost 15 campaigns.</p>
+<h2>12. DOUBLING DOWN ON AUTO, DONE TODAY</h2>
+<p>Auto is the only part of this account that approaches paying for itself: **$2.51</p>
+<p>per order against manual&#x27;s $9.04**, from 4.4% of the targets. So it gets the</p>
+<p>budget. The question was where, and the answer was not where I expected.</p>
+<h3>The US cannot be doubled down. It is already saturated.</h3>
+<table>
+<tr><th>check</th><th>reading</th></tr>
+<tr><td>US auto campaigns</td><td><strong>40 enabled</strong></td></tr>
+<tr><td>Budget between them</td><td><strong>$26.00/day</strong></td></tr>
+<tr><td>Actually spent</td><td><strong>$0.90/day, 3.5% of cap</strong></td></tr>
+<tr><td>Eligible books without an auto campaign</td><td><strong>0 of 39</strong></td></tr>
+<tr><td>Bids vs affordable</td><td>already at or above</td></tr>
+</table>
+<p>Budgets are not binding, every eligible book already has a campaign, and bids are</p>
+<p>already above what the books can pay. **There is no US auto lever that is not the</p>
+<p>price.**</p>
+<h3>So the expansion went abroad, where 5 books of 25-36 eligible had a campaign</h3>
+<table>
+<tr><th>market</th><th>eligible</th><th>had</th><th>added</th><th>verified</th></tr>
+<tr><td>UK</td><td>34</td><td>5</td><td>22</td><td><strong>22/22</strong></td></tr>
+<tr><td>DE</td><td>36</td><td>5</td><td>25</td><td><strong>25/25</strong></td></tr>
+<tr><td>FR</td><td>36</td><td>5</td><td>24</td><td><strong>24/24</strong></td></tr>
+<tr><td>ES</td><td>36</td><td>5</td><td>31</td><td><strong>31/31</strong></td></tr>
+<tr><td>IT</td><td>36</td><td>5</td><td>31</td><td><strong>31/31</strong></td></tr>
+<tr><td>NL</td><td>36</td><td>5</td><td>31</td><td><strong>31/31</strong></td></tr>
+<tr><td>AU</td><td>25</td><td>5</td><td>15</td><td><strong>15/15</strong></td></tr>
+</table>
+<p><strong>179 new auto campaigns, 179/179 verified enabled with four auto groups each.</strong></p>
+<p><code>audit_assets.py</code> then read <strong>0 findings in every market</strong>: no campaign without an</p>
+<p>ad group, no ad group without a live target, no budget under the floor.</p>
+<p>CA was excluded because it is payment-blocked. IN stays refused.</p>
+<h3>Two things that had to be fixed first, and both were real</h3>
+<p><strong>1. The budget would have blacked out the account.</strong> The tool defaulted to</p>
+<p>$5.00/day. 179 campaigns at $5.00 is <strong>$895/day of new enabled budget</strong> on top of</p>
+<p>$405/day already enabled, against a <strong>$344.83/month ceiling</strong>. The spend guard&#x27;s</p>
+<p>response to a projected breach is to pause *every campaign*, so an over-budgeted</p>
+<p>expansion does not overspend, it stops the account partway through the month. Cut</p>
+<p>to Amazon&#x27;s floor before launching.</p>
+<p><strong>2. Amazon&#x27;s floor is not the same everywhere.</strong> All 15 AU launches failed on the</p>
+<p>first run with <code>BUDGET_OUT_OF_MARKET_PLACE_RANGE</code>. Probing directly: **A$1.00</p>
+<p>rejected, A$1.50 accepted.** Now recorded per market in <code>MARKET_MIN_BUDGET</code> and</p>
+<p>measured rather than assumed. AU relaunched, 15/15.</p>
+<h3>What this is actually a bet on, stated honestly</h3>
+<p>**Every bid in this expansion is below the ~$0.35 this account has been observed to</p>
+<p>need to deliver.** Median affordable bid is $0.20-$0.24 across these markets. So</p>
+<p>the honest hypothesis is not &quot;auto will make money abroad&quot;, it is:</p>
+<blockquote>Do these marketplaces have <strong>any</strong> demand reachable at a price these books can</blockquote>
+<blockquote>pay? Seven months of manual campaigns and 176 dead targets never answered that,</blockquote>
+<blockquote>because they only ever tested keywords we guessed in English.</blockquote>
+<p>If they take zero impressions, <strong>that is the answer</strong> and it points at price, not</p>
+<p>campaigns. Cost of finding out: 179 campaigns at the floor, on an account measured</p>
+<p>to spend 1.5-3% of enabled budget. Check registered for <strong>2026-08-08</strong>.</p>
+<h3>What was deliberately NOT done</h3>
+<p><strong>Harvesting converting auto terms into exact match.</strong> It is the obvious next step</p>
+<p>and the account says it is wrong: US EXACT holds **1,016 live keywords producing</p>
+<p>157 impressions and zero clicks**, while BROAD produced 57 of the account&#x27;s clicks</p>
+<p>from 427 targets. Promoting a winner into exact moves it into the only part of the</p>
+<p>estate with no evidence of working. Written into the tool so it is not re-proposed.</p>
 <h2>11. PER BOOK: RANK, REVIEWS AND WHAT TO DO</h2>
 <p><strong>3 book(s) improving, 22 worsening</strong> on US Best Sellers Rank. A positive <code>rank gain</code> means the BSR number fell, which is the good direction.</p>
 <p><strong>Reviews arrived on 2 book(s)</strong> in the window: <code>B0DPQBJBMD</code> +1, <code>B0G2BKTDXD</code> +1</p>
