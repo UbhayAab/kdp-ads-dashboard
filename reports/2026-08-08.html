@@ -123,7 +123,7 @@ a{color:var(--accent)}
 </style>
 <div class="wrap">
   <header class="mast">
-    <div class="eyebrow">KDP Sponsored Products &middot; daily report &middot; generated 2026-08-08T00:22:57</div>
+    <div class="eyebrow">KDP Sponsored Products &middot; daily report &middot; generated 2026-08-08T00:59:27</div>
     <h1>2026-08-08: 15 orders on $101.45, and $34.17 of it came back</h1>
     <p class="standfirst">Every figure on this page is computed by <code>report.py</code> from the
       <code>kdp</code> warehouse and <code>amazon_ads.policy</code>. Nothing is typed by hand.
@@ -139,18 +139,21 @@ a{color:var(--accent)}
   </header>
 
   <section>
-    <h2>Account, all time</h2>
-    <div class="stats">
-      <div><span class="k">Impressions</span><span class="v">110,524</span></div>
-      <div><span class="k">Clicks</span><span class="v">249</span></div>
-      <div><span class="k">CTR</span><span class="v">0.225%</span></div>
-      <div><span class="k">Spend</span><span class="v">$101.45</span></div>
-      <div><span class="k">Orders</span><span class="v">15</span></div>
-      <div><span class="k">Royalty kept</span><span class="v">$34.17</span></div>
-      <div><span class="k">Net</span><span class="v bad">$-67.28</span></div>
-    </div>
-    <p class="note">Amazon's &ldquo;sales&rdquo; number is retail. Royalty kept is what reaches us,
-      computed per order from each book's KDP-read royalty. Never quote the first as if it were the second.</p>
+    <h2>The account, by window</h2>
+    <p class="lede">Two nets, and the difference between them is the whole argument for
+      running ads at a loss. <b>Ads-only net</b> is ad royalty minus ad spend, which is
+      what every report here showed before today. <b>True net</b> is <em>all</em> KDP
+      royalty minus ad spend, including the organic sales the Advertising API cannot see.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Window</th><th>Impr</th><th>Clicks</th><th>CTR</th><th>Spend</th>
+        <th>CPC</th><th>Sales</th><th>ACOS</th><th>Ad ord</th><th>KDP units</th>
+        <th>Organic</th><th>KDP royalty</th><th>Net ads-only</th><th>True net</th></tr></thead>
+      <tbody><tr class='stripe-bad'><td><b>Last 7 days</b></td><td>96,312</td><td>136</td><td>0.141%</td><td>$39.12</td><td>$0.29</td><td>$96.22</td><td>41%</td><td>8</td><td>15</td><td class='good'>7 (47%)</td><td>$34.03</td><td class='bad'>$-20.04</td><td class='bad'><b>$-5.09</b></td></tr><tr class='stripe-good'><td><b>Last 14 days</b></td><td>107,032</td><td>184</td><td>0.172%</td><td>$58.76</td><td>$0.32</td><td>$141.88</td><td>41%</td><td>12</td><td>35</td><td class='good'>23 (66%)</td><td>$78.01</td><td class='bad'>$-31.16</td><td class='good'><b>$19.25</b></td></tr><tr class='stripe-bad'><td><b>Last 30 days</b></td><td>109,670</td><td>231</td><td>0.211%</td><td>$89.81</td><td>$0.39</td><td>$165.66</td><td>54%</td><td>14</td><td>35</td><td class='good'>21 (60%)</td><td>$78.01</td><td class='bad'>$-57.83</td><td class='bad'><b>$-11.80</b></td></tr><tr class='stripe-good'><td><b>Lifetime</b></td><td>110,524</td><td>249</td><td>0.225%</td><td>$101.45</td><td>$0.41</td><td>$177.55</td><td>57%</td><td>15</td><td>559</td><td class='good'>544 (97%)</td><td>$1,188.95</td><td class='bad'>$-67.28</td><td class='good'><b>$1,087.50</b></td></tr></tbody></table></div>
+    <p class="note">KDP royalty is <b>monthly for print</b>; only KENP is daily. A 7-day
+      window is therefore served by the months it touches and is labelled with them rather
+      than interpolated into days that do not exist. Source: 2023-12 .. 2026-08,
+      415 rows, ingested 2026-08-07 19:28:15.497023+00.
+      Amazon's &ldquo;sales&rdquo; is retail; royalty is what reaches us.</p>
   </section>
 
   <section>
@@ -227,7 +230,7 @@ a{color:var(--accent)}
           <span class="hstatus">open</span>
           <span class="heta">judged 2026-08-21 &middot; 13 days</span></header>
         <p class="hstate">The two ASIN auto groups (substitutes, complements) cannot earn a click on this account, so they can never accumulate enough clicks to be judged on conversion.</p>
-        <div class="hrow"><span class="k">Why we believe it</span><span>76,698 impressions across the two groups produced 46 clicks, a 0.060% CTR, against 0.559% on loose-match and 0.289% on close-match over the same window. The click-earning gap is 9.5x on a 76,698-impression sample, which is decisive. The CONVERSION claim is NOT supported and must not be made: 24 clicks on substitutes has a 13.2% chance of showing zero orders even at the account&#x27;s full 8.08% CVR. We are pausing these for failing to earn clicks, not for failing to convert, and at 0.059% CTR reaching even 100 clicks would take another 170,000 impressions.</span></div>
+        <div class="hrow"><span class="k">Why we believe it</span><span>Two findings, and only one was supported before today. CLICK-EARNING: 76,698 lifetime impressions produced 46 clicks, 0.060% CTR, against 0.559% on loose-match and 0.289% on close-match. Decisive. CONVERSION: substitutes alone (24 clicks, P(0 orders|8.08% CVR)=13.2%) and complements alone (22 clicks, P=15.7%) are NOT significant, but COMBINED the two groups have 46 clicks and zero orders and P=2.1%, which IS significant at p&lt;0.05. So the conversion failure is supported at the group level where it was not at the individual level. Abhay&#x27;s framing sharpens it: an impression on a product page is a poor denominator because a scroll can register a view, so the honest metric is clicks-to-orders, and on that metric these placements fail. Likely mechanism is intent - a shopper already reading a competitor&#x27;s book page clicks ours out of curiosity, not purchase intent, which predicts exactly what we see. And the ASIN CPC was LOWER than the QUERY CPC, so this was never a bargain, it was a different product.</span></div>
         <div class="hrow"><span class="k">Metric</span><span><code>asin_group_impression_share</code>
           baseline <b>0.773</b> &rarr; expected <b>0.15</b>
           &middot; now <b>0.7742</b></span></div>
@@ -292,9 +295,9 @@ a{color:var(--accent)}
         
         <div class="hrow"><span class="k">Actions</span><span><code>txn_20260808_000733_2b7abd</code> </span></div>
       </article>
-      <article class="hyp is-open">
+      <article class="hyp is-warn">
         <header><span class="hid">H6</span>
-          <span class="hstatus">open</span>
+          <span class="hstatus">parked</span>
           <span class="heta">judged 2026-09-07 &middot; 30 days</span></header>
         <p class="hstate">No book in this catalogue can honestly afford the delivery floor, so every impression the account buys is bought above the value of the click, and the gap closes with price rather than with bids.</p>
         <div class="hrow"><span class="k">Why we believe it</span><span>A click is worth royalty x CVR. At 8.08% CVR the $0.36 floor needs $4.46 of royalty. Only 3 of 87 ad-eligible books clear that, and none of those three has ever converted. All four books that DO convert sit at $1.75-$2.39, which affords $0.14-$0.19. The books that can afford to advertise do not sell and the books that sell cannot afford to advertise.</span></div>
@@ -303,7 +306,7 @@ a{color:var(--accent)}
           &middot; now <b>0.0808</b></span></div>
         <div class="hrow good"><span class="k">Good movement</span><span>CVR rises toward 15%, which would halve the royalty required and close the gap without touching price. More reviews and better targeting are the levers.</span></div>
         <div class="hrow bad"><span class="k">Bad movement</span><span>CVR stays near 8%. Then the only remaining levers are price and read-through, and single-book ad profitability is not reachable at this royalty.</span></div>
-        <div class='hrow'><span class='k'>Note</span><span>PRICE IS EXPLICITLY NOT BEING CHANGED. Abhay, 2026-08-07: &#x27;don&#x27;t change prices yet, that will just affect the conversion, we are already at a costly point right now.&#x27; This hypothesis is recorded so the arithmetic is visible, not to license a repricing.</span></div>
+        <div class='hrow'><span class='k'>Note</span><span>PARKED 2026-08-08 on two independent grounds. (1) Abhay: &#x27;Increasing prices is the easiest and the last resort. The cheaper the product, the more people will buy it.&#x27; (2) The competitor scrape agrees with him: our matched-pair price ratio against each book&#x27;s own competitor set is 0.961 and we sit at the 67th percentile of the shelf, so we are not underpriced. The self-published competitors who ARE winning price higher (median $14.47) but they also carry 1,489 median reviews, so their price is a consequence of their position rather than the cause of it. Raising price into a zero-review listing buys a worse conversion rate, not more royalty. The arithmetic stays recorded because it is true; it is not a licence to reprice.</span></div>
         <div class="hrow"><span class="k">Actions</span><span><span class='faint'>no action taken yet</span></span></div>
       </article>
       <article class="hyp is-open">
@@ -362,6 +365,20 @@ a{color:var(--accent)}
         
         <div class="hrow"><span class="k">Actions</span><span><span class='faint'>no action taken yet</span></span></div>
       </article>
+      <article class="hyp is-open">
+        <header><span class="hid">H11</span>
+          <span class="hstatus">open</span>
+          <span class="heta">judged 2026-09-08 &middot; 31 days</span></header>
+        <p class="hstate">Ads bought at a loss are paying for themselves through ORGANIC sales the Advertising API cannot see. Total KDP royalty, not ad-attributed royalty, is the only honest measure of whether the spend works.</p>
+        <div class="hrow"><span class="k">Why we believe it</span><span>The ads pipeline knew about 15 orders and $34 of royalty. KDP&#x27;s own report shows 559 paid units and $1,188.95. In the ads era (2026-07 onward): $78.01 of royalty on 35 paid units against $101.45 of spend, of which only 15 units were ad-attributed, so 20 of 35 (57%) are organic. Monthly paid units went 7 in June with no ads, to 20 in July, to 15 in the first 8 days of August. True net over the last 14 days is POSITIVE at +$19.25 where the ads-only view showed -$31.16.</span></div>
+        <div class="hrow"><span class="k">Metric</span><span><code>kdp_royalty_30d</code>
+          baseline <b>78.01</b> &rarr; expected <b>150.0</b>
+          &middot; now <b>78.01</b></span></div>
+        <div class="hrow good"><span class="k">Good movement</span><span>Total monthly KDP royalty keeps rising faster than ad spend and the organic share of units stays above 50%. That is the rank-building thesis working, and it justifies spending above ad-attributed breakeven.</span></div>
+        <div class="hrow bad"><span class="k">Bad movement</span><span>Total royalty flattens or falls while spend continues. Then ads buy attributed orders only, the organic lift was seasonality rather than rank, and spend has to be cut to what ad-attributed royalty supports.</span></div>
+        <div class='hrow'><span class='k'>Note</span><span>CONFOUND, stated on purpose: December 2025 produced 97 paid units and $213 of royalty with ZERO ad spend, so this catalogue has a large Christmas seasonality. A July-to-August rise is not proof of ad effect on its own. The same-month comparison we now hold: July 2025 was 10 paid units, August 2025 was 7. July 2026 was 20 and August 2026 is 15 in eight days.</span></div>
+        <div class="hrow"><span class="k">Actions</span><span><span class='faint'>no action taken yet</span></span></div>
+      </article>
   </section>
 
   <section>
@@ -411,11 +428,11 @@ a{color:var(--accent)}
       captured, applied, then verified by reading Amazon back, and reversible from that record.</p>
     <div class="scroll"><table>
       <thead><tr><th>Transaction</th><th>What</th><th>State</th><th>Hypothesis</th><th>Verified</th></tr></thead>
-      <tbody><tr><td><code>txn_20260808_000810_3b10ff</code></td><td>pause substitutes+complements on unproven books</td><td><span class='pill good'>VERIFIED</span></td><td>H1</td><td>1017/1017</td></tr><tr><td><code>txn_20260808_000758_c8c5f7</code></td><td>re-fund five dark harvested winners to $0.40</td><td><span class='pill good'>VERIFIED</span></td><td>H4</td><td>5/5</td></tr><tr><td><code>txn_20260808_000733_2b7abd</code></td><td>negate four dead head terms</td><td><span class='pill good'>VERIFIED</span></td><td>H5</td><td>4/4</td></tr><tr><td><code>txn_20260808_000719_c98c50</code></td><td>re-fund five dark harvested winners to $0.40</td><td><span class='pill warn'>PLANNED</span></td><td>H4</td><td>0/5</td></tr><tr><td><code>txn_20260808_000712_21e879</code></td><td>negate four dead head terms</td><td><span class='pill warn'>PLANNED</span></td><td>H5</td><td>0/4</td></tr><tr><td><code>txn_20260808_000711_90b3f2</code></td><td>pause substitutes+complements on unproven books</td><td><span class='pill warn'>PLANNED</span></td><td>H1</td><td>0/1017</td></tr><tr><td><code>txn_20260807_235420_c3765d</code></td><td>selftest lift</td><td><span class='pill bad'>ROLLED_BACK</span></td><td>H-TEST</td><td>2/2</td></tr><tr><td><code>txn_20260807_235420_9c5448</code></td><td>ROLLBACK selftest lift</td><td><span class='pill good'>VERIFIED</span></td><td>H-TEST</td><td>2/2</td></tr></tbody></table></div>
+      <tbody><tr><td><code>txn_20260808_000810_3b10ff</code></td><td>pause substitutes+complements on unproven books</td><td><span class='pill good'>VERIFIED</span></td><td>H1</td><td>1017/1017</td></tr><tr><td><code>txn_20260808_000758_c8c5f7</code></td><td>re-fund five dark harvested winners to $0.40</td><td><span class='pill good'>VERIFIED</span></td><td>H4</td><td>5/5</td></tr><tr><td><code>txn_20260808_000733_2b7abd</code></td><td>negate four dead head terms</td><td><span class='pill good'>VERIFIED</span></td><td>H5</td><td>4/4</td></tr><tr><td><code>txn_20260808_000719_c98c50</code></td><td>re-fund five dark harvested winners to $0.40</td><td><span class='pill bad'>ABANDONED</span></td><td>H4</td><td>0/5</td></tr><tr><td><code>txn_20260808_000712_21e879</code></td><td>negate four dead head terms</td><td><span class='pill bad'>ABANDONED</span></td><td>H5</td><td>0/4</td></tr><tr><td><code>txn_20260808_000711_90b3f2</code></td><td>pause substitutes+complements on unproven books</td><td><span class='pill bad'>ABANDONED</span></td><td>H1</td><td>0/1017</td></tr><tr><td><code>txn_20260807_235420_c3765d</code></td><td>selftest lift</td><td><span class='pill bad'>ROLLED_BACK</span></td><td>H-TEST</td><td>2/2</td></tr><tr><td><code>txn_20260807_235420_9c5448</code></td><td>ROLLBACK selftest lift</td><td><span class='pill good'>VERIFIED</span></td><td>H-TEST</td><td>2/2</td></tr></tbody></table></div>
   </section>
 
   <footer>
-    <span>Warehouse: 65 <code>kdp</code> tables,
+    <span>Warehouse: 67 <code>kdp</code> tables,
       4,952 target-days, current to 2026-08-06.</span>
     <span>Built by <code>python report.py --publish</code>. Fact base:
       <code>brain/reports/2026-08-08.json</code>.</span>
