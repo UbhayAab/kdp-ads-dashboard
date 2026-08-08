@@ -152,9 +152,9 @@ a{color:var(--accent)}
 </style>
 <div class="wrap">
   <header class="mast">
-    <div class="eyebrow">KDP Sponsored Products &middot; daily report &middot; generated 2026-08-09T00:56:27</div>
+    <div class="eyebrow">KDP Sponsored Products &middot; daily report &middot; generated 2026-08-09T01:11:16</div>
     <h1>2026-08-09: 20 orders on
-      at least $119.44,
+      $839.75,
       and $47.62 of it came back</h1>
     <p class="standfirst">Every figure on this page is computed by <code>report.py</code> from the
       <code>kdp</code> warehouse and <code>amazon_ads.policy</code>. Nothing is typed by hand.
@@ -166,7 +166,7 @@ a{color:var(--accent)}
       <b>Amazon is serving</b>
       <p>623 enabled campaigns across 10
       marketplaces, no blocking <code>servingStatus</code>.<br>
-      <span class="faint">read 2026-08-08T20:54:55, 4.0h ago &middot;
+      <span class="faint">read 2026-08-08T20:54:55, 4.3h ago &middot;
       <code>state</code> is what we asked for, <code>servingStatus</code> is what Amazon does</span></p>
     </div>
     
@@ -178,16 +178,61 @@ a{color:var(--accent)}
   </header>
 
   <section>
+    <h2>How much is down</h2>
+    <p class="lede">Two nets on every row, because they answer different questions.
+      <b>Ads net</b> is ad-attributed royalty minus ad spend: what the advertising did on
+      its own terms, and the number a bid should answer to. <b>Net after organic</b> is
+      <em>all</em> KDP royalty minus ad spend: the business question, which counts the
+      sales the Advertising API never sees.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Window</th><th>Ad spend</th><th>Ad orders</th><th>Ad royalty</th>
+        <th>Ads net</th><th>All KDP royalty</th><th>Net after organic</th></tr></thead>
+      <tbody><tr class='stripe-good'><td><b>Since ads began</b><span class='sup'>from 2024-12</span></td><td>$839.75</td><td>117</td><td>$248.85</td><td class='bad'><b>$-590.90</b></td><td>$1,177.36</td><td class='good'><b>$337.61</b></td></tr><tr class='stripe-bad'><td><b>Last 7 days</b><span class='sup'>from 2026-08-01</span></td><td>$50.45</td><td>13</td><td>$32.53</td><td class='bad'><b>$-17.92</b></td><td>$34.03*</td><td class='bad'><b>$-16.42</b></td></tr><tr class='stripe-bad'><td><b>Last 14 days</b><span class='sup'>from 2026-07-25</span></td><td>$70.09</td><td>17</td><td>$41.05</td><td class='bad'><b>$-29.04</b></td><td>$43.96*</td><td class='bad'><b>$-26.13</b></td></tr><tr class='stripe-bad'><td><b>Last 30 days</b><span class='sup'>from 2026-07-09</span></td><td>$101.14</td><td>19</td><td>$45.43</td><td class='bad'><b>$-55.71</b></td><td>$66.66*</td><td class='bad'><b>$-34.48</b></td></tr></tbody></table></div>
+    <p class="note"><b>Read the lifetime row carefully.</b> Ads have cost
+      $839.75 and returned
+      $248.85 of attributed royalty, so on
+      their own terms they are <b>$-590.90</b>.
+      The positive figure beside it credits <em>every</em> unit sold since ads began to the
+      ads, including December 2025's $213.47 earned on almost no ad spend. It is the
+      ceiling of what the ads could possibly have done, not an estimate of what they did.
+      <br>* KDP print royalty is <b>monthly</b>, so windowed totals are prorated across the
+      elapsed days of each month and are estimates. The lifetime row is exact on both sides.
+      <br>Ad spend source: Amazon Ads console export 2026-08-09, range=lifetime, 300 campaigns. Royalty per paid unit all time:
+      $2.13.</p>
+  </section>
+
+  <section>
+    <h2>What it cost to get here, outside the ads</h2>
+    <p class="lede">Kept out of the P&amp;L above and out of every ACOS, cost-per-order and
+      bid in this system. This table is the number to earn back, not a number to optimise
+      against.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Cost</th><th>INR</th><th>USD</th></tr></thead>
+      <tbody><tr><td>AI subscriptions<span class='sup'>Midjourney and others, cumulative to 2026-08-09</span></td><td>Rs 60,000</td><td>$720.00</td></tr><tr><td>Stipend<span class='sup'>paid to one person, cumulative to 2026-08-09</span></td><td>Rs 24,000</td><td>$288.00</td></tr><tr><td>Miscellaneous and loan servicing<span class='sup'>Abhay&#x27;s own figure, stated as approximate, 2026-08-09</span></td><td>Rs 150,000</td><td>$1,800.00</td></tr>
+        <tr class='stripe-bad'><td><b>Total</b><span class='sup'>at Rs 83/USD</span></td>
+        <td><b>Rs 234,000</b></td><td><b>$2,808.00</b></td></tr>
+      </tbody></table></div>
+    <div class="frozen"><span class="dot"></span><div>
+      <b>Everything in, the business is $-2,470.39</b>
+      <p>All KDP royalty since ads began, minus all ad spend, minus the fixed costs above.
+      That is <b>Rs -205,866</b> to earn back before this is
+      even.<br><span class="faint">the miscellaneous figure is Abhay's own estimate and is
+      labelled as one in <code>brain/fixed_costs.json</code>; edit that file, not this
+      page</span></p>
+    </div>
+  </section>
+
+  <section>
     <h2>Have the ads ever paid for themselves?</h2>
     <p class="lede"><b>No.</b> Three ways of asking, differing only in how generously
       organic sales are credited to the ads. All three are losses, between
-      $41.43 and $76.03.</p>
+      $761.74 and $796.34.</p>
     <div class="scroll"><table>
       <thead><tr><th>What counts as ad revenue</th><th></th><th>Royalty</th>
         <th>Ad spend</th><th>Net</th></tr></thead>
-      <tbody><tr class='stripe-bad'><td>Ad-attributed royalty only</td><td class='faint'>what Amazon credits to an ad click</td><td>$47.62</td><td>$119.44</td><td class='bad'><b>$-71.82</b></td></tr><tr class='stripe-bad'><td>Every unit sold since ads began</td><td class='faint'>credits all organic sales to the ads</td><td>$78.01</td><td>$119.44</td><td class='bad'><b>$-41.43</b></td></tr><tr class='stripe-bad'><td>Royalty above the pre-ad baseline</td><td class='faint'>vs $28.23/mo over 2026-01..2026-06 with no ads</td><td>$43.41</td><td>$119.44</td><td class='bad'><b>$-76.03</b></td></tr></tbody></table></div>
+      <tbody><tr class='stripe-bad'><td>Ad-attributed royalty only</td><td class='faint'>what Amazon credits to an ad click</td><td>$47.62</td><td>$839.75</td><td class='bad'><b>$-792.13</b></td></tr><tr class='stripe-bad'><td>Every unit sold since ads began</td><td class='faint'>credits all organic sales to the ads</td><td>$78.01</td><td>$839.75</td><td class='bad'><b>$-761.74</b></td></tr><tr class='stripe-bad'><td>Royalty above the pre-ad baseline</td><td class='faint'>vs $28.23/mo over 2026-01..2026-06 with no ads</td><td>$43.41</td><td>$839.75</td><td class='bad'><b>$-796.34</b></td></tr></tbody></table></div>
     <div class="frozen"><span class="dot"></span><div>
-      <b>Lifetime ad spend is not known, and $119.44 is a floor</b>
+      <b>Lifetime ad spend is not known, and $839.75 is a floor</b>
       <p>Amazon's reports API serves a <b>31-day maximum window</b>, so
       <code>kdp.target_days</code> begins 2026-07-03 and nothing here can
       reach further back. <b>138 campaigns in this
@@ -197,7 +242,7 @@ a{color:var(--accent)}
       The figure above is $112.78 from the warehouse plus
       $6.66 recovered from <code>brain/ads_daily.csv</code>
       for 2026-06-28..2026-07-02, days Amazon will no longer serve.<br>
-      <span class="faint">source: warehouse 31-day reports plus brain/ads_daily.csv; no lifetime console export ingested &middot; only a console
+      <span class="faint">source: console export 2026-08-09, range lifetime, 300 campaigns &middot; only a console
       export with the date range set to Lifetime can close this, ingested with
       <code>python import_console_export.py &lt;file&gt; --range lifetime</code></span></p>
     </div>
