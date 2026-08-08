@@ -34,6 +34,33 @@ border:1px solid var(--rule);border-left:3px solid var(--bad);padding:1rem 1.15r
 .frozen b{font-family:var(--data);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;
 display:block;margin-bottom:.15rem}
 .frozen p{margin:0;font-size:.9rem}
+.serving{display:flex;gap:.9rem;align-items:flex-start;border:1px solid var(--rule);
+padding:1rem 1.15rem;border-radius:3px}
+.serving.ok{background:var(--good-soft);border-left:3px solid var(--good)}
+.serving .dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--good);
+flex:none;margin-top:.5rem}
+.serving b{font-family:var(--data);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;
+display:block;margin-bottom:.15rem}
+.serving p{margin:0;font-size:.9rem}
+.qcounts{display:flex;flex-wrap:wrap;gap:.6rem}
+.qc{font-family:var(--data);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;
+padding:.5rem .85rem;border:1px solid var(--rule);border-radius:3px;background:var(--panel-2);
+color:var(--muted)}
+.qc b{font-family:var(--display);font-size:1.35rem;letter-spacing:0;margin-right:.4rem;
+color:var(--ink)}
+.qc.good{background:var(--good-soft);border-color:var(--good)}
+.qc.good b{color:var(--good)}
+.qc.warn{background:var(--warn-soft);border-color:var(--warn)}
+.qc.warn b{color:var(--warn)}
+.qc.bad{background:var(--bad-soft);border-color:var(--bad)}
+.qc.bad b{color:var(--bad)}
+.gaps{border:1px solid var(--rule);border-radius:3px;background:var(--panel);padding:.9rem 1.1rem}
+.gaps summary{cursor:pointer;font-family:var(--data);font-size:.8rem;letter-spacing:.06em;
+text-transform:uppercase;color:var(--warn)}
+.gaps ul{margin:.9rem 0 0;padding-left:1.1rem;display:flex;flex-direction:column;gap:.5rem;
+font-size:.9rem;color:var(--muted)}
+.garea{font-family:var(--data);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
+color:var(--faint);margin-right:.5rem}
 section{display:flex;flex-direction:column;gap:1.25rem}
 h2{font-family:var(--display);font-weight:600;font-size:1.5rem;margin:0;letter-spacing:-.01em;
 padding-bottom:.6rem;border-bottom:1px solid var(--rule-strong);text-wrap:balance}
@@ -123,13 +150,21 @@ a{color:var(--accent)}
 </style>
 <div class="wrap">
   <header class="mast">
-    <div class="eyebrow">KDP Sponsored Products &middot; daily report &middot; generated 2026-08-08T01:18:26</div>
-    <h1>2026-08-08: 15 orders on $101.45, and $34.17 of it came back</h1>
+    <div class="eyebrow">KDP Sponsored Products &middot; daily report &middot; generated 2026-08-08T21:17:17</div>
+    <h1>2026-08-08: 20 orders on $112.78, and $47.62 of it came back</h1>
     <p class="standfirst">Every figure on this page is computed by <code>report.py</code> from the
       <code>kdp</code> warehouse and <code>amazon_ads.policy</code>. Nothing is typed by hand.
       The delivery floor is <b>$0.36</b>, measured conversion is
       <b>8.08%</b>, so a bid at the floor is only honest on a book earning
       <b>$4.46</b> per sale.</p>
+    
+    <div class="serving ok"><span class="dot"></span><div>
+      <b>Amazon is serving</b>
+      <p>623 enabled campaigns across 10
+      marketplaces, no blocking <code>servingStatus</code>.<br>
+      <span class="faint">read 2026-08-08T20:54:55, 0.4h ago &middot;
+      <code>state</code> is what we asked for, <code>servingStatus</code> is what Amazon does</span></p>
+    </div>
     
     <div class="frozen"><span class="dot"></span><div>
       <b>Account writes are FROZEN</b>
@@ -148,7 +183,7 @@ a{color:var(--accent)}
       <thead><tr><th>Window</th><th>Impr</th><th>Clicks</th><th>CTR</th><th>Spend</th>
         <th>CPC</th><th>Sales</th><th>ACOS</th><th>Ad ord</th><th>KDP units</th>
         <th>Organic</th><th>KDP royalty</th><th>Net ads-only</th><th>True net</th></tr></thead>
-      <tbody><tr class='stripe-bad'><td><b>Last 7 days</b></td><td>96,312</td><td>136</td><td>0.141%</td><td>$39.12</td><td>$0.29</td><td>$96.22</td><td>41%</td><td>8</td><td>15</td><td class='good'>7 (47%)</td><td>$34.03</td><td class='bad'>$-20.04</td><td class='bad'><b>$-5.09</b></td></tr><tr class='stripe-good'><td><b>Last 14 days</b></td><td>107,032</td><td>184</td><td>0.172%</td><td>$58.76</td><td>$0.32</td><td>$141.88</td><td>41%</td><td>12</td><td>35</td><td class='good'>23 (66%)</td><td>$78.01</td><td class='bad'>$-31.16</td><td class='good'><b>$19.25</b></td></tr><tr class='stripe-bad'><td><b>Last 30 days</b></td><td>109,670</td><td>231</td><td>0.211%</td><td>$89.81</td><td>$0.39</td><td>$165.66</td><td>54%</td><td>14</td><td>35</td><td class='good'>21 (60%)</td><td>$78.01</td><td class='bad'>$-57.83</td><td class='bad'><b>$-11.80</b></td></tr><tr class='stripe-good'><td><b>Lifetime</b></td><td>110,524</td><td>249</td><td>0.225%</td><td>$101.45</td><td>$0.41</td><td>$177.55</td><td>57%</td><td>15</td><td>559</td><td class='good'>544 (97%)</td><td>$1,188.95</td><td class='bad'>$-67.28</td><td class='good'><b>$1,087.50</b></td></tr></tbody></table></div>
+      <tbody><tr class='stripe-bad'><td><b>Last 7 days</b></td><td>108,947</td><td>170</td><td>0.156%</td><td>$50.45</td><td>$0.30</td><td>$152.37</td><td>33%</td><td>13</td><td>15</td><td class='good'>2 (13%)</td><td>$34.03</td><td class='bad'>$-17.92</td><td class='bad'><b>$-16.42</b></td></tr><tr class='stripe-good'><td><b>Last 14 days</b></td><td>119,666</td><td>218</td><td>0.182%</td><td>$70.09</td><td>$0.32</td><td>$198.03</td><td>35%</td><td>17</td><td>35</td><td class='good'>18 (51%)</td><td>$78.01</td><td class='bad'>$-29.04</td><td class='good'><b>$7.92</b></td></tr><tr class='stripe-bad'><td><b>Last 30 days</b></td><td>122,304</td><td>265</td><td>0.217%</td><td>$101.14</td><td>$0.38</td><td>$221.81</td><td>46%</td><td>19</td><td>35</td><td class='good'>16 (46%)</td><td>$78.01</td><td class='bad'>$-55.71</td><td class='bad'><b>$-23.13</b></td></tr><tr class='stripe-good'><td><b>Lifetime</b></td><td>123,158</td><td>283</td><td>0.230%</td><td>$112.78</td><td>$0.40</td><td>$233.70</td><td>48%</td><td>20</td><td>559</td><td class='good'>539 (96%)</td><td>$1,188.95</td><td class='bad'>$-65.16</td><td class='good'><b>$1,076.17</b></td></tr></tbody></table></div>
     <p class="note">KDP royalty is <b>monthly for print</b>; only KENP is daily. A 7-day
       window is therefore served by the months it touches and is labelled with them rather
       than interpolated into days that do not exist. Source: 2023-12 .. 2026-08,
@@ -164,29 +199,29 @@ a{color:var(--accent)}
       <div class="tile is-good">
         <span class="sub">Auto, close + loose match</span>
         <span class="name">reads the shopper&#x27;s search query</span>
-        <span class="big">$0.65</span>
+        <span class="big">$0.82</span>
         <span class="caption">of royalty back per $1 spent</span>
         <dl>
-          <dt>Impressions</dt><dd>22,247</dd>
-          <dt>Clicks</dt><dd>99</dd>
-          <dt>CTR</dt><dd>0.445%</dd>
-          <dt>Spend</dt><dd>$30.38</dd>
-          <dt>Orders</dt><dd class="">8</dd>
-          <dt>Net</dt><dd>$-10.66</dd>
+          <dt>Impressions</dt><dd>30,339</dd>
+          <dt>Clicks</dt><dd>129</dd>
+          <dt>CTR</dt><dd>0.425%</dd>
+          <dt>Spend</dt><dd>$40.32</dd>
+          <dt>Orders</dt><dd class="">13</dd>
+          <dt>Net</dt><dd>$-7.15</dd>
         </dl>
       </div>
       <div class="tile is-warn">
         <span class="sub">Manual keywords</span>
         <span class="name">terms we chose by hand</span>
-        <span class="big">$0.24</span>
+        <span class="big">$0.23</span>
         <span class="caption">of royalty back per $1 spent</span>
         <dl>
-          <dt>Impressions</dt><dd>11,793</dd>
-          <dt>Clicks</dt><dd>104</dd>
-          <dt>CTR</dt><dd>0.882%</dd>
-          <dt>Spend</dt><dd>$60.80</dd>
+          <dt>Impressions</dt><dd>12,869</dd>
+          <dt>Clicks</dt><dd>106</dd>
+          <dt>CTR</dt><dd>0.824%</dd>
+          <dt>Spend</dt><dd>$61.75</dd>
           <dt>Orders</dt><dd class="">7</dd>
-          <dt>Net</dt><dd>$-46.35</dd>
+          <dt>Net</dt><dd>$-47.30</dd>
         </dl>
       </div>
       <div class="tile is-bad">
@@ -195,29 +230,66 @@ a{color:var(--accent)}
         <span class="big">$0.00</span>
         <span class="caption">of royalty back per $1 spent</span>
         <dl>
-          <dt>Impressions</dt><dd>76,292</dd>
-          <dt>Clicks</dt><dd>46</dd>
+          <dt>Impressions</dt><dd>79,689</dd>
+          <dt>Clicks</dt><dd>48</dd>
           <dt>CTR</dt><dd>0.060%</dd>
-          <dt>Spend</dt><dd>$10.27</dd>
+          <dt>Spend</dt><dd>$10.71</dd>
           <dt>Orders</dt><dd class="zero">0</dd>
-          <dt>Net</dt><dd>$-10.27</dd>
+          <dt>Net</dt><dd>$-10.71</dd>
         </dl>
       </div></div>
     <div class="scroll"><table>
       <caption>All four auto target groups</caption>
       <thead><tr><th>Auto group</th><th>Impr</th><th>Clicks</th><th>CTR</th><th>Spend</th><th>Orders</th></tr></thead>
-      <tbody><tr class='stripe-bad'><td>asin substitute related</td><td>40,340</td><td>24</td><td>0.059%</td><td>$6.58</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>asin accessory related</td><td>35,952</td><td>22</td><td>0.061%</td><td>$3.69</td><td class='zero'>0</td></tr><tr class='stripe-good'><td>query broad rel matches</td><td>12,663</td><td>71</td><td>0.561%</td><td>$22.91</td><td class='good'>6</td></tr><tr class='stripe-good'><td>query high rel matches</td><td>9,584</td><td>28</td><td>0.292%</td><td>$7.47</td><td class='good'>2</td></tr></tbody></table></div>
+      <tbody><tr class='stripe-bad'><td>asin substitute related</td><td>43,252</td><td>26</td><td>0.060%</td><td>$7.02</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>asin accessory related</td><td>36,437</td><td>22</td><td>0.060%</td><td>$3.69</td><td class='zero'>0</td></tr><tr class='stripe-good'><td>query broad rel matches</td><td>17,038</td><td>96</td><td>0.563%</td><td>$31.57</td><td class='good'>11</td></tr><tr class='stripe-good'><td>query high rel matches</td><td>13,301</td><td>33</td><td>0.248%</td><td>$8.75</td><td class='good'>2</td></tr></tbody></table></div>
   </section>
 
   <section>
     <h2>The delivery floor</h2>
     <p class="lede">Live targets by bid band against every order the account has taken.
-      <b>4,118</b> live targets still bid below $0.36.</p>
-    <div class="floor"><div class='frow below'><span class='band'>$0.00+</span><span class='track'><span class='bar' style='width:66.5%'></span></span><span class='ord'>0 orders</span></div><div class='frow below'><span class='band'>$0.10+</span><span class='track'><span class='bar' style='width:33.3%'></span></span><span class='ord'>0 orders</span></div><div class='frow below'><span class='band'>$0.20+</span><span class='track'><span class='bar' style='width:91.1%'></span></span><span class='ord'>0 orders</span></div><div class='frow below'><span class='band'>$0.30+</span><span class='track'><span class='bar' style='width:100.0%'></span></span><span class='ord'>12 orders</span></div><div class='floor-divider'>delivery floor &middot; $0.36</div><div class='frow above'><span class='band'>$0.40+</span><span class='track'><span class='bar' style='width:16.4%'></span></span><span class='ord'>0 orders</span></div><div class='frow above'><span class='band'>$0.50+</span><span class='track'><span class='bar' style='width:11.8%'></span></span><span class='ord'>3 orders</span></div><div class='frow above'><span class='band'>$0.60+</span><span class='track'><span class='bar' style='width:1.6%'></span></span><span class='ord'>0 orders</span></div><div class='frow above'><span class='band'>$0.70+</span><span class='track'><span class='bar' style='width:2.3%'></span></span><span class='ord'>0 orders</span></div><div class='frow above'><span class='band'>$0.80+</span><span class='track'><span class='bar' style='width:0.8%'></span></span><span class='ord'>0 orders</span></div><div class='frow above'><span class='band'>$1.00+</span><span class='track'><span class='bar' style='width:0.0%'></span></span><span class='ord'>0 orders</span></div>
+      <b>3,166</b> live targets still bid below $0.36.</p>
+    <div class="floor"><div class='frow below'><span class='band'>$0.00+</span><span class='track'><span class='bar' style='width:57.0%'></span></span><span class='ord'>0 orders</span></div><div class='frow below'><span class='band'>$0.10+</span><span class='track'><span class='bar' style='width:39.5%'></span></span><span class='ord'>0 orders</span></div><div class='frow below'><span class='band'>$0.20+</span><span class='track'><span class='bar' style='width:95.5%'></span></span><span class='ord'>0 orders</span></div><div class='frow below'><span class='band'>$0.30+</span><span class='track'><span class='bar' style='width:100.0%'></span></span><span class='ord'>17 orders</span></div><div class='floor-divider'>delivery floor &middot; $0.36</div><div class='frow above'><span class='band'>$0.40+</span><span class='track'><span class='bar' style='width:22.9%'></span></span><span class='ord'>0 orders</span></div><div class='frow above'><span class='band'>$0.50+</span><span class='track'><span class='bar' style='width:14.1%'></span></span><span class='ord'>3 orders</span></div><div class='frow above'><span class='band'>$0.60+</span><span class='track'><span class='bar' style='width:1.7%'></span></span><span class='ord'>0 orders</span></div><div class='frow above'><span class='band'>$0.70+</span><span class='track'><span class='bar' style='width:3.3%'></span></span><span class='ord'>0 orders</span></div><div class='frow above'><span class='band'>$0.80+</span><span class='track'><span class='bar' style='width:1.0%'></span></span><span class='ord'>0 orders</span></div><div class='frow above'><span class='band'>$1.00+</span><span class='track'><span class='bar' style='width:0.0%'></span></span><span class='ord'>0 orders</span></div>
       <div class="floor-key"><span><span class="swatch" style="background:var(--bad);opacity:.34"></span>
         bar length = impressions bought</span>
         <span><span class="swatch" style="background:var(--good)"></span>bands above the floor convert</span></div>
     </div>
+  </section>
+
+  <section>
+    <h2>The thing above the ads</h2>
+    <p class="lede">Everything above this line is about buying a click. This is about whether
+      the listing the click lands on can convert it. Of 1,066 top-30 bestseller slots read on
+      2026-08-08, <b>zero</b> were held by a book with no ratings.</p>
+    <div class="tiles">
+      <div class="tile is-bad">
+        <span class="sub">Our catalogue</span><span class="name">ratings across all titles</span>
+        <span class="big">69</span>
+        <span class="caption">total, across 86 US listings</span>
+        <dl>
+          <dt>Median book</dt><dd>0</dd>
+          <dt>At zero</dt><dd>62 (72%)</dd>
+          <dt>Best book</dt><dd>16</dd>
+          <dt>Gained in 30d</dt><dd class="">4</dd>
+        </dl>
+      </div>
+      <div class="tile is-good">
+        <span class="sub">The shelf we compete on</span><span class="name">mapped competitors</span>
+        <span class="big">1,489</span>
+        <span class="caption">median ratings per competing title</span>
+        <dl>
+          <dt>Competitors read</dt><dd>158</dd>
+          <dt>Of them at zero</dt><dd>0</dd>
+          <dt>Our median</dt><dd>0</dd>
+          <dt>Ratio</dt><dd>0.000</dd>
+        </dl>
+      </div>
+    </div>
+    <p class="note">Ratings, unlike the prices in the same table, carry no currency, so the known
+      INR/USD mixing in <code>kdp.competitor_days</code> does not touch this comparison and no
+      price is quoted from it. Our counts are the newest observation per ASIN in
+      <code>kdp.review_events</code>, last read 2026-08-07. This is the
+      evidence behind H8, and if H8 holds it outranks every bid on this page: ad spend on a
+      zero-rating listing is buying traffic to a page that cannot convert it.</p>
   </section>
 
   <section>
@@ -233,7 +305,7 @@ a{color:var(--accent)}
         <div class="hrow"><span class="k">Why we believe it</span><span>Two findings, and only one was supported before today. CLICK-EARNING: 76,698 lifetime impressions produced 46 clicks, 0.060% CTR, against 0.559% on loose-match and 0.289% on close-match. Decisive. CONVERSION: substitutes alone (24 clicks, P(0 orders|8.08% CVR)=13.2%) and complements alone (22 clicks, P=15.7%) are NOT significant, but COMBINED the two groups have 46 clicks and zero orders and P=2.1%, which IS significant at p&lt;0.05. So the conversion failure is supported at the group level where it was not at the individual level. Abhay&#x27;s framing sharpens it: an impression on a product page is a poor denominator because a scroll can register a view, so the honest metric is clicks-to-orders, and on that metric these placements fail. Likely mechanism is intent - a shopper already reading a competitor&#x27;s book page clicks ours out of curiosity, not purchase intent, which predicts exactly what we see. And the ASIN CPC was LOWER than the QUERY CPC, so this was never a bargain, it was a different product.</span></div>
         <div class="hrow"><span class="k">Metric</span><span><code>asin_group_impression_share</code>
           baseline <b>0.773</b> &rarr; expected <b>0.15</b>
-          &middot; now <b>0.7742</b></span></div>
+          &middot; now <b>0.7243</b></span></div>
         <div class="hrow good"><span class="k">Good movement</span><span>ASIN share of auto impressions falls below 20% and account CTR rises above 0.25%, because the junk impressions were dragging every CTR-based verdict in the repo.</span></div>
         <div class="hrow bad"><span class="k">Bad movement</span><span>Account-wide clicks or orders FALL after the pause, which would mean these placements were assisting conversions we attributed elsewhere. Roll back immediately if 30-day orders drop below 6.</span></div>
         <div class='hrow'><span class='k'>Holdout</span><span>46 live ASIN targets on the 4 proven books stay ENABLED as a control. Only the 993 targets on unproven books are paused. This keeps the conversion question answerable instead of closing it by assumption.</span></div>
@@ -247,7 +319,7 @@ a{color:var(--accent)}
         <div class="hrow"><span class="k">Why we believe it</span><span>All 15 lifetime orders came from a bid at or above $0.35. The 2,868 live targets below it took 77,543 impressions and produced zero orders, at a CTR of 0.026-0.175% against 0.331-0.635% above the floor.</span></div>
         <div class="hrow"><span class="k">Metric</span><span><code>sub_floor_live_targets</code>
           baseline <b>2868</b> &rarr; expected <b>2868</b>
-          &middot; now <b>4118</b></span></div>
+          &middot; now <b>3166</b></span></div>
         <div class="hrow good"><span class="k">Good movement</span><span>Stays true: no order ever appears from a sub-floor bid. The number itself is not the target, it is a standing check.</span></div>
         <div class="hrow bad"><span class="k">Bad movement</span><span>A settled month shows sub-$0.30 bids producing clicks at a normal CTR, which would mean the floor is an artefact of what we bid on rather than of price.</span></div>
         
@@ -261,7 +333,7 @@ a{color:var(--accent)}
         <div class="hrow"><span class="k">Why we believe it</span><span>38 loose/close-match targets on the 4 proven books across 8 foreign markets sat at $0.16-$0.25 against a $0.36 floor. They were raised to $0.40 at 05:28 on 2026-08-07. Across seven foreign markets those books had produced 47 clicks and zero orders on 24,000 impressions, every one of them at a sub-floor bid.</span></div>
         <div class="hrow"><span class="k">Metric</span><span><code>foreign_clicks</code>
           baseline <b>47</b> &rarr; expected <b>120</b>
-          &middot; now <b>48</b></span></div>
+          &middot; now <b>56</b></span></div>
         <div class="hrow good"><span class="k">Good movement</span><span>Foreign CTR reaches 0.3%+ on the raised targets, meaning the market is reachable and the old silence was a bid problem. An order anywhere abroad settles it outright.</span></div>
         <div class="hrow bad"><span class="k">Bad movement</span><span>Impressions rise but CTR stays under 0.1%, meaning the listing, not the bid, is what foreign shoppers are rejecting. Then we stop paying to ask and the money goes to the US.</span></div>
         <div class='hrow'><span class='k'>Cost</span><span>All 38 bid about $0.21 above what local royalty affords. Charged to the learning budget knowingly.</span></div>
@@ -289,7 +361,7 @@ a{color:var(--accent)}
         <div class="hrow"><span class="k">Why we believe it</span><span>198 distinct search terms took 211 clicks and $86.35 with zero orders, against 13 terms that took 14 clicks and $7.03 and produced 13 orders. The dead terms cost $0.70-$1.00 a click; the converting ones cost about $0.50. The account holds 5 negative keywords in total across 656 campaigns.</span></div>
         <div class="hrow"><span class="k">Metric</span><span><code>wasted_search_term_spend</code>
           baseline <b>86.35</b> &rarr; expected <b>86.35</b>
-          &middot; now <b>91.95</b></span></div>
+          &middot; now <b>102.48</b></span></div>
         <div class="hrow good"><span class="k">Good movement</span><span>The four negated head terms stop accruing spend and no order is lost. Cost per click falls because we stop buying the expensive end of the distribution.</span></div>
         <div class="hrow bad"><span class="k">Bad movement</span><span>Orders fall. A head term we negated was feeding a converting long-tail variant through broad match, which would mean negating at the wrong match type.</span></div>
         
@@ -303,7 +375,7 @@ a{color:var(--accent)}
         <div class="hrow"><span class="k">Why we believe it</span><span>A click is worth royalty x CVR. At 8.08% CVR the $0.36 floor needs $4.46 of royalty. Only 3 of 87 ad-eligible books clear that, and none of those three has ever converted. All four books that DO convert sit at $1.75-$2.39, which affords $0.14-$0.19. The books that can afford to advertise do not sell and the books that sell cannot afford to advertise.</span></div>
         <div class="hrow"><span class="k">Metric</span><span><code>auto_query_cvr</code>
           baseline <b>0.0808</b> &rarr; expected <b>0.0808</b>
-          &middot; now <b>0.0808</b></span></div>
+          &middot; now <b>0.1008</b></span></div>
         <div class="hrow good"><span class="k">Good movement</span><span>CVR rises toward 15%, which would halve the royalty required and close the gap without touching price. More reviews and better targeting are the levers.</span></div>
         <div class="hrow bad"><span class="k">Bad movement</span><span>CVR stays near 8%. Then the only remaining levers are price and read-through, and single-book ad profitability is not reachable at this royalty.</span></div>
         <div class='hrow'><span class='k'>Note</span><span>PARKED 2026-08-08 on two independent grounds. (1) Abhay: &#x27;Increasing prices is the easiest and the last resort. The cheaper the product, the more people will buy it.&#x27; (2) The competitor scrape agrees with him: our matched-pair price ratio against each book&#x27;s own competitor set is 0.961 and we sit at the 67th percentile of the shelf, so we are not underpriced. The self-published competitors who ARE winning price higher (median $14.47) but they also carry 1,489 median reviews, so their price is a consequence of their position rather than the cause of it. Raising price into a zero-review listing buys a worse conversion rate, not more royalty. The arithmetic stays recorded because it is true; it is not a licence to reprice.</span></div>
@@ -317,7 +389,7 @@ a{color:var(--accent)}
         <div class="hrow"><span class="k">Why we believe it</span><span>Auto search returns $0.59 of royalty per $1 spent against manual&#x27;s $0.24, from a fifth as many targets. Every converting search term is long and specific: &#x27;kids astronomy chart age 1-2&#x27;, &#x27;toddler books planets 4t&#x27;, &#x27;first astronaut book 3 year old&#x27;, &#x27;astrophysics book for kids&#x27;. Most converted on 1-3 lifetime impressions. Manual keyword lists cannot enumerate that distribution; auto discovers it.</span></div>
         <div class="hrow"><span class="k">Metric</span><span><code>account_ctr</code>
           baseline <b>0.00209</b> &rarr; expected <b>0.0035</b>
-          &middot; now <b>0.00225</b></span></div>
+          &middot; now <b>0.0023</b></span></div>
         <div class="hrow good"><span class="k">Good movement</span><span>Shifting budget share toward auto search raises account CTR and cost per order falls below $4.00.</span></div>
         <div class="hrow bad"><span class="k">Bad movement</span><span>Auto&#x27;s advantage disappears once manual keywords are also lifted above the floor, which would mean we were comparing funded targets against unfunded ones rather than auto against manual.</span></div>
         <div class='hrow'><span class='k'>Note</span><span>The confound is real and stated on purpose: only 2,493 of 10,054 manual targets are live and many sit under the floor. A fair test needs manual keywords funded to $0.36 too.</span></div>
@@ -359,7 +431,7 @@ a{color:var(--accent)}
         <div class="hrow"><span class="k">Why we believe it</span><span>The contested half is confirmed: 54 of our books target Children&#x27;s Nature Books (tail review floor 3,491) and 50 target Children&#x27;s Aeronautics and Space (tail 850). Holding slot 25-30 in those nodes costs 2.4 to 7.9 PRINT SALES PER DAY, which is 72 to 691 a month against an account that currently produces 8 orders a month. CORRECTION 2026-08-08, and it reverses what this hypothesis said yesterday: the soft nodes are not simply available. Node 13453 &#x27;Solar System&#x27; has the softest review floor measured (min 1, median 95) and scored best-in-catalogue at 64.0, nineteen points clear. Reading its actual occupants shows slot 28 is a BLANK COMPOSITION NOTEBOOK holding rank on one review, and slots 11-22 are adult reference titles at $40-$47. It is an adult astronomy shelf, not a children&#x27;s one, and its low floor means no traffic rather than an opening. Three of the four softest nodes measured are the same artifact. So niche selection needs GATES (is this actually under Children&#x27;s Books, does slot 25 move at least 1 book a day, can the shelf&#x27;s price afford our bid) before any score is computed.</span></div>
         <div class="hrow"><span class="k">Metric</span><span><code>account_ctr</code>
           baseline <b>0.00209</b> &rarr; expected <b>0.0035</b>
-          &middot; now <b>0.00225</b></span></div>
+          &middot; now <b>0.0023</b></span></div>
         <div class="hrow good"><span class="k">Good movement</span><span>Gated niche scoring finds nodes that pass purity, demand and affordability, and a book published into one reaches the top-30 shelf. That would prove category choice is a real lever once the traps are excluded.</span></div>
         <div class="hrow bad"><span class="k">Bad movement</span><span>Every node that passes the gates needs sales velocity we cannot reach from a standing start. Then category choice is not the lever, reviews and rank are, and the answer is to concentrate on the books we already have rather than publish into new shelves.</span></div>
         
@@ -393,6 +465,20 @@ a{color:var(--accent)}
         <div class='hrow'><span class='k'>Note</span><span>This is a BUILD instruction for the 6-10 titles going up this month, not a repricing of existing ones. Abhay has ruled out price changes on the live catalogue and the competitor data supports him. Nothing here touches an existing listing. Baseline corrected to the measured 7 (kdp.book_marketplace US royalty x 8.08% CVR &gt;= $0.36); the earlier 3 came from brain/catalog.csv at a $4.33 threshold and is a different source.</span></div>
         <div class="hrow"><span class="k">Actions</span><span><span class='faint'>no action taken yet</span></span></div>
       </article>
+      <article class="hyp is-good">
+        <header><span class="hid">H13</span>
+          <span class="hstatus">supported</span>
+          <span class="heta">judged 2026-09-08 &middot; 31 days</span></header>
+        <p class="hstate">Better keywords cannot fix this account. The market clearing price for a click in children&#x27;s books is roughly $0.77 and our royalty licenses $0.14-$0.19, a 4-6x gap no amount of keyword research closes.</p>
+        <div class="hrow"><span class="k">Why we believe it</span><span>Amazon&#x27;s /sp/targets/keywords/recommendations accepts arbitrary competitor ASINs, and Amazon computes its suggested bids from &#x27;a group of recent winning bids for similar products&#x27; - the market clearing price, not advice. Mined against the 4 proven books&#x27; own mapped competitors: 6 API calls returned 786 relevance-passing candidates after filtering physical-product noise and competitor brands. Median suggested bid $0.77. ZERO of 786 (0.0%) are affordable on our royalty. Only 19 (2.4%) reach even the $0.36 delivery floor. To afford the MEDIAN keyword in this category a book needs $9.53 of royalty; the best in our catalogue is $6.40 and the books that actually convert earn $1.75-$2.39. This is decisions.json:price_is_the_constraint confirmed from a fully independent direction.</span></div>
+        <div class="hrow"><span class="k">Metric</span><span><code>affordable_candidate_share</code>
+          baseline <b>0.0</b> &rarr; expected <b>0.0</b>
+          &middot; now <b>0.0</b></span></div>
+        <div class="hrow good"><span class="k">Good movement</span><span>Stays at zero, which means we stop spending sessions on keyword research and put the effort into the two things that can move: conversion rate (reviews, listing) and the product shape of new titles. Auto targeting keeps finding the ultra-long-tail queries where the clearing price IS near the floor, which is where all 15 orders came from.</span></div>
+        <div class="hrow bad"><span class="k">Bad movement</span><span>The share rises above ~10%, meaning a segment of affordable keywords exists that this sample missed. Most likely cause would be competitor selection: these came from books mapped by title similarity, so a different competitor set might surface a cheaper tail.</span></div>
+        <div class='hrow'><span class='k'>Note</span><span>This does NOT say keyword work is worthless. It says keyword EXPANSION is. The value left in keywords is subtractive: negatives, and fencing harvested winners. Also worth recording: our own ASIN and a competitor ASIN return near-disjoint lists (2% overlap, measured), so the endpoint is genuinely useful for discovery even though almost nothing it discovers is affordable.</span></div>
+        <div class="hrow"><span class="k">Actions</span><span><span class='faint'>no action taken yet</span></span></div>
+      </article>
   </section>
 
   <section>
@@ -404,34 +490,34 @@ a{color:var(--accent)}
     <div class="scroll"><table>
       <thead><tr><th>Book</th><th>Royalty</th><th>Click worth</th><th>Bid policy</th>
         <th>Over</th><th>Orders</th><th>Cost/order</th></tr></thead>
-      <tbody><tr class='stripe-good'><td>My First Book on Space: A Toddler’s Guide to the Universe – </td><td>$2.19</td><td>$0.18</td><td>$0.36</td><td>2.00x</td><td>11</td><td>$6.07</td></tr><tr class='stripe-good'><td>My First Book on Space: A Toddler’s Guide to the Universe – </td><td>$1.75</td><td>$0.14</td><td>$0.36</td><td>2.57x</td><td>2</td><td>$4.10</td></tr><tr class='stripe-good'><td>BARNEY AND THE WOBBLY WONDERFUL DAM: A Heartwarming Beaver F</td><td>$4.19</td><td>$0.34</td><td>$0.36</td><td>1.06x</td><td>1</td><td>$1.43</td></tr><tr class='stripe-good'><td>Milo Monkey&#x27;s Magic Breathes: Breathe, Relax, Smile: Milo th</td><td>$2.39</td><td>$0.19</td><td>$0.36</td><td>1.89x</td><td>1</td><td>$0.35</td></tr><tr class=''><td>Underwater Mermaid Activity Book: A Magical Ocean Adventure </td><td>$6.40</td><td>$0.52</td><td>$0.52</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>The Fairy Float Coloring Book: A Magical Fairy Coloring Book</td><td>$5.49</td><td>$0.44</td><td>$0.44</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>THE HIDDEN WORLD COLORING BOOK: A Magical Jungle Coloring Bo</td><td>$5.49</td><td>$0.44</td><td>$0.44</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>Mystical Waves Coloring Book: A Mermaid Coloring Book with S</td><td>$5.49</td><td>$0.44</td><td>$0.44</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>COSMIC Fairy Coloring Book: A Fairy Coloring Book for Kids A</td><td>$4.89</td><td>$0.40</td><td>$0.40</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>Haven Bloom Coloring Book: A Magical Mermaid Coloring Book f</td><td>$4.89</td><td>$0.40</td><td>$0.40</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>Elf Academy Activity Book: A Christmas Activity Book with Fu</td><td>$4.72</td><td>$0.38</td><td>$0.38</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>What to Do with a Mistake: A Children&#x27;s Storybook about Grow</td><td>$4.29</td><td>$0.35</td><td>$0.35</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>Melody&#x27;s Sound Safari: Explore Animals and Spark Early Learn</td><td>$4.24</td><td>$0.34</td><td>$0.34</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>SQUIRREL CHEF’S AUTUMN SECRET: A Heartwarming Autumn Tale of</td><td>$4.19</td><td>$0.34</td><td>$0.34</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>Inside-Out Adventures: The Secret Tunnel: A Thrilling Discov</td><td>$4.19</td><td>$0.34</td><td>$0.34</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>THE LANTERN QUEST: A LIGHT LOST AND FOUND: A Magical Fall Ad</td><td>$4.19</td><td>$0.34</td><td>$0.34</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr></tbody></table></div>
+      <tbody><tr class='stripe-good'><td>My First Book on Space: A Toddler’s Guide to the Universe – </td><td>$2.19</td><td>$0.18</td><td>$0.36</td><td>2.00x</td><td>14</td><td>$5.17</td></tr><tr class='stripe-good'><td>My First Book on Space: A Toddler’s Guide to the Universe – </td><td>$1.75</td><td>$0.14</td><td>$0.36</td><td>2.57x</td><td>2</td><td>$4.58</td></tr><tr class='stripe-good'><td>BARNEY AND THE WOBBLY WONDERFUL DAM: A Heartwarming Beaver F</td><td>$4.19</td><td>$0.34</td><td>$0.36</td><td>1.06x</td><td>1</td><td>$1.43</td></tr><tr class='stripe-good'><td>SQUIRREL CHEF’S AUTUMN SECRET: A Heartwarming Autumn Tale of</td><td>$4.19</td><td>$0.34</td><td>$0.36</td><td>1.06x</td><td>1</td><td>$0.70</td></tr><tr class='stripe-good'><td>What to Do with a Mistake: A Children&#x27;s Storybook about Grow</td><td>$2.69</td><td>$0.22</td><td>$0.36</td><td>1.64x</td><td>1</td><td>$0.73</td></tr><tr class='stripe-good'><td>Milo Monkey&#x27;s Magic Breathes: Breathe, Relax, Smile: Milo th</td><td>$2.39</td><td>$0.19</td><td>$0.36</td><td>1.89x</td><td>1</td><td>$0.35</td></tr><tr class=''><td>Underwater Mermaid Activity Book: A Magical Ocean Adventure </td><td>$6.40</td><td>$0.52</td><td>$0.52</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>THE HIDDEN WORLD COLORING BOOK: A Magical Jungle Coloring Bo</td><td>$5.49</td><td>$0.44</td><td>$0.44</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>Mystical Waves Coloring Book: A Mermaid Coloring Book with S</td><td>$5.49</td><td>$0.44</td><td>$0.44</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>The Fairy Float Coloring Book: A Magical Fairy Coloring Book</td><td>$5.49</td><td>$0.44</td><td>$0.44</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>Haven Bloom Coloring Book: A Magical Mermaid Coloring Book f</td><td>$4.89</td><td>$0.40</td><td>$0.40</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>COSMIC Fairy Coloring Book: A Fairy Coloring Book for Kids A</td><td>$4.89</td><td>$0.40</td><td>$0.40</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>Elf Academy Activity Book: A Christmas Activity Book with Fu</td><td>$4.72</td><td>$0.38</td><td>$0.38</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>What to Do with a Mistake: A Children&#x27;s Storybook about Grow</td><td>$4.29</td><td>$0.35</td><td>$0.35</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>Melody&#x27;s Sound Safari: Explore Animals and Spark Early Learn</td><td>$4.24</td><td>$0.34</td><td>$0.34</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr><tr class=''><td>Inside-Out Adventures: The Secret Tunnel: A Thrilling Discov</td><td>$4.19</td><td>$0.34</td><td>$0.34</td><td>1.00x</td><td>0</td><td>&mdash;</td></tr></tbody></table></div>
   </section>
 
   <section>
     <h2>Search terms</h2>
-    <p class="lede">215 terms took 228 clicks and
-      $91.95 without ever selling a book. The account holds
-      <b>5</b> negative keywords.</p>
+    <p class="lede">242 terms took 260 clicks and
+      $102.48 without ever selling a book. The account holds
+      <b>9</b> negative keywords.</p>
     <div class="scroll"><table><caption>Every term that has ever converted</caption>
       <thead><tr><th>Search term</th><th>Mkt</th><th>Clicks</th><th>Spend</th><th>Orders</th></tr></thead>
-      <tbody><tr class='stripe-good'><td>kids dam book</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>children&#x27;s astronomy books</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>toddler kids book about space</td><td>US</td><td>1</td><td>$0.82</td><td class='good'>1</td></tr><tr class='stripe-good'><td>books for kids 3 boys about space</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>toddler my first space book</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>astrophysics book for kids</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>toddler books planets 4t</td><td>US</td><td>1</td><td>$0.41</td><td class='good'>1</td></tr><tr class='stripe-good'><td>simple books for toddler boys about space shuttles</td><td>US</td><td>1</td><td>$0.80</td><td class='good'>1</td></tr><tr class='stripe-good'><td>book about stars for toddlers</td><td>US</td><td>1</td><td>$0.82</td><td class='good'>1</td></tr><tr class='stripe-good'><td>preschool books about space</td><td>US</td><td>1</td><td>$0.54</td><td class='good'>1</td></tr><tr class='stripe-good'><td>first astronaut book 3 year old</td><td>US</td><td>1</td><td>$0.59</td><td class='good'>1</td></tr><tr class='stripe-good'><td>child&#x27;s book on space</td><td>US</td><td>2</td><td>$0.90</td><td class='good'>1</td></tr><tr class='stripe-good'><td>kids astronomy chart age 1-2</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>books for 3 year olds</td><td>US</td><td>1</td><td>$0.59</td><td class='good'>1</td></tr><tr class='stripe-good'><td>breathwork for kids</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr></tbody></table></div>
+      <tbody><tr class='stripe-good'><td>kids dam book</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>books for kids 3 boys about space</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>space for kids 3-5</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>children&#x27;s astronomy books</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>toddler kids book about space</td><td>US</td><td>1</td><td>$0.82</td><td class='good'>1</td></tr><tr class='stripe-good'><td>kids astronomy chart age 1-2</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>books for 3 year olds</td><td>US</td><td>2</td><td>$0.94</td><td class='good'>1</td></tr><tr class='stripe-good'><td>galaxy picture books</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>toddler my first space book</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>astrophysics book for kids</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>toddler books planets 4t</td><td>US</td><td>1</td><td>$0.41</td><td class='good'>1</td></tr><tr class='stripe-good'><td>simple books for toddler boys about space shuttles</td><td>US</td><td>1</td><td>$0.80</td><td class='good'>1</td></tr><tr class='stripe-good'><td>book about stars for toddlers</td><td>US</td><td>1</td><td>$0.82</td><td class='good'>1</td></tr><tr class='stripe-good'><td>preschool books about space</td><td>US</td><td>1</td><td>$0.54</td><td class='good'>1</td></tr><tr class='stripe-good'><td>sun and moon for toddler book</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>first astronaut book 3 year old</td><td>US</td><td>1</td><td>$0.59</td><td class='good'>1</td></tr><tr class='stripe-good'><td>child&#x27;s book on space</td><td>US</td><td>2</td><td>$0.90</td><td class='good'>1</td></tr><tr class='stripe-good'><td>growth mindset story book</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>breathwork for kids</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr><tr class='stripe-good'><td>fall themed books for five year olds</td><td>US</td><td>1</td><td>$0.35</td><td class='good'>1</td></tr></tbody></table></div>
     <div class="scroll"><table><caption>Top spenders that never converted</caption>
       <thead><tr><th>Search term</th><th>Mkt</th><th>Clicks</th><th>Spend</th><th>Orders</th></tr></thead>
-      <tbody><tr class='stripe-bad'><td>my first space book</td><td>US</td><td>3</td><td>$2.45</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>books for 4 year olds about space</td><td>US</td><td>3</td><td>$2.17</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>my first big book of outer space</td><td>US</td><td>3</td><td>$2.01</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>my first big book about space</td><td>US</td><td>2</td><td>$1.40</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>books about space for toddlers</td><td>US</td><td>2</td><td>$1.21</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>little kids first book of space</td><td>US</td><td>1</td><td>$1.00</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>kids first space book</td><td>US</td><td>1</td><td>$0.99</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>books for ages 1-5 about space</td><td>US</td><td>2</td><td>$0.90</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>space books first grade</td><td>US</td><td>1</td><td>$0.89</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>space theme books for kids</td><td>US</td><td>1</td><td>$0.87</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>picture books about astronauts</td><td>US</td><td>1</td><td>$0.82</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>interactive childrens books about space</td><td>US</td><td>1</td><td>$0.82</td><td class='zero'>0</td></tr></tbody></table></div>
+      <tbody><tr class='stripe-bad'><td>my first space book</td><td>US</td><td>3</td><td>$2.45</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>books for 4 year olds about space</td><td>US</td><td>3</td><td>$2.17</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>my first big book of outer space</td><td>US</td><td>3</td><td>$2.01</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>my first big book about space</td><td>US</td><td>2</td><td>$1.40</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>books about space for toddlers</td><td>US</td><td>2</td><td>$1.21</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>little kids first book of space</td><td>US</td><td>1</td><td>$1.00</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>kids first space book</td><td>US</td><td>1</td><td>$0.99</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>books for ages 1-5 about space</td><td>US</td><td>2</td><td>$0.90</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>space books first grade</td><td>US</td><td>1</td><td>$0.89</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>space theme books for kids</td><td>US</td><td>1</td><td>$0.87</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>coloriage mystere enfant</td><td>FR</td><td>2</td><td>$0.86</td><td class='zero'>0</td></tr><tr class='stripe-bad'><td>talking book about space for toddlers</td><td>US</td><td>1</td><td>$0.82</td><td class='zero'>0</td></tr></tbody></table></div>
   </section>
 
   <section>
     <h2>Markets</h2>
     <div class="scroll"><table>
       <thead><tr><th>Market</th><th>Days</th><th>Impr</th><th>Clicks</th><th>Spend</th><th>Orders</th></tr></thead>
-      <tbody><tr><td>US</td><td>35</td><td>82,684</td><td>201</td><td>$90.34</td><td class='good'>15</td></tr><tr><td>UK</td><td>7</td><td>8,755</td><td>13</td><td>$4.96</td><td class='zero'>0</td></tr><tr><td>IT</td><td>6</td><td>8,050</td><td>11</td><td>$2.03</td><td class='zero'>0</td></tr><tr><td>DE</td><td>7</td><td>3,600</td><td>8</td><td>$0.95</td><td class='zero'>0</td></tr><tr><td>ES</td><td>6</td><td>3,024</td><td>7</td><td>$1.28</td><td class='zero'>0</td></tr><tr><td>FR</td><td>6</td><td>2,746</td><td>5</td><td>$1.41</td><td class='zero'>0</td></tr><tr><td>CA</td><td>5</td><td>692</td><td>1</td><td>$0.12</td><td class='zero'>0</td></tr><tr><td>NL</td><td>6</td><td>577</td><td>2</td><td>$0.30</td><td class='zero'>0</td></tr><tr><td>AU</td><td>6</td><td>383</td><td>1</td><td>$0.06</td><td class='zero'>0</td></tr><tr><td>MX</td><td>3</td><td>13</td><td>0</td><td>$0.00</td><td class='zero'>0</td></tr></tbody></table></div>
+      <tbody><tr><td>US</td><td>36</td><td>84,374</td><td>227</td><td>$99.63</td><td class='good'>20</td></tr><tr><td>UK</td><td>8</td><td>12,110</td><td>15</td><td>$5.47</td><td class='zero'>0</td></tr><tr><td>IT</td><td>7</td><td>11,485</td><td>12</td><td>$2.43</td><td class='zero'>0</td></tr><tr><td>DE</td><td>8</td><td>4,806</td><td>9</td><td>$1.38</td><td class='zero'>0</td></tr><tr><td>ES</td><td>7</td><td>4,503</td><td>8</td><td>$1.42</td><td class='zero'>0</td></tr><tr><td>FR</td><td>7</td><td>3,638</td><td>6</td><td>$1.84</td><td class='zero'>0</td></tr><tr><td>CA</td><td>6</td><td>983</td><td>1</td><td>$0.12</td><td class='zero'>0</td></tr><tr><td>NL</td><td>7</td><td>765</td><td>3</td><td>$0.37</td><td class='zero'>0</td></tr><tr><td>AU</td><td>7</td><td>479</td><td>2</td><td>$0.12</td><td class='zero'>0</td></tr><tr><td>MX</td><td>4</td><td>15</td><td>0</td><td>$0.00</td><td class='zero'>0</td></tr></tbody></table></div>
   </section>
 
   <section>
     <h2>Last 21 days</h2>
     <div class="scroll"><table>
       <thead><tr><th>Day</th><th>Impr</th><th>Clicks</th><th>Spend</th><th>Orders</th></tr></thead>
-      <tbody><tr><td>2026-07-17</td><td>116</td><td>0</td><td>$0.00</td><td class=''>0</td></tr><tr><td>2026-07-18</td><td>142</td><td>3</td><td>$2.02</td><td class=''>0</td></tr><tr><td>2026-07-19</td><td>223</td><td>2</td><td>$1.30</td><td class=''>0</td></tr><tr><td>2026-07-20</td><td>234</td><td>1</td><td>$0.61</td><td class=''>0</td></tr><tr><td>2026-07-21</td><td>165</td><td>4</td><td>$2.78</td><td class=''>0</td></tr><tr><td>2026-07-22</td><td>157</td><td>4</td><td>$2.80</td><td class=''>0</td></tr><tr><td>2026-07-23</td><td>160</td><td>6</td><td>$4.40</td><td class='good'>1</td></tr><tr><td>2026-07-24</td><td>108</td><td>3</td><td>$1.58</td><td class=''>0</td></tr><tr><td>2026-07-25</td><td>119</td><td>2</td><td>$1.55</td><td class=''>0</td></tr><tr><td>2026-07-26</td><td>184</td><td>5</td><td>$3.47</td><td class='good'>1</td></tr><tr><td>2026-07-27</td><td>284</td><td>2</td><td>$0.96</td><td class=''>0</td></tr><tr><td>2026-07-28</td><td>3,150</td><td>8</td><td>$2.76</td><td class=''>0</td></tr><tr><td>2026-07-29</td><td>1,641</td><td>9</td><td>$2.94</td><td class='good'>1</td></tr><tr><td>2026-07-30</td><td>2,295</td><td>10</td><td>$4.06</td><td class='good'>1</td></tr><tr><td>2026-07-31</td><td>3,047</td><td>12</td><td>$3.90</td><td class='good'>1</td></tr><tr><td>2026-08-01</td><td>6,753</td><td>21</td><td>$7.38</td><td class='good'>4</td></tr><tr><td>2026-08-02</td><td>1,241</td><td>3</td><td>$0.87</td><td class=''>0</td></tr><tr><td>2026-08-03</td><td>6,907</td><td>23</td><td>$7.37</td><td class='good'>2</td></tr><tr><td>2026-08-04</td><td>28,145</td><td>32</td><td>$7.69</td><td class=''>0</td></tr><tr><td>2026-08-05</td><td>20,053</td><td>27</td><td>$6.91</td><td class=''>0</td></tr><tr><td>2026-08-06</td><td>33,213</td><td>30</td><td>$8.90</td><td class='good'>2</td></tr></tbody></table></div>
+      <tbody><tr><td>2026-07-18</td><td>142</td><td>3</td><td>$2.02</td><td class=''>0</td></tr><tr><td>2026-07-19</td><td>223</td><td>2</td><td>$1.30</td><td class=''>0</td></tr><tr><td>2026-07-20</td><td>234</td><td>1</td><td>$0.61</td><td class=''>0</td></tr><tr><td>2026-07-21</td><td>165</td><td>4</td><td>$2.78</td><td class=''>0</td></tr><tr><td>2026-07-22</td><td>157</td><td>4</td><td>$2.80</td><td class=''>0</td></tr><tr><td>2026-07-23</td><td>160</td><td>6</td><td>$4.40</td><td class='good'>1</td></tr><tr><td>2026-07-24</td><td>108</td><td>3</td><td>$1.58</td><td class=''>0</td></tr><tr><td>2026-07-25</td><td>119</td><td>2</td><td>$1.55</td><td class=''>0</td></tr><tr><td>2026-07-26</td><td>184</td><td>5</td><td>$3.47</td><td class='good'>1</td></tr><tr><td>2026-07-27</td><td>284</td><td>2</td><td>$0.96</td><td class=''>0</td></tr><tr><td>2026-07-28</td><td>3,150</td><td>8</td><td>$2.76</td><td class=''>0</td></tr><tr><td>2026-07-29</td><td>1,641</td><td>9</td><td>$2.94</td><td class='good'>1</td></tr><tr><td>2026-07-30</td><td>2,295</td><td>10</td><td>$4.06</td><td class='good'>1</td></tr><tr><td>2026-07-31</td><td>3,046</td><td>12</td><td>$3.90</td><td class='good'>1</td></tr><tr><td>2026-08-01</td><td>6,692</td><td>21</td><td>$7.38</td><td class='good'>4</td></tr><tr><td>2026-08-02</td><td>1,240</td><td>3</td><td>$0.87</td><td class=''>0</td></tr><tr><td>2026-08-03</td><td>6,907</td><td>23</td><td>$7.37</td><td class='good'>2</td></tr><tr><td>2026-08-04</td><td>27,804</td><td>32</td><td>$7.69</td><td class=''>0</td></tr><tr><td>2026-08-05</td><td>19,856</td><td>27</td><td>$6.91</td><td class=''>0</td></tr><tr><td>2026-08-06</td><td>28,309</td><td>40</td><td>$12.57</td><td class='good'>5</td></tr><tr><td>2026-08-07</td><td>18,139</td><td>24</td><td>$7.66</td><td class='good'>2</td></tr></tbody></table></div>
     <p class="note">Amazon re-attributes orders for 14 days, so the most recent fortnight
       can only rise. A zero on yesterday is not a result.</p>
   </section>
@@ -445,9 +531,32 @@ a{color:var(--accent)}
       <tbody><tr><td><code>txn_20260808_000810_3b10ff</code></td><td>pause substitutes+complements on unproven books</td><td><span class='pill good'>VERIFIED</span></td><td>H1</td><td>1017/1017</td></tr><tr><td><code>txn_20260808_000758_c8c5f7</code></td><td>re-fund five dark harvested winners to $0.40</td><td><span class='pill good'>VERIFIED</span></td><td>H4</td><td>5/5</td></tr><tr><td><code>txn_20260808_000733_2b7abd</code></td><td>negate four dead head terms</td><td><span class='pill good'>VERIFIED</span></td><td>H5</td><td>4/4</td></tr><tr><td><code>txn_20260808_000719_c98c50</code></td><td>re-fund five dark harvested winners to $0.40</td><td><span class='pill bad'>ABANDONED</span></td><td>H4</td><td>0/5</td></tr><tr><td><code>txn_20260808_000712_21e879</code></td><td>negate four dead head terms</td><td><span class='pill bad'>ABANDONED</span></td><td>H5</td><td>0/4</td></tr><tr><td><code>txn_20260808_000711_90b3f2</code></td><td>pause substitutes+complements on unproven books</td><td><span class='pill bad'>ABANDONED</span></td><td>H1</td><td>0/1017</td></tr><tr><td><code>txn_20260807_235420_c3765d</code></td><td>selftest lift</td><td><span class='pill bad'>ROLLED_BACK</span></td><td>H-TEST</td><td>2/2</td></tr><tr><td><code>txn_20260807_235420_9c5448</code></td><td>ROLLBACK selftest lift</td><td><span class='pill good'>VERIFIED</span></td><td>H-TEST</td><td>2/2</td></tr></tbody></table></div>
   </section>
 
+  <section>
+    <h2>The standing questions</h2>
+    <p class="lede"><code>brief.py</code> asks 232 questions of the data every
+      night and writes one row per question per day, so every answer has a time series. Answered
+      2026-08-08.</p>
+    <div class="qcounts">
+      <span class="qc good"><b>56</b> OK</span>
+      <span class="qc"><b>152</b> WARN</span>
+      <span class="qc warn"><b>21</b> GAP</span>
+      <span class="qc bad"><b>3</b> FAIL</span>
+    </div>
+    <p class="note"><b>A GAP is a to-do, not a pass.</b> It means no code here can answer that
+      question yet, which is why it is counted apart from OK rather than folded into it.</p>
+    <div class="scroll"><table><caption>Failing right now</caption>
+      <thead><tr><th>Check</th><th>Area</th><th>Question</th><th>What to run</th></tr></thead>
+      <tbody><tr><td><code>auto_groups</code></td><td>ads-performance</td><td>How are the four AUTO targeting groups doing against each other?<div class='faint'>complements, substitutes have had a real trial and zero orders; substitutes is 39.3% of all impressions</div></td><td><code>python tune_auto_groups.py --apply - but ONLY where the campaign has had its own 7 days. amazon_ads/experiments.py will refuse the rest, which is correct: an account-wide verdict is not a licence to kill new inventory.</code></td></tr><tr><td><code>winners_budget_capped</code></td><td>budget</td><td>Is a campaign that makes sales being held back by its own daily budget?<div class='faint'>1 campaign(s) that make sales hit 90%+ of their own daily budget in the last 7 days</div></td><td><code>A budget cap on a converting campaign throttles the only demand the account has. Raise it or accept the ceiling.</code></td></tr><tr><td><code>action_outcomes</code></td><td>process-discipline</td><td>Of everything we have ever done, what actually worked?<div class='faint'>910 action(s) backfired or never delivered</div></td><td><code>python outcomes.py</code></td></tr></tbody></table></div>
+    <details class="gaps"><summary>21 questions nothing here can answer yet</summary>
+      <ul><li><span class='garea'>ads-performance</span> Has anyone verified in the console whether Sponsored Brands reporting is genuinely unavailable to this KDP account?</li><li><span class='garea'>ads-performance</span> Is the break-even ACOS in every campaign name, since Amazon&#x27;s dashboard shows sales and not royalty?</li><li><span class='garea'>ads-performance</span> Is the lottery ad structure running: 5 to 10 same-niche books in one ad group, 100 to 260 product targets including gift and toy ASINs, 20 cent bid, down-only, left running?</li><li><span class='garea'>bidding</span> Has the CTR arbitrage test been run: halve the bid on a proven keyword and watch whether impressions survive?</li><li><span class='garea'>bidding</span> Is top-of-search impression share being read as the bid signal (under 5% bid up, over 90% bid down)?</li><li><span class='garea'>bsr-rank</span> Is there a BSR floor below which ads cannot move a book at all?</li><li><span class='garea'>bsr-rank</span> What is our subcategory rank, not just the overall BSR, so a reachable #1 New Release or category badge is visible?</li><li><span class='garea'>catalogue</span> Are any titles carrying the two silent delivery killers: an adult-content checkbox, or swearing in the title?</li><li><span class='garea'>catalogue</span> Are omnibus or bundle SKUs being built, since packaging the series into one transaction takes royalty from $2.39 to roughly $6 to $9?</li><li><span class='garea'>catalogue</span> Has anyone actually opened our own interior PDFs to check bleed-through, image resolution, AI-art tells and repeated images?</li><li><span class='garea'>catalogue</span> What is flagged on KDP&#x27;s Quality Issues dashboard, per title? A flagged title can be suppressed without the bookshelf saying so.</li><li><span class='garea'>competitor</span> Are we running ASIN-targeted ads on competitor books with weak ratings?</li><li><span class='garea'>creative-covers</span> For every open description test: which variant is live and how far through its plan is it?</li><li><span class='garea'>creative-covers</span> Would any change we are about to make break the preconditions of an open test that requires a freeze?</li><li><span class='garea'>keywords</span> Does the keyword miner have the under-1,000-search-results filter, which is the benchmark&#x27;s actual selection rule?</li><li><span class='garea'>process-discipline</span> Do the two blocked commands still need a permission rule from him: Bash(python publish_all.py:*) and Bash(python ads.py apply:*)?</li><li><span class='garea'>process-discipline</span> Has an em dash or en dash appeared anywhere in chat, code, comments, commits or docs?</li><li><span class='garea'>reviews-ratings</span> Has the $10 rating experiment been run: does a low displayed rating actually destroy CVR for children&#x27;s picture books, or do buyers ignore ratings under 5 reviews?</li><li><span class='garea'>reviews-ratings</span> Have Editorial Reviews been added to the listings, the one scalable zero-risk review lever, on all US titles?</li><li><span class='garea'>reviews-ratings</span> Is an ARC distribution channel such as BookSirens running, since that is the only costed route to real Amazon customer reviews?</li><li><span class='garea'>reviews-ratings</span> What does crossing 5 reviews do to a book&#x27;s conversion rate?</li></ul></details>
+    <div class="scroll"><table><caption>By area</caption>
+      <thead><tr><th>Area</th><th>Asked</th><th>Fail</th><th>Gap</th><th>Warn</th><th>OK</th></tr></thead>
+      <tbody><tr><td>ads-performance</td><td>21</td><td class='bad'>1</td><td class='warn'>3</td><td>14</td><td class='good'>3</td></tr><tr><td>process-discipline</td><td>29</td><td class='bad'>1</td><td class='warn'>2</td><td>23</td><td class='good'>3</td></tr><tr><td>budget</td><td>5</td><td class='bad'>1</td><td class='faint'>0</td><td>4</td><td class='good'>0</td></tr><tr><td>reviews-ratings</td><td>17</td><td class='faint'>0</td><td class='warn'>4</td><td>8</td><td class='good'>5</td></tr><tr><td>catalogue</td><td>12</td><td class='faint'>0</td><td class='warn'>4</td><td>8</td><td class='good'>0</td></tr><tr><td>bidding</td><td>20</td><td class='faint'>0</td><td class='warn'>2</td><td>15</td><td class='good'>3</td></tr><tr><td>bsr-rank</td><td>12</td><td class='faint'>0</td><td class='warn'>2</td><td>3</td><td class='good'>7</td></tr><tr><td>creative-covers</td><td>6</td><td class='faint'>0</td><td class='warn'>2</td><td>4</td><td class='good'>0</td></tr><tr><td>competitor</td><td>12</td><td class='faint'>0</td><td class='warn'>1</td><td>8</td><td class='good'>3</td></tr><tr><td>keywords</td><td>11</td><td class='faint'>0</td><td class='warn'>1</td><td>10</td><td class='good'>0</td></tr><tr><td>settled-decisions</td><td>16</td><td class='faint'>0</td><td class='faint'>0</td><td>0</td><td class='good'>16</td></tr><tr><td>data-pull</td><td>15</td><td class='faint'>0</td><td class='faint'>0</td><td>8</td><td class='good'>7</td></tr><tr><td>pricing</td><td>14</td><td class='faint'>0</td><td class='faint'>0</td><td>13</td><td class='good'>1</td></tr><tr><td>coverage</td><td>11</td><td class='faint'>0</td><td class='faint'>0</td><td>8</td><td class='good'>3</td></tr><tr><td>warehouse-data</td><td>10</td><td class='faint'>0</td><td class='faint'>0</td><td>7</td><td class='good'>3</td></tr><tr><td>money-limits</td><td>8</td><td class='faint'>0</td><td class='faint'>0</td><td>7</td><td class='good'>1</td></tr><tr><td>markets</td><td>7</td><td class='faint'>0</td><td class='faint'>0</td><td>7</td><td class='good'>0</td></tr><tr><td>royalty</td><td>6</td><td class='faint'>0</td><td class='faint'>0</td><td>5</td><td class='good'>1</td></tr></tbody></table></div>
+  </section>
+
   <footer>
-    <span>Warehouse: 67 <code>kdp</code> tables,
-      4,952 target-days, current to 2026-08-06.</span>
+    <span>Warehouse: 68 <code>kdp</code> tables,
+      6,002 target-days, current to 2026-08-07.</span>
     <span>Built by <code>python report.py --publish</code>. Fact base:
       <code>brain/reports/2026-08-08.json</code>.</span>
   </footer>
