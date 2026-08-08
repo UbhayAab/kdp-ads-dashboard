@@ -152,7 +152,7 @@ a{color:var(--accent)}
 </style>
 <div class="wrap">
   <header class="mast">
-    <div class="eyebrow">KDP Sponsored Products &middot; daily report &middot; generated 2026-08-09T01:11:16</div>
+    <div class="eyebrow">KDP Sponsored Products &middot; daily report &middot; generated 2026-08-09T01:15:59</div>
     <h1>2026-08-09: 20 orders on
       $839.75,
       and $47.62 of it came back</h1>
@@ -166,7 +166,7 @@ a{color:var(--accent)}
       <b>Amazon is serving</b>
       <p>623 enabled campaigns across 10
       marketplaces, no blocking <code>servingStatus</code>.<br>
-      <span class="faint">read 2026-08-08T20:54:55, 4.3h ago &middot;
+      <span class="faint">read 2026-08-08T20:54:55, 4.4h ago &middot;
       <code>state</code> is what we asked for, <code>servingStatus</code> is what Amazon does</span></p>
     </div>
     
@@ -197,6 +197,10 @@ a{color:var(--accent)}
       ceiling of what the ads could possibly have done, not an estimate of what they did.
       <br>* KDP print royalty is <b>monthly</b>, so windowed totals are prorated across the
       elapsed days of each month and are estimates. The lifetime row is exact on both sides.
+      <br>Before any ad ran (2023-12..2024-11) the catalogue earned
+      $11.59 in total. That is a real contrast and it is
+      also confounded: the catalogue grew from a handful of titles to 91
+      over the same period, so it is not evidence that ads caused the difference.
       <br>Ad spend source: Amazon Ads console export 2026-08-09, range=lifetime, 300 campaigns. Royalty per paid unit all time:
       $2.13.</p>
   </section>
@@ -220,39 +224,6 @@ a{color:var(--accent)}
       labelled as one in <code>brain/fixed_costs.json</code>; edit that file, not this
       page</span></p>
     </div>
-  </section>
-
-  <section>
-    <h2>Have the ads ever paid for themselves?</h2>
-    <p class="lede"><b>No.</b> Three ways of asking, differing only in how generously
-      organic sales are credited to the ads. All three are losses, between
-      $761.74 and $796.34.</p>
-    <div class="scroll"><table>
-      <thead><tr><th>What counts as ad revenue</th><th></th><th>Royalty</th>
-        <th>Ad spend</th><th>Net</th></tr></thead>
-      <tbody><tr class='stripe-bad'><td>Ad-attributed royalty only</td><td class='faint'>what Amazon credits to an ad click</td><td>$47.62</td><td>$839.75</td><td class='bad'><b>$-792.13</b></td></tr><tr class='stripe-bad'><td>Every unit sold since ads began</td><td class='faint'>credits all organic sales to the ads</td><td>$78.01</td><td>$839.75</td><td class='bad'><b>$-761.74</b></td></tr><tr class='stripe-bad'><td>Royalty above the pre-ad baseline</td><td class='faint'>vs $28.23/mo over 2026-01..2026-06 with no ads</td><td>$43.41</td><td>$839.75</td><td class='bad'><b>$-796.34</b></td></tr></tbody></table></div>
-    <div class="frozen"><span class="dot"></span><div>
-      <b>Lifetime ad spend is not known, and $839.75 is a floor</b>
-      <p>Amazon's reports API serves a <b>31-day maximum window</b>, so
-      <code>kdp.target_days</code> begins 2026-07-03 and nothing here can
-      reach further back. <b>138 campaigns in this
-      account started before that</b>, the oldest on
-      <b>2023-11-24</b>, and whatever they spent is invisible to
-      every tool in this repo.<br>
-      The figure above is $112.78 from the warehouse plus
-      $6.66 recovered from <code>brain/ads_daily.csv</code>
-      for 2026-06-28..2026-07-02, days Amazon will no longer serve.<br>
-      <span class="faint">source: console export 2026-08-09, range lifetime, 300 campaigns &middot; only a console
-      export with the date range set to Lifetime can close this, ingested with
-      <code>python import_console_export.py &lt;file&gt; --range lifetime</code></span></p>
-    </div>
-    <p class="note">Ads first spent on <b>2026-06-28</b>. Whole ad
-      months: 2026-07..2026-08, excluding 2026-06 (6d) which saw ads on too few of its days to count as one.
-      The baseline is this catalogue's own $28.23 a month over
-      2026-01..2026-06 with no ads running, charged pro rata for the month
-      still in progress. <b>December is a known confound</b>: December 2025 earned $213.47
-      on zero ad spend, so this catalogue has a large Christmas seasonality and a
-      month-on-month rise is not by itself an ad effect.</p>
   </section>
 
   <section>
