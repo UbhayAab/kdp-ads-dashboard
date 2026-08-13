@@ -1,0 +1,1086 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aug 1 vs now | KDP Ads</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='14'>&#128201;</text></svg>">
+<style>
+*, *::before, *::after { margin:0; padding:0; }
+:root {
+  color-scheme: light;
+  --ground:#eaeef2; --surface:#ffffff; --surface-2:#f4f7fa;
+  --ink:#0d1620; --ink-2:#44586b; --ink-3:#7d90a1; --rule:#d2dbe4; --rule-2:#e5ebf1;
+  --accent:#1d3b5e; --accent-soft:#e6edf5;
+  --spend:#eb6834; --royalty:#2a78d6;
+  --loss:#a8271a; --gain:#186647; --hold:#8a6410;
+  --loss-bg:#fbeceb; --gain-bg:#e9f4ef; --hold-bg:#faf3e2;
+  --shadow:0 1px 2px rgba(13,22,32,.06), 0 8px 24px -18px rgba(13,22,32,.4);
+  --display:"Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --body:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono","Cascadia Code","SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground:#0a1017; --surface:#121b25; --surface-2:#16212c;
+    --ink:#e7eef5; --ink-2:#9cb0c3; --ink-3:#6b8095; --rule:#243342; --rule-2:#1b2733;
+    --accent:#8fb4dd; --accent-soft:#182838;
+    --spend:#d95926; --royalty:#3987e5;
+    --loss:#ef8878; --gain:#4cbd8c; --hold:#d8ac45;
+    --loss-bg:#2a1815; --gain-bg:#0f2a20; --hold-bg:#2a2211;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -18px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground:#0a1017; --surface:#121b25; --surface-2:#16212c;
+  --ink:#e7eef5; --ink-2:#9cb0c3; --ink-3:#6b8095; --rule:#243342; --rule-2:#1b2733;
+  --accent:#8fb4dd; --accent-soft:#182838;
+  --spend:#d95926; --royalty:#3987e5;
+  --loss:#ef8878; --gain:#4cbd8c; --hold:#d8ac45;
+  --loss-bg:#2a1815; --gain-bg:#0f2a20; --hold-bg:#2a2211;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -18px rgba(0,0,0,.9);
+}
+
+* { box-sizing:border-box; }
+body {
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--body); font-size:15px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap { max-width:1120px; margin:0 auto; padding:0 24px 96px; }
+
+/* ---- status rail ---- */
+.rail {
+  border-bottom:1px solid var(--rule); background:var(--surface);
+  position:sticky; top:0; z-index:20;
+}
+.rail-in {
+  max-width:1120px; margin:0 auto; padding:10px 24px;
+  display:flex; flex-wrap:wrap; gap:8px 20px; align-items:center;
+}
+.st { display:flex; align-items:center; gap:7px; font-size:12.5px; color:var(--ink-2); }
+.st b { font-family:var(--mono); font-weight:600; color:var(--ink); letter-spacing:-.01em; }
+.dot { width:7px; height:7px; border-radius:50%; flex:none; }
+.dot.stop { background:var(--loss); }
+.dot.go { background:var(--gain); }
+.dot.warn { background:var(--hold); }
+
+/* ---- masthead ---- */
+header.mast { padding:56px 0 34px; }
+.kicker {
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-3); margin:0 0 14px;
+}
+h1 {
+  font-family:var(--display); font-size:clamp(32px,5.4vw,52px); line-height:1.04;
+  letter-spacing:-.028em; font-weight:700; margin:0 0 18px; text-wrap:balance; max-width:19ch;
+}
+.standfirst { font-size:18px; line-height:1.55; color:var(--ink-2); max-width:62ch; margin:0; }
+.standfirst strong { color:var(--ink); font-weight:600; }
+
+/* ---- sections ---- */
+section { margin-top:52px; }
+.eyebrow {
+  font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); margin:0 0 8px; display:flex; align-items:center; gap:10px;
+}
+.eyebrow::after { content:""; height:1px; background:var(--rule); flex:1; }
+h2 {
+  font-family:var(--display); font-size:clamp(21px,2.6vw,27px); letter-spacing:-.018em;
+  font-weight:650; margin:0 0 10px; line-height:1.2; text-wrap:balance; max-width:36ch;
+}
+h3 { font-family:var(--display); font-size:16.5px; font-weight:650; letter-spacing:-.01em; margin:0 0 6px; }
+p { max-width:70ch; margin:0 0 12px; }
+.lede { color:var(--ink-2); max-width:68ch; }
+
+/* ---- cards ---- */
+.card {
+  background:var(--surface); border:1px solid var(--rule); border-radius:10px;
+  padding:22px 24px; box-shadow:var(--shadow);
+}
+.card + .card { margin-top:14px; }
+
+/* ---- headline figures ---- */
+.figs { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1px;
+        background:var(--rule); border:1px solid var(--rule); border-radius:10px; overflow:hidden; }
+.fig { background:var(--surface); padding:18px 20px; }
+.fig .lab { font-size:12px; color:var(--ink-3); text-transform:uppercase; letter-spacing:.07em; margin-bottom:7px; }
+.fig .val { font-family:var(--mono); font-size:27px; font-weight:600; letter-spacing:-.03em;
+            font-variant-numeric:tabular-nums; line-height:1.1; }
+.fig .val.neg { color:var(--loss); }
+.fig .val.pos { color:var(--gain); }
+.fig .note { font-size:12.5px; color:var(--ink-2); margin-top:6px; line-height:1.45; }
+
+/* ---- findings ---- */
+.finding { border-top:1px solid var(--rule-2); padding:18px 0; display:grid;
+           grid-template-columns:34px 1fr; gap:16px; align-items:start; }
+.finding:first-of-type { border-top:0; }
+.fnum { font-family:var(--mono); font-size:12px; color:var(--ink-3); padding-top:3px;
+        font-variant-numeric:tabular-nums; }
+.finding p { margin:0; color:var(--ink-2); }
+.finding p + p { margin-top:8px; }
+.finding strong { color:var(--ink); font-weight:600; }
+
+/* ---- tables ---- */
+.scroll { overflow-x:auto; border:1px solid var(--rule); border-radius:10px; background:var(--surface);
+          box-shadow:var(--shadow); }
+table { border-collapse:collapse; width:100%; font-size:13.5px; min-width:660px; }
+.wide table { min-width:940px; }
+th, td { text-align:left; padding:10px 13px; border-bottom:1px solid var(--rule-2); vertical-align:top; }
+thead th {
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:500; background:var(--surface-2); border-bottom:1px solid var(--rule);
+  white-space:nowrap; position:sticky; top:0;
+}
+tbody tr:last-child td { border-bottom:0; }
+tbody tr:hover td { background:var(--surface-2); }
+.num { text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums; white-space:nowrap; }
+.mono { font-family:var(--mono); font-variant-numeric:tabular-nums; }
+.dim { color:var(--ink-3); }
+.strong { font-weight:650; }
+.sub { display:block; font-size:12px; color:var(--ink-3); margin-top:2px; }
+.sub2 { font-size:12.5px; color:var(--ink-2); }
+.term { font-weight:550; }
+tr.nil td { color:var(--ink-3); }
+tr.nil td.strong { color:var(--loss); }
+
+.chip { display:inline-block; font-family:var(--mono); font-size:11px; letter-spacing:.04em;
+        padding:2px 8px; border-radius:20px; white-space:nowrap; }
+.chip.live { background:var(--gain-bg); color:var(--gain); }
+.verdict { font-size:12.5px; font-weight:600; display:block; }
+.verdict.good { color:var(--gain); }
+.verdict.warn { color:var(--hold); }
+.verdict.mute { color:var(--ink-3); }
+
+/* ---- charts ---- */
+.chart { display:block; width:100%; height:auto; }
+.chart .grid { stroke:var(--rule-2); stroke-width:1; }
+.chart .axis { stroke:var(--rule); stroke-width:1; }
+.chart .ax, .chart .xlab, .chart .ord, .chart .axcap, .chart .blab, .chart .bval, .chart .floorlab {
+  font-family:var(--mono); font-variant-numeric:tabular-nums; fill:var(--ink-3);
+}
+.chart .ax, .chart .xlab { font-size:10px; }
+.chart .axcap { font-size:9px; letter-spacing:.06em; text-transform:uppercase; }
+.chart .xlab.hot { fill:var(--ink); font-weight:600; }
+.chart .ord { font-size:11px; fill:var(--ink); font-weight:600; }
+.chart .ord.zero { fill:var(--ink-3); font-weight:400; }
+.chart .bar.spend { fill:var(--spend); }
+.chart .bar.royalty { fill:var(--royalty); }
+.chart .bar { transition:opacity .12s; }
+.chart:hover .bar { opacity:.55; }
+.chart .bar:hover { opacity:1; }
+.chart .settling { fill:var(--ink); opacity:.045; pointer-events:none; }
+.floorchart .blab { font-size:11px; }
+.floorchart .bval { font-size:11px; fill:var(--ink-2); }
+.floorchart .bar.dark { fill:var(--ink-3); opacity:.5; }
+.floorchart .bar.lit { fill:var(--royalty); }
+.floorchart .floor { stroke:var(--loss); stroke-width:1.5; stroke-dasharray:5 4; }
+.floorchart .floorlab { font-size:10px; fill:var(--loss); letter-spacing:.05em; }
+
+.legend { display:flex; flex-wrap:wrap; gap:18px; margin:14px 0 0; font-size:12.5px; color:var(--ink-2); }
+.legend span { display:inline-flex; align-items:center; gap:7px; }
+.swatch { width:11px; height:11px; border-radius:3px; flex:none; }
+.swatch.spend { background:var(--spend); }
+.swatch.royalty { background:var(--royalty); }
+.swatch.settling { background:var(--ink); opacity:.12; }
+
+/* ---- 2x2 ---- */
+.grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1px;
+         background:var(--rule); border:1px solid var(--rule); border-radius:10px; overflow:hidden; }
+.cell { background:var(--surface); padding:18px 20px; }
+.cell .ttl { font-family:var(--mono); font-size:11px; letter-spacing:.07em; text-transform:uppercase;
+             color:var(--ink-3); margin-bottom:10px; }
+.cell .big { font-family:var(--mono); font-size:24px; font-weight:600; letter-spacing:-.03em;
+             font-variant-numeric:tabular-nums; }
+.cell .big.zero { color:var(--loss); }
+.cell .big.ok { color:var(--gain); }
+.cell dl { margin:12px 0 0; font-size:12.5px; color:var(--ink-2); display:grid;
+           grid-template-columns:auto 1fr; gap:3px 12px; }
+.cell dt { color:var(--ink-3); }
+.cell dd { margin:0; font-family:var(--mono); font-variant-numeric:tabular-nums; text-align:right; }
+.cell .p { margin-top:11px; font-size:12px; line-height:1.45; color:var(--ink-2); }
+
+/* ---- ledger ---- */
+.led { border-left:2px solid var(--rule); padding-left:22px; margin-left:6px; }
+.ev { position:relative; padding:0 0 24px; }
+.ev::before { content:""; position:absolute; left:-27px; top:7px; width:9px; height:9px;
+              border-radius:50%; background:var(--surface); border:2px solid var(--ink-3); }
+.ev.win::before { border-color:var(--gain); background:var(--gain); }
+.ev.bad::before { border-color:var(--loss); background:var(--loss); }
+.ev.hold::before { border-color:var(--hold); background:var(--hold); }
+.ev .when { font-family:var(--mono); font-size:11.5px; color:var(--ink-3); }
+.ev .what { font-weight:600; margin:2px 0 4px; }
+.ev .out { font-size:13px; color:var(--ink-2); max-width:66ch; }
+.ev .out b { font-family:var(--mono); font-variant-numeric:tabular-nums; color:var(--ink); font-weight:600; }
+.tag { font-family:var(--mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase;
+       padding:1px 7px; border-radius:4px; margin-left:8px; white-space:nowrap; }
+.tag.v { background:var(--gain-bg); color:var(--gain); }
+.tag.f { background:var(--loss-bg); color:var(--loss); }
+.tag.h { background:var(--hold-bg); color:var(--hold); }
+
+/* ---- proposals ---- */
+.prop { display:grid; grid-template-columns:auto 1fr; gap:0 18px; border-top:1px solid var(--rule-2);
+        padding:16px 0; }
+.prop:first-of-type { border-top:0; }
+.prop .rank { font-family:var(--mono); font-size:12px; color:var(--ink-3); padding-top:3px; }
+.prop .body p { margin:0; color:var(--ink-2); font-size:14px; }
+.prop .body p + p { margin-top:6px; }
+.prop h3 { margin-bottom:4px; }
+.saves { font-family:var(--mono); font-size:12px; color:var(--ink-3); margin-top:6px; }
+
+.callout { border-left:3px solid var(--accent); background:var(--accent-soft); padding:16px 20px;
+           border-radius:0 8px 8px 0; margin:18px 0; }
+.callout p { margin:0; color:var(--ink-2); }
+.callout p + p { margin-top:8px; }
+.callout strong { color:var(--ink); }
+
+footer { margin-top:64px; padding-top:22px; border-top:1px solid var(--rule); font-size:12.5px;
+         color:var(--ink-3); }
+footer p { max-width:74ch; margin:0 0 8px; }
+footer code { font-family:var(--mono); font-size:11.5px; color:var(--ink-2); }
+
+a { color:var(--accent); }
+:focus-visible { outline:2px solid var(--accent); outline-offset:2px; border-radius:3px; }
+@media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+@media (max-width:640px) {
+  .wrap { padding:0 16px 64px; }
+  .rail-in { padding:9px 16px; }
+  header.mast { padding:38px 0 26px; }
+}
+</style>
+</head>
+<body>
+
+<div class="rail"><div class="rail-in">
+  <span class="st"><span class="dot stop"></span>Writes <b>FROZEN</b> since 08-12 04:46</span>
+  <span class="st"><span class="dot go"></span>Serving <b>10 / 10 markets</b></span>
+  <span class="st"><span class="dot warn"></span>Ads data through <b>2026-08-11</b></span>
+  <span class="st"><span class="dot go"></span>policy selftest <b>OK</b></span>
+  <span class="st">floor <b>$0.36</b> &middot; CVR <b>8.08%</b> &middot; royalty needed <b>$4.46</b></span>
+</div></div>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="kicker">Account read &middot; 13 August 2026</p>
+  <h1>August 1 did not stop working. It was never a baseline.</h1>
+  <p class="standfirst">All seven targets that produced an order on 1 or 6 August are
+  <strong>still enabled at unchanged bids</strong>, and two of them ordered again on 11 August.
+  What changed is not conversion. It is that <strong>484 campaigns launched on 1-3 August</strong>
+  have taken $32.34 and 137 clicks for <strong>zero orders</strong>, which is
+  80% of the eleven-day loss.</p>
+  <p class="standfirst" style="margin-top:14px">There is one exception, and it is new.
+  <strong>Two targets that sold on 11 August were bid under the delivery floor at 04:45 the
+  next morning</strong> and cannot currently win an impression. That is the only thing on this
+  page that is actually broken, and it happened yesterday.</p>
+</header>
+
+<section>
+  <p class="eyebrow">Broken right now</p>
+  <h2>Three targets on two books that sold are sitting below the floor</h2>
+  <p class="lede">The 12 August tail-down moved 762 targets to $0.30. It was supposed to skip
+  anything that had sold in the last 30 days, and for the seven targets in this report it did.
+  It did not skip these, and the reason is exact.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Target</th><th>Book</th><th>Campaign</th><th>Auto group</th><th>Sold on</th>
+      <th>Bid now</th><th>Should be</th></tr></thead>
+    <tbody>
+<tr>
+ <td class="mono dim">542857005443538</td>
+ <td>The Little Bell Found Its Ring<span class="sub mono">B0FWWX7KKZ</span></td>
+ <td class="sub2">little bell Auto V1</td>
+ <td>loose match</td>
+ <td class="num strong">2026-08-11</td>
+ <td class="num" style="color:var(--loss);font-weight:650">$0.30</td>
+ <td class="num">$0.36</td>
+</tr>
+<tr>
+ <td class="mono dim">515427008176867</td>
+ <td>Penny Leads the Polar Parade<span class="sub mono">B0FWX4P7BQ</span></td>
+ <td class="sub2">penny leads auto v1</td>
+ <td>loose match</td>
+ <td class="num strong">2026-08-11</td>
+ <td class="num" style="color:var(--loss);font-weight:650">$0.30</td>
+ <td class="num">$0.36</td>
+</tr>
+<tr>
+ <td class="mono dim">494013404669276</td>
+ <td>Penny Leads the Polar Parade<span class="sub mono">B0FWX4P7BQ</span></td>
+ <td class="sub2">penny leads auto v1</td>
+ <td>close match</td>
+ <td class="num dim">sibling group</td>
+ <td class="num" style="color:var(--loss);font-weight:650">$0.30</td>
+ <td class="num">$0.36</td>
+</tr>
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <p><strong>Why the guard missed them.</strong> <code>winners.py</code> decides what is
+    protected by reading <code>brain/pull_all/keywords.csv</code>, which is only as current as the
+    last pull. Both orders landed on <strong>11 August</strong>. The tail-down ran at
+    <strong>04:45 on 12 August</strong>, before 11 August had closed on the US clock and been
+    pulled. So the guard was asked a fair question and gave the right answer from the data it had:
+    at that moment, neither target had ever sold.</p>
+    <p><strong>The guard is only as current as the last pull, and nothing said so.</strong> The
+    write verified, the transaction reads VERIFIED for these three, and it took today's brief to
+    notice. A cheap fix exists: have <code>guard_bids</code> refuse to run at all when the pull
+    behind it is older than the newest settled day, rather than silently protecting a shorter list.</p>
+  </div>
+  <p><strong>A repair is planned and not applied.</strong> Transaction
+  <code>txn_20260813_201336_71d965</code> lifts all three to $0.36, which is what
+  <code>policy.target_bid($2.39, proven=True)</code> returns: $0.19 of click value lifted to the
+  delivery floor, 1.89x above value, charged to the learning budget. Writes are frozen, so it sits
+  at PLANNED until you say otherwise.</p>
+</section>
+
+<section>
+  <p class="eyebrow">The answer</p>
+  <div class="figs">
+    <div class="fig">
+      <div class="lab">Aug 1 &rarr; Aug 11</div>
+      <div class="val">4 &rarr; 4 orders</div>
+      <div class="note">Same order count. Aug 11 still lost $1.41
+      because spend was $10.13 against $7.38.</div>
+    </div>
+    <div class="fig">
+      <div class="lab">Aug 6 luck test</div>
+      <div class="val">0.52%</div>
+      <div class="note">P(6 orders or more from 21 proven clicks at 8.08% CVR).
+      The report flags it as a fluke. Aug 1 reads 6.2%.</div>
+    </div>
+    <div class="fig">
+      <div class="lab">Aug 1-11 net, as run</div>
+      <div class="val neg">-$40.43</div>
+      <div class="note">$91.14 spent against $50.71 of KDP-read royalty.</div>
+    </div>
+    <div class="fig">
+      <div class="lab">Same window, without the launch wave</div>
+      <div class="val neg">-$8.09</div>
+      <div class="note">The pre-existing campaigns produced every one of the
+      21 orders on $58.80.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Evidence &middot; the winners</p>
+  <h2>Every target that converted on 1 or 6 August is still live</h2>
+  <p class="lede">Nothing was paused, archived or bid-cut. <code>winners.py</code> held all seven
+  out of the 12 August tail-down, which is the guard doing exactly its job. The right-hand column
+  is the only honest verdict available: with 0-15 clicks each since 7 August, six of the seven
+  cannot be judged at all.</p>
+  <div class="scroll wide"><table>
+    <thead><tr>
+      <th>Target</th><th>What it is</th><th>Ord 08-01/06</th><th>Bid</th><th>State now</th>
+      <th>Impr since 08-07</th><th>Clicks</th><th>Spend</th><th>Ord</th><th>P(0 orders)</th><th>Verdict</th>
+    </tr></thead>
+    <tbody>
+<tr>
+ <td class="mono dim">383227005227058</td>
+ <td>loose-match auto<span class="sub">My First Book on Space</span></td>
+ <td class="num">3</td>
+ <td class="num">$0.35</td>
+ <td class="chip-cell"><span class="chip live">Enabled</span></td>
+ <td class="num">661</td>
+ <td class="num">14</td>
+ <td class="num">$4.85</td>
+ <td class="num">0</td>
+ <td class="num mono">31%</td>
+ <td><span class="verdict mute">not enough clicks</span><span class="sub">the account's single best target</span></td>
+</tr>
+<tr>
+ <td class="mono dim">308682148936601</td>
+ <td>loose-match auto<span class="sub">My First Book on Space</span></td>
+ <td class="num">2</td>
+ <td class="num">$0.35</td>
+ <td class="chip-cell"><span class="chip live">Enabled</span></td>
+ <td class="num">502</td>
+ <td class="num">15</td>
+ <td class="num">$5.23</td>
+ <td class="num">2</td>
+ <td class="num mono">28%</td>
+ <td><span class="verdict good">still converting</span><span class="sub">ordered 08-06, 08-07 and 08-11</span></td>
+</tr>
+<tr>
+ <td class="mono dim">207452193511945</td>
+ <td>phrase &ldquo;book about space&rdquo;<span class="sub">My First Book on Space</span></td>
+ <td class="num">1</td>
+ <td class="num">$0.54</td>
+ <td class="chip-cell"><span class="chip live">Enabled</span></td>
+ <td class="num">144</td>
+ <td class="num">1</td>
+ <td class="num">$0.54</td>
+ <td class="num">0</td>
+ <td class="num mono">92%</td>
+ <td><span class="verdict mute">not enough clicks</span><span class="sub">1 click since</span></td>
+</tr>
+<tr>
+ <td class="mono dim">410698306785681</td>
+ <td>loose-match auto<span class="sub">What to Do with a Mistake</span></td>
+ <td class="num">1</td>
+ <td class="num">$0.35</td>
+ <td class="chip-cell"><span class="chip live">Enabled</span></td>
+ <td class="num">281</td>
+ <td class="num">1</td>
+ <td class="num">$0.35</td>
+ <td class="num">0</td>
+ <td class="num mono">92%</td>
+ <td><span class="verdict mute">not enough clicks</span><span class="sub">1 click since</span></td>
+</tr>
+<tr>
+ <td class="mono dim">464591098846729</td>
+ <td>close-match auto<span class="sub">My First Book on Space</span></td>
+ <td class="num">1</td>
+ <td class="num">$0.35</td>
+ <td class="chip-cell"><span class="chip live">Enabled</span></td>
+ <td class="num">194</td>
+ <td class="num">1</td>
+ <td class="num">$0.35</td>
+ <td class="num">0</td>
+ <td class="num mono">92%</td>
+ <td><span class="verdict mute">not enough clicks</span><span class="sub">1 click since</span></td>
+</tr>
+<tr>
+ <td class="mono dim">505853117480742</td>
+ <td>close-match auto<span class="sub">My First Book on Space</span></td>
+ <td class="num">1</td>
+ <td class="num">$0.35</td>
+ <td class="chip-cell"><span class="chip live">Enabled</span></td>
+ <td class="num">249</td>
+ <td class="num">0</td>
+ <td class="num">$0.00</td>
+ <td class="num">0</td>
+ <td class="num mono">100%</td>
+ <td><span class="verdict warn">no clicks to judge</span><span class="sub">stopped earning clicks</span></td>
+</tr>
+<tr>
+ <td class="mono dim">515579163818855</td>
+ <td>phrase &ldquo;books 3 year olds&rdquo;<span class="sub">Suzie's Secret Superpower</span></td>
+ <td class="num">1</td>
+ <td class="num">$0.59</td>
+ <td class="chip-cell"><span class="chip live">Enabled</span></td>
+ <td class="num">160</td>
+ <td class="num">2</td>
+ <td class="num">$1.18</td>
+ <td class="num">1</td>
+ <td class="num mono">84%</td>
+ <td><span class="verdict good">still converting</span><span class="sub">ordered again on 08-11</span></td>
+</tr>
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <p><strong>One genuine failure, and it is not a conversion failure.</strong>
+    Target <code>505853117480742</code> (close-match auto on the flagship) took
+    249 impressions
+    and <strong>zero clicks</strong> in five days. That is a relevance problem, not a
+    conversion problem, and it is the only one of the seven with a real signal in it.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Evidence &middot; the money</p>
+  <h2>Spend rose, royalty did not follow</h2>
+  <p class="lede">Both bars are dollars, so they share one axis. Orders are printed rather than
+  plotted: giving them a second y-scale would let the eye read a crossing that is an artefact of
+  the scaling. Shaded days are still inside Amazon's restatement window and are not verdicts yet.</p>
+  <div class="card">
+    <svg viewBox="0 0 980 300" class="chart" role="img" aria-label="Daily ad spend against KDP royalty, 26 July to 11 August 2026"><line class="grid" x1="46" y1="166.7" x2="968" y2="166.7"/><text class="ax" x="38" y="170.7" text-anchor="end">$5</text><line class="grid" x1="46" y1="91.3" x2="968" y2="91.3"/><text class="ax" x="38" y="95.3" text-anchor="end">$10</text><line class="grid" x1="46" y1="16.0" x2="968" y2="16.0"/><text class="ax" x="38" y="20.0" text-anchor="end">$15</text><line class="axis" x1="46" y1="242.0" x2="968" y2="242.0"/><rect class="bar spend" x="61.1" y="189.7" width="11.0" height="52.3" rx="4.0"><title>2026-07-26  spend $3.47</title></rect><rect class="bar royalty" x="74.1" y="209.0" width="11.0" height="33.0" rx="4.0"><title>2026-07-26  royalty $2.19</title></rect><text class="xlab" x="73.1" y="258.0" text-anchor="middle">26</text><text class="ord" x="73.1" y="276.0" text-anchor="middle">1</text><rect class="bar spend" x="115.4" y="227.5" width="11.0" height="14.5" rx="4.0"><title>2026-07-27  spend $0.96</title></rect><text class="xlab" x="127.4" y="258.0" text-anchor="middle">27</text><text class="ord zero" x="127.4" y="276.0" text-anchor="middle">0</text><rect class="bar spend" x="169.6" y="200.4" width="11.0" height="41.6" rx="4.0"><title>2026-07-28  spend $2.76</title></rect><text class="xlab" x="181.6" y="258.0" text-anchor="middle">28</text><text class="ord zero" x="181.6" y="276.0" text-anchor="middle">0</text><rect class="bar spend" x="223.8" y="197.7" width="11.0" height="44.3" rx="4.0"><title>2026-07-29  spend $2.94</title></rect><rect class="bar royalty" x="236.8" y="209.0" width="11.0" height="33.0" rx="4.0"><title>2026-07-29  royalty $2.19</title></rect><text class="xlab" x="235.8" y="258.0" text-anchor="middle">29</text><text class="ord" x="235.8" y="276.0" text-anchor="middle">1</text><rect class="bar spend" x="278.1" y="180.8" width="11.0" height="61.2" rx="4.0"><title>2026-07-30  spend $4.06</title></rect><rect class="bar royalty" x="291.1" y="206.0" width="11.0" height="36.0" rx="4.0"><title>2026-07-30  royalty $2.39</title></rect><text class="xlab" x="290.1" y="258.0" text-anchor="middle">30</text><text class="ord" x="290.1" y="276.0" text-anchor="middle">1</text><rect class="bar spend" x="332.3" y="186.9" width="11.0" height="55.1" rx="4.0"><title>2026-07-31  spend $3.66</title></rect><rect class="bar royalty" x="345.3" y="215.6" width="11.0" height="26.4" rx="4.0"><title>2026-07-31  royalty $1.75</title></rect><text class="xlab" x="344.3" y="258.0" text-anchor="middle">31</text><text class="ord" x="344.3" y="276.0" text-anchor="middle">1</text><rect class="bar spend" x="386.5" y="130.8" width="11.0" height="111.2" rx="4.0"><title>2026-08-01  spend $7.38</title></rect><rect class="bar royalty" x="399.5" y="116.6" width="11.0" height="125.4" rx="4.0"><title>2026-08-01  royalty $8.32</title></rect><text class="xlab hot" x="398.5" y="258.0" text-anchor="middle">01</text><text class="ord" x="398.5" y="276.0" text-anchor="middle">4</text><rect class="bar spend" x="440.8" y="228.9" width="11.0" height="13.1" rx="4.0"><title>2026-08-02  spend $0.87</title></rect><text class="xlab" x="452.8" y="258.0" text-anchor="middle">02</text><text class="ord zero" x="452.8" y="276.0" text-anchor="middle">0</text><rect class="bar spend" x="495.0" y="131.0" width="11.0" height="111.0" rx="4.0"><title>2026-08-03  spend $7.37</title></rect><rect class="bar royalty" x="508.0" y="145.9" width="11.0" height="96.1" rx="4.0"><title>2026-08-03  royalty $6.38</title></rect><text class="xlab" x="507.0" y="258.0" text-anchor="middle">03</text><text class="ord" x="507.0" y="276.0" text-anchor="middle">2</text><rect class="bar spend" x="549.2" y="131.4" width="11.0" height="110.6" rx="4.0"><title>2026-08-04  spend $7.34</title></rect><text class="xlab" x="561.2" y="258.0" text-anchor="middle">04</text><text class="ord zero" x="561.2" y="276.0" text-anchor="middle">0</text><rect class="bar spend" x="603.5" y="137.9" width="11.0" height="104.1" rx="4.0"><title>2026-08-05  spend $6.91</title></rect><rect class="bar royalty" x="616.5" y="206.0" width="11.0" height="36.0" rx="4.0"><title>2026-08-05  royalty $2.39</title></rect><text class="xlab" x="615.5" y="258.0" text-anchor="middle">05</text><text class="ord" x="615.5" y="276.0" text-anchor="middle">1</text><rect class="bar spend" x="657.7" y="52.6" width="11.0" height="189.4" rx="4.0"><title>2026-08-06  spend $12.57</title></rect><rect class="bar royalty" x="670.7" y="36.5" width="11.0" height="205.5" rx="4.0"><title>2026-08-06  royalty $13.64</title></rect><text class="xlab hot" x="669.7" y="258.0" text-anchor="middle">06</text><text class="ord" x="669.7" y="276.0" text-anchor="middle">6</text><rect class="bar spend" x="711.9" y="126.6" width="11.0" height="115.4" rx="4.0"><title>2026-08-07  spend $7.66</title></rect><rect class="bar royalty" x="724.9" y="145.9" width="11.0" height="96.1" rx="4.0"><title>2026-08-07  royalty $6.38</title></rect><text class="xlab" x="723.9" y="258.0" text-anchor="middle">07</text><text class="ord" x="723.9" y="276.0" text-anchor="middle">2</text><rect class="bar spend" x="766.2" y="110.9" width="11.0" height="131.1" rx="4.0"><title>2026-08-08  spend $8.70</title></rect><rect class="bar royalty" x="779.2" y="168.5" width="11.0" height="73.5" rx="4.0"><title>2026-08-08  royalty $4.88</title></rect><text class="xlab" x="778.2" y="258.0" text-anchor="middle">08</text><text class="ord" x="778.2" y="276.0" text-anchor="middle">2</text><rect class="settling" x="751.1" y="16" width="54.2" height="226.0"/><rect class="bar spend" x="820.4" y="31.1" width="11.0" height="210.9" rx="4.0"><title>2026-08-09  spend $14.00</title></rect><text class="xlab" x="832.4" y="258.0" text-anchor="middle">09</text><text class="ord zero" x="832.4" y="276.0" text-anchor="middle">0</text><rect class="settling" x="805.3" y="16" width="54.2" height="226.0"/><rect class="bar spend" x="874.6" y="118.3" width="11.0" height="123.7" rx="4.0"><title>2026-08-10  spend $8.21</title></rect><text class="xlab" x="886.6" y="258.0" text-anchor="middle">10</text><text class="ord zero" x="886.6" y="276.0" text-anchor="middle">0</text><rect class="settling" x="859.5" y="16" width="54.2" height="226.0"/><rect class="bar spend" x="928.9" y="89.4" width="11.0" height="152.6" rx="4.0"><title>2026-08-11  spend $10.13</title></rect><rect class="bar royalty" x="941.9" y="110.6" width="11.0" height="131.4" rx="4.0"><title>2026-08-11  royalty $8.72</title></rect><text class="xlab" x="940.9" y="258.0" text-anchor="middle">11</text><text class="ord" x="940.9" y="276.0" text-anchor="middle">4</text><rect class="settling" x="913.8" y="16" width="54.2" height="226.0"/><text class="axcap" x="38" y="276.0" text-anchor="end">orders</text><text class="axcap" x="38" y="258.0" text-anchor="end">day</text></svg>
+    <div class="legend">
+      <span><i class="swatch spend"></i>Ad spend</span>
+      <span><i class="swatch royalty"></i>KDP-read royalty</span>
+      <span><i class="swatch settling"></i>Still restating - not a verdict</span>
+    </div>
+  </div>
+  <p style="margin-top:16px">Conversion rate over 1-7 August was 8.88%, and over 8-11 August
+  4.51%. That difference is <strong>not statistically distinguishable</strong>
+  (z = 1.48, two-sided p = 0.139 on 302 clicks). Spend per day, over the same split, went
+  $7.16 to $10.26. <strong>The change is in the spending, not the selling.</strong></p>
+</section>
+
+<section>
+  <p class="eyebrow">Evidence &middot; the cause</p>
+  <h2>484 campaigns launched 1-3 August, and the foreign leg is a decisive zero</h2>
+  <p class="lede">Splitting the window by when a campaign was created and where it runs separates
+  the account that works from the account that was added to it. The two are not close.</p>
+  <div class="grid2">
+    <div class="cell">
+      <div class="ttl">Pre-existing &middot; US</div>
+      <div class="big ok">21 orders</div>
+      <dl>
+        <dt>clicks</dt><dd>164</dd>
+        <dt>spend</dt><dd>$58.37</dd>
+        <dt>CVR</dt><dd>12.8%</dd>
+      </dl>
+      <p class="p">This is the whole working account. Every order in the window came from here.</p>
+    </div>
+    <div class="cell">
+      <div class="ttl">Launched Aug 1-3 &middot; foreign</div>
+      <div class="big zero">0 orders</div>
+      <dl>
+        <dt>clicks</dt><dd>115</dd>
+        <dt>spend</dt><dd>$27.74</dd>
+        <dt>P(0 orders)</dt><dd>6.2e-05</dd>
+      </dl>
+      <p class="p">At the account's own 8.08% CVR this zero has a 1-in-16,000 chance.
+      <strong>Decisive.</strong> Nine markets, no order, ever.</p>
+    </div>
+    <div class="cell">
+      <div class="ttl">Launched Aug 1-3 &middot; US</div>
+      <div class="big">0 orders</div>
+      <dl>
+        <dt>clicks</dt><dd>22</dd>
+        <dt>spend</dt><dd>$4.60</dd>
+        <dt>P(0 orders)</dt><dd>16%</dd>
+      </dl>
+      <p class="p">Not judgeable. 22 clicks is far short of the 25-35 a kill needs.
+      Leave it running.</p>
+    </div>
+    <div class="cell">
+      <div class="ttl">Pre-existing &middot; foreign</div>
+      <div class="big">1 click</div>
+      <dl>
+        <dt>spend</dt><dd>$0.43</dd>
+      </dl>
+      <p class="p">Effectively empty, which matters: it means &ldquo;new campaigns&rdquo;
+      and &ldquo;foreign&rdquo; are the same explanation, not two.</p>
+    </div>
+  </div>
+  <p style="margin-top:16px">Across all ten markets and the whole record, <strong>every order this
+  account has ever produced came from the United States.</strong></p>
+  <div class="scroll" style="margin-top:12px"><table>
+    <thead><tr><th>Market</th><th>Impressions</th><th>Clicks</th><th>CTR</th><th>Spend</th><th>Orders</th></tr></thead>
+    <tbody>
+<tr class="">
+ <td class="mono">US</td>
+ <td class="num">96,170</td>
+ <td class="num">298</td>
+ <td class="num">0.310%</td>
+ <td class="num">$125.06</td>
+ <td class="num strong">28</td>
+</tr>
+<tr class="nil">
+ <td class="mono">UK</td>
+ <td class="num">24,251</td>
+ <td class="num">34</td>
+ <td class="num">0.140%</td>
+ <td class="num">$10.39</td>
+ <td class="num strong">0</td>
+</tr>
+<tr class="nil">
+ <td class="mono">IT</td>
+ <td class="num">18,824</td>
+ <td class="num">26</td>
+ <td class="num">0.138%</td>
+ <td class="num">$6.55</td>
+ <td class="num strong">0</td>
+</tr>
+<tr class="nil">
+ <td class="mono">DE</td>
+ <td class="num">10,803</td>
+ <td class="num">17</td>
+ <td class="num">0.157%</td>
+ <td class="num">$3.73</td>
+ <td class="num strong">0</td>
+</tr>
+<tr class="nil">
+ <td class="mono">ES</td>
+ <td class="num">8,191</td>
+ <td class="num">18</td>
+ <td class="num">0.220%</td>
+ <td class="num">$3.56</td>
+ <td class="num strong">0</td>
+</tr>
+<tr class="nil">
+ <td class="mono">FR</td>
+ <td class="num">6,006</td>
+ <td class="num">12</td>
+ <td class="num">0.200%</td>
+ <td class="num">$3.06</td>
+ <td class="num strong">0</td>
+</tr>
+<tr class="nil">
+ <td class="mono">NL</td>
+ <td class="num">1,223</td>
+ <td class="num">4</td>
+ <td class="num">0.327%</td>
+ <td class="num">$0.56</td>
+ <td class="num strong">0</td>
+</tr>
+<tr class="nil">
+ <td class="mono">AU</td>
+ <td class="num">1,161</td>
+ <td class="num">3</td>
+ <td class="num">0.258%</td>
+ <td class="num">$0.18</td>
+ <td class="num strong">0</td>
+</tr>
+<tr class="nil">
+ <td class="mono">CA</td>
+ <td class="num">1,510</td>
+ <td class="num">2</td>
+ <td class="num">0.132%</td>
+ <td class="num">$0.14</td>
+ <td class="num strong">0</td>
+</tr>
+<tr class="nil">
+ <td class="mono">MX</td>
+ <td class="num">21</td>
+ <td class="num">0</td>
+ <td class="num">0.000%</td>
+ <td class="num">$0.00</td>
+ <td class="num strong">0</td>
+</tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <p class="eyebrow">Why the days differ</p>
+  <h2>Five reasons, in the order they matter</h2>
+  <div class="card">
+    <div class="finding"><div class="fnum">01</div><div>
+      <p><strong>We partly do still see it.</strong> 11 August produced 4 orders and
+      $8.72 of royalty - the same order count as 1 August. The order flow
+      did not stop. Two of the seven winners, <code>308682148936601</code> and the phrase
+      <em>books 3 year olds</em>, converted again on 11 August.</p>
+    </div></div>
+    <div class="finding"><div class="fnum">02</div><div>
+      <p><strong>1 and 6 August were the two luckiest days in the record.</strong>
+      P(that many orders | that many proven-book clicks at the measured 8.08% CVR) reads
+      6.2% for 1 August and 0.52% for 6 August.
+      An expectation set by the two best draws the account has ever made cannot be met on demand.</p>
+    </div></div>
+    <div class="finding"><div class="fnum">03</div><div>
+      <p><strong>Nothing was turned off.</strong> All seven winning targets are ENABLED at the bids
+      they had on the day they converted. The 12 August tail-down moved 762 targets to $0.30, and
+      <code>winners.py</code> excluded every one of these from it.</p>
+    </div></div>
+    <div class="finding"><div class="fnum">04</div><div>
+      <p><strong>The extra spend bought traffic that does not convert.</strong> The 1-3 August
+      launch wave added $32.34 of spend over eleven days and 137 clicks for zero
+      orders, at a click-through rate of 0.113% against 0.499% on the pre-existing campaigns. It
+      fails both tests: it does not earn clicks, and the clicks it does earn do not convert.</p>
+      <p>Without it the same eleven days lose $8.09 rather than
+      $40.43 - $0.74 a day rather than
+      $3.68.</p>
+    </div></div>
+    <div class="finding"><div class="fnum">05</div><div>
+      <p><strong>9 and 10 August are not verdicts yet.</strong> Both read zero orders on 69 clicks,
+      which looks alarming, and both are inside Amazon's restatement window. Amazon restates
+      conversion data at 1, 7 and 28 days after the event; the day-7 restatement for 9 August lands
+      on 16 August. A zero on a four-day-old day is an unfinished number, not a result.</p>
+    </div></div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Evidence &middot; where the money goes</p>
+  <h2>One lane earns the clicks, and it still loses on every order</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Lane</th><th>Impressions</th><th>Clicks</th><th>CTR</th><th>Spend</th><th>Share</th><th>Orders</th><th>Cost / order</th></tr></thead>
+    <tbody>
+<tr>
+ <td>auto &middot; loose match</td>
+ <td class="num">32,505</td>
+ <td class="num">161</td>
+ <td class="num">0.495%</td>
+ <td class="num">$50.84</td>
+ <td class="num">56%</td>
+ <td class="num">16</td>
+ <td class="num">$3.18</td>
+</tr>
+<tr>
+ <td>auto &middot; close match</td>
+ <td class="num">32,420</td>
+ <td class="num">62</td>
+ <td class="num">0.191%</td>
+ <td class="num">$16.20</td>
+ <td class="num">18%</td>
+ <td class="num">2</td>
+ <td class="num">$8.10</td>
+</tr>
+<tr>
+ <td>keyword &middot; phrase</td>
+ <td class="num">2,432</td>
+ <td class="num">21</td>
+ <td class="num">0.863%</td>
+ <td class="num">$8.80</td>
+ <td class="num">10%</td>
+ <td class="num">3</td>
+ <td class="num">$2.93</td>
+</tr>
+<tr>
+ <td>auto &middot; substitutes</td>
+ <td class="num">43,217</td>
+ <td class="num">26</td>
+ <td class="num">0.060%</td>
+ <td class="num">$7.02</td>
+ <td class="num">8%</td>
+ <td class="num">0</td>
+ <td class="num">-</td>
+</tr>
+<tr>
+ <td>auto &middot; complements</td>
+ <td class="num">38,598</td>
+ <td class="num">22</td>
+ <td class="num">0.057%</td>
+ <td class="num">$3.44</td>
+ <td class="num">4%</td>
+ <td class="num">0</td>
+ <td class="num">-</td>
+</tr>
+<tr>
+ <td>keyword &middot; broad</td>
+ <td class="num">3,769</td>
+ <td class="num">6</td>
+ <td class="num">0.159%</td>
+ <td class="num">$2.95</td>
+ <td class="num">3%</td>
+ <td class="num">0</td>
+ <td class="num">-</td>
+</tr>
+<tr>
+ <td>keyword &middot; exact</td>
+ <td class="num">581</td>
+ <td class="num">4</td>
+ <td class="num">0.688%</td>
+ <td class="num">$1.89</td>
+ <td class="num">2%</td>
+ <td class="num">0</td>
+ <td class="num">-</td>
+</tr>
+    </tbody>
+  </table></div>
+  <p style="margin-top:16px">Loose-match auto takes 56% of the spend and returns 16 of the 21 orders
+  at $3.18 an order. The flagship's royalty is <strong>$2.19</strong>. Even the lane that
+  works loses about a dollar every time it wins.</p>
+</section>
+
+<section>
+  <p class="eyebrow">Evidence &middot; the constraint</p>
+  <h2>Most of the account is deliberately below the delivery floor</h2>
+  <p class="lede">Nothing on this account has ever won a real search impression below about $0.36.
+  A sub-floor bid does not buy less traffic; it buys only the detail-page placements nobody
+  competes for. After the 12 August tail-down, 2,704 enabled targets sit under that line on purpose.</p>
+  <div class="card">
+    <svg viewBox="0 0 560 166" class="chart floorchart" role="img" aria-label="Enabled targets by bid band against the 36 cent delivery floor"><text class="blab" x="86" y="30" text-anchor="end">under $0.30</text><rect class="bar dark" x="96" y="18" width="406.0" height="15" rx="4"><title>under $0.30: 1,674 enabled targets</title></rect><text class="bval" x="510.0" y="30">1,674</text><text class="blab" x="86" y="60" text-anchor="end">$0.30-0.34</text><rect class="bar dark" x="96" y="48" width="249.8" height="15" rx="4"><title>$0.30-0.34: 1,030 enabled targets</title></rect><text class="bval" x="353.8" y="60">1,030</text><text class="blab" x="86" y="90" text-anchor="end">$0.35</text><rect class="bar dark" x="96" y="78" width="171.5" height="15" rx="4"><title>$0.35: 707 enabled targets</title></rect><text class="bval" x="275.5" y="90">707</text><line class="floor" x1="0" y1="97" x2="560" y2="97"/><text class="floorlab" x="560" y="91" text-anchor="end">$0.36 delivery floor</text><text class="blab" x="86" y="120" text-anchor="end">$0.36-0.49</text><rect class="bar lit" x="96" y="108" width="49.0" height="15" rx="4"><title>$0.36-0.49: 202 enabled targets</title></rect><text class="bval" x="153.0" y="120">202</text><text class="blab" x="86" y="150" text-anchor="end">$0.50+</text><rect class="bar lit" x="96" y="138" width="8.2" height="15" rx="4"><title>$0.50+: 34 enabled targets</title></rect><text class="bval" x="112.2" y="150">34</text></svg>
+  </div>
+  <div class="callout">
+    <p><strong>The number that governs everything:</strong> $0.36 &divide; 8.08% = <strong>$4.46</strong>
+    of royalty needed before a floor bid is honest. Seven US books clear it and
+    <strong>none of the seven has ever converted.</strong> The flagship, which is 16 of the account's
+    28 lifetime orders, carries $2.19.</p>
+    <p>This is why bids are not the lever. Raising them scales the loss; lowering them below $0.36
+    switches the keyword off. The gap closes with price and royalty, or it does not close.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">The ledger</p>
+  <h2>Every account change since the freeze, and what it did</h2>
+  <div class="led">
+    <div class="ev hold">
+      <div class="when">2026-08-07</div>
+      <div class="what">Abhay froze all account writes<span class="tag h">standing</span></div>
+      <div class="out">Still in force. It overrides the repo's &ldquo;act first, report after&rdquo;
+      authority for anything that writes. Everything below either predates it or was thawed
+      deliberately and re-frozen.</div>
+    </div>
+    <div class="ev win">
+      <div class="when">2026-08-08 00:07</div>
+      <div class="what">Negate four dead head terms<span class="tag v">verified 4/4</span></div>
+      <div class="out">Exact-match negatives, so the converting long-tail variants were untouched.
+      $2.17 had gone to these terms with no order.</div>
+    </div>
+    <div class="ev bad">
+      <div class="when">2026-08-08 00:07</div>
+      <div class="what">Re-fund five dark harvested winners to $0.40<span class="tag v">verified 5/5</span></div>
+      <div class="out">The write succeeded and the intent failed. These five exact-match keywords are
+      the literal queries that produced orders, all now ENABLED above the floor, and in the four
+      settled days since they have taken <b>1 impression between them</b>. This is
+      <code>decisions.json &rarr; launch_beats_raise</code> confirmed again: to wake a dark target,
+      launch a fresh auto campaign; do not expect a bid raise to do it.</div>
+    </div>
+    <div class="ev win">
+      <div class="when">2026-08-08 00:08</div>
+      <div class="what">Pause substitutes and complements on unproven books<span class="tag v">verified 1017/1017</span></div>
+      <div class="out">Worked, and measurably. Substitute impressions fell <b>42,487 &rarr; 730</b> and
+      complements <b>34,442 &rarr; 4,156</b>; combined spend <b>$9.60 &rarr; $0.86</b>. 46 targets stay
+      live on the four proven books as a deliberate holdout, so the conversion question stays
+      answerable.</div>
+    </div>
+    <div class="ev win">
+      <div class="when">2026-08-09 11:23</div>
+      <div class="what">Stop funding Kindle ads<span class="tag v">verified 120/120</span></div>
+      <div class="out">120 product ads paused. Kindle is a review-acquisition channel through the
+      free promotion, not a paid-traffic channel: lifetime paid Kindle was $12.69 across 55,705
+      impressions for 45 clicks.</div>
+    </div>
+    <div class="ev">
+      <div class="when">2026-08-09</div>
+      <div class="what">89 rewritten descriptions published</div>
+      <div class="out"><code>outcomes.py</code> currently marks six books
+      <em>early-backfired</em> on a 3-of-7-day provisional window, the flagship among them.
+      <b>Treat that as unproven.</b> The book's BSR swings five-fold day to day at this sales
+      velocity and shows no break at 9 August, and the conversion-rate test over the same split is
+      not significant. It is a watch item, not a cause.</div>
+    </div>
+    <div class="ev bad">
+      <div class="when">2026-08-12 04:43</div>
+      <div class="what">Tail-down, first attempt<span class="tag f">failed 214/817</span></div>
+      <div class="out">603 of the 817 were keywords planned as <code>target_bid</code>. Amazon read
+      back <code>None</code> for every one of them, the ledger refused to call it verified, and the
+      transaction stayed reversible. The guard worked.</div>
+    </div>
+    <div class="ev hold">
+      <div class="when">2026-08-12 04:45</div>
+      <div class="what">Tail-down, re-planned with correct kinds<span class="tag f">failed 762/817</span></div>
+      <div class="out">762 targets verified at $0.30, below the floor, so they stay ENABLED but stop
+      buying real search placement. 55 did not take: Amazon read back $0.35 or $0.36 unchanged.
+      The seven targets in this report were correctly excluded. <b>Expected saving is only $1.31 a
+      day</b> out of $9.74 - the tail was never where the money was.</div>
+    </div>
+    <div class="ev bad">
+      <div class="when">2026-08-13 (today, found by the brief)</div>
+      <div class="what">Three of those 762 were winners<span class="tag f">needs repair</span></div>
+      <div class="out">Two targets that sold on <b>08-11</b> were bid to $0.30 at 04:45 on 08-12,
+      before 08-11 had closed on the US clock and reached the pull that <code>winners.py</code>
+      reads. They cannot win an impression at that bid. Repair planned as
+      <code>txn_20260813_201336_71d965</code>, not applied.</div>
+    </div>
+    <div class="ev hold">
+      <div class="when">2026-08-13 (today)</div>
+      <div class="what">New standing check: <code>spending_slices_with_no_orders</code></div>
+      <div class="out">Every existing bidding check reasons one target at a time, and no single
+      target in the launch wave had enough clicks to look wrong. The cohort had 137. The new check
+      slices the account by market and by campaign-launch week and reports a slice only when it has
+      passed <b>30 clicks</b> AND its zero is improbable at the measured CVR, so a 34-click zero at
+      P=5.7% reads WARN and not FAIL. It fires today and names the launch week of 2026-07-27:
+      107 clicks, $26.20, P=1.2e-04.</div>
+    </div>
+    <div class="ev">
+      <div class="when">2026-08-13 (today)</div>
+      <div class="what">Fixed the CA and MX search-term pull</div>
+      <div class="out">Not an account write. Canada and Mexico reject
+      <code>groupBy: ["searchTerm","targeting"]</code> with a 400 that names what they will accept,
+      while the other eight markets take it. That 400 was fatal per market, so those two had
+      <b>1 row and 0 rows</b> of query data against 223 for the US, and nothing said so because the
+      failure printed and the run carried on. <code>reports.run</code> now reads the allowed set out
+      of Amazon's own error and re-requests. It applies from the next pull.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Evidence &middot; what actually converts</p>
+  <h2>Twenty converting queries, and every one is ultra-long-tail</h2>
+  <p class="lede">This is the whole conversion record the search-term report can see. Not one is a
+  head term. Every single one came through the US, and 14 of the 20 through auto targeting rather
+  than a keyword we chose.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Day</th><th>Shopper query</th><th>Matched by</th><th>Cost</th></tr></thead>
+    <tbody>
+<tr>
+ <td class="mono dim">07-08</td>
+ <td class="term">book about stars for toddlers</td>
+ <td class="sub2">book about space <span class="dim">broad</span></td>
+ <td class="num">$0.82</td>
+</tr>
+<tr>
+ <td class="mono dim">07-14</td>
+ <td class="term">toddler books planets 4t</td>
+ <td class="sub2">planet book toddlers <span class="dim">broad</span></td>
+ <td class="num">$0.41</td>
+</tr>
+<tr>
+ <td class="mono dim">07-23</td>
+ <td class="term">toddler kids book about space</td>
+ <td class="sub2">kids book about space <span class="dim">broad</span></td>
+ <td class="num">$0.82</td>
+</tr>
+<tr>
+ <td class="mono dim">07-26</td>
+ <td class="term">simple books for toddler boys about space shuttles</td>
+ <td class="sub2">book about space <span class="dim">broad</span></td>
+ <td class="num">$0.80</td>
+</tr>
+<tr>
+ <td class="mono dim">07-29</td>
+ <td class="term">child's book on space</td>
+ <td class="sub2">loose-match <span class="dim">auto</span></td>
+ <td class="num">$0.35</td>
+</tr>
+<tr>
+ <td class="mono dim">07-30</td>
+ <td class="term">breathwork for kids</td>
+ <td class="sub2">loose-match <span class="dim">auto</span></td>
+ <td class="num">$0.35</td>
+</tr>
+<tr>
+ <td class="mono dim">07-31</td>
+ <td class="term">first astronaut book 3 year old</td>
+ <td class="sub2">books 3 year olds <span class="dim">phrase</span></td>
+ <td class="num">$0.59</td>
+</tr>
+<tr>
+ <td class="mono dim">08-01</td>
+ <td class="term">books for 3 year olds</td>
+ <td class="sub2">books 3 year olds <span class="dim">phrase</span></td>
+ <td class="num">$0.59</td>
+</tr>
+<tr>
+ <td class="mono dim">08-01</td>
+ <td class="term">toddler my first space book</td>
+ <td class="sub2">close-match <span class="dim">auto</span></td>
+ <td class="num">$0.35</td>
+</tr>
+<tr>
+ <td class="mono dim">08-01</td>
+ <td class="term">children's astronomy books</td>
+ <td class="sub2">loose-match <span class="dim">auto</span></td>
+ <td class="num">$0.35</td>
+</tr>
+<tr>
+ <td class="mono dim">08-01</td>
+ <td class="term">kids astronomy chart age 1-2</td>
+ <td class="sub2">loose-match <span class="dim">auto</span></td>
+ <td class="num">$0.35</td>
+</tr>
+<tr>
+ <td class="mono dim">08-03</td>
+ <td class="term">astrophysics book for kids</td>
+ <td class="sub2">loose-match <span class="dim">auto</span></td>
+ <td class="num">$0.35</td>
+</tr>
+<tr>
+ <td class="mono dim">08-03</td>
+ <td class="term">kids dam book</td>
+ <td class="sub2">loose-match <span class="dim">auto</span></td>
+ <td class="num">$0.35</td>
+</tr>
+<tr>
+ <td class="mono dim">08-06</td>
+ <td class="term">space for kids 3-5</td>
+ <td class="sub2">loose-match <span class="dim">auto</span></td>
+ <td class="num">$0.35</td>
+</tr>
+<tr>
+ <td class="mono dim">08-06</td>
+ <td class="term">preschool books about space</td>
+ <td class="sub2">book about space <span class="dim">phrase</span></td>
+ <td class="num">$0.54</td>
+</tr>
+<tr>
+ <td class="mono dim">08-06</td>
+ <td class="term">growth mindset story book</td>
+ <td class="sub2">loose-match <span class="dim">auto</span></td>
+ <td class="num">$0.35</td>
+</tr>
+<tr>
+ <td class="mono dim">08-06</td>
+ <td class="term">galaxy picture books</td>
+ <td class="sub2">loose-match <span class="dim">auto</span></td>
+ <td class="num">$0.35</td>
+</tr>
+<tr>
+ <td class="mono dim">08-06</td>
+ <td class="term">books for kids 3 boys about space</td>
+ <td class="sub2">close-match <span class="dim">auto</span></td>
+ <td class="num">$0.35</td>
+</tr>
+<tr>
+ <td class="mono dim">08-07</td>
+ <td class="term">fall themed books for five year olds</td>
+ <td class="sub2">loose-match <span class="dim">auto</span></td>
+ <td class="num">$0.35</td>
+</tr>
+<tr>
+ <td class="mono dim">08-07</td>
+ <td class="term">sun and moon for toddler book</td>
+ <td class="sub2">loose-match <span class="dim">auto</span></td>
+ <td class="num">$0.35</td>
+</tr>
+    </tbody>
+  </table></div>
+  <p style="margin-top:16px">This is the mechanism behind the failed re-funding above. These queries
+  convert because auto targeting finds them at a price near the floor. Planting the same words as
+  exact-match keywords does not reproduce that - it produces silence.</p>
+</section>
+
+<section>
+  <p class="eyebrow">Proposed &middot; needs Abhay's word</p>
+  <h2>Five changes, ranked by money, none applied</h2>
+  <p class="lede">The account is frozen and stays frozen. These are proposals with the number that
+  justifies each, in the shape the ledger will take them.</p>
+  <div class="card">
+    <div class="prop"><div class="rank">01</div><div class="body">
+      <h3>Restore the three sub-floor winners</h3>
+      <p>Two of them sold on 11 August and are bid at $0.30, which on this account is off rather
+      than cheap. Planned as <code>txn_20260813_201336_71d965</code>, three changes, all reversible
+      with one <code>ledger.rollback</code>. This is the only item here that repairs something
+      already broken rather than stopping something wasteful.</p>
+      <p class="saves">Costs about $0.11/day at current volume - restores two order-producing targets</p>
+    </div></div>
+    <div class="prop"><div class="rank">02</div><div class="body">
+      <h3>Pause the 1-3 August foreign launch wave</h3>
+      <p>115 clicks, $27.74, zero orders, across nine markets that have never produced
+      an order in the whole record. At the account's own CVR that zero is a 1-in-16,000 event, so
+      this is a decided question rather than a small sample.</p>
+      <p class="saves">Saves roughly $2.52/day &middot; 27% of current spend &middot; costs zero
+      known orders</p>
+    </div></div>
+    <div class="prop"><div class="rank">03</div><div class="body">
+      <h3>Leave the US half of the wave running</h3>
+      <p>22 clicks and no orders is <em>not</em> a result - P(0 orders) is 16% even if it
+      converts perfectly normally. Practitioner floors are 25-35 clicks before a kill. Cutting
+      it now would be exactly the mistake the foreign leg is not.</p>
+      <p class="saves">Costs $0.42/day to keep the question answerable</p>
+    </div></div>
+    <div class="prop"><div class="rank">04</div><div class="body">
+      <h3>Re-launch the five harvested winners as fresh auto campaigns, not as raised bids</h3>
+      <p>They are ENABLED at $0.40, above the floor, and took 1 impression in four days. The bid was
+      never the blocker. <code>decisions.json &rarr; launch_beats_raise</code> already says a fresh
+      auto campaign is the way to wake a dark target; this is the third time the raise route has
+      been tried and produced nothing.</p>
+    </div></div>
+    <div class="prop"><div class="rank">05</div><div class="body">
+      <h3>Give the 9-10 August zeros until 16 August before reading them</h3>
+      <p>Day-7 restatement for 9 August lands on the 16th. Judging those days now, at 69 clicks, is
+      the same error in the opposite direction to treating 1 August as a baseline.</p>
+    </div></div>
+  </div>
+  <div class="callout">
+    <p><strong>What none of this fixes.</strong> The flagship costs $5.45 an order
+    against $2.19 of royalty. Pausing the foreign wave takes the account from roughly
+    $3.68 a day of loss to about $0.74 - better,
+    and still a loss. The $12.99 read lands on 14 August and raises the flagship's royalty to about
+    $2.85, which is a 30% improvement on a number that needs to roughly double.
+    <strong>Price and royalty are the lever. Bids are not.</strong></p>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Provenance.</strong> Every figure above is computed from the <code>kdp</code> warehouse
+  and <code>amazon_ads.policy</code>, not asserted. Ads data is complete and settled through
+  <strong>2026-08-11</strong>; the pull for 08-12 was requested and timed out in Amazon's build
+  queue at 900s, which is congestion rather than a failure of the account. Search-term data ends
+  08-07 for the same reason. Royalty is read off KDP per book per market, never computed.</p>
+  <p><strong>What this cannot say.</strong> Order counts on days inside the restatement window are
+  floors, not totals. The 4.51% conversion rate for 8-11 August will move. Per-target
+  conclusions on fewer than 25 clicks are not conclusions, and the table above says so rather than
+  hiding it.</p>
+  <p><strong>One thing I got wrong on the way.</strong> Selecting the books that had converted and
+  comparing their cost per order to the flagship's showed them looking profitable. That selection is
+  on the outcome, so it guarantees the result. The unbiased split - flagship against every
+  other book in the US - reverses it: the flagship converts at 14.7% and $2.45 an order, the
+  rest of the catalogue at 9.0% and $3.61. Both lose money.</p>
+  <p><code>python report.py</code> &middot; <code>python brief.py</code> &middot;
+  <code>python outcomes.py</code> &middot; <code>python -m amazon_ads.ledger list</code>
+  &middot; generated 2026-08-13 20:27:23</p>
+</footer>
+
+</div>
+</body>
+</html>
