@@ -212,7 +212,29 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <p><strong>Fix, one command, zero risk:</strong></p>
 <p><code>`</code> schtasks /change /tn kdp-ads-loop /rl highest powershell -c &quot;$s=(Get-ScheduledTask kdp-ads-loop).Settings; $s.DisallowStartIfOnBatteries=$false; $s.StopIfGoingOnBatteries=$false; Set-ScheduledTask kdp-ads-loop -Settings $s&quot; <code>`</code></p>
 <p>Do the same for <code>kdp-scout-loop</code>, which carries the same settings and the same 02:00 problem.</p>
-<h3>6.2 What is live</h3>
+<h3>6.2 Amazon&#x27;s North America reporting region is not answering tonight</h3>
+<p>The re-pull run to close the gap gives a clean second finding, because it failed in a shape:</p>
+<table>
+<tr><th>Amazon reporting region</th><th>markets</th><th>reports returned</th></tr>
+<tr><td>Europe</td><td>UK, DE, FR, IT, ES, NL</td><td><strong>24 of 24</strong></td></tr>
+<tr><td>Far East</td><td>AU</td><td><strong>4 of 4</strong></td></tr>
+<tr><td><strong>North America</strong></td><td><strong>US, CA, MX</strong></td><td><strong>0 of 12</strong></td></tr>
+</table>
+<p>All twelve North American reports sat <code>PENDING</code> and were abandoned at the 900-second ceiling. Twenty-eight of forty returned, and every failure is on one region.</p>
+<p>The obvious explanation is report size, since the US carries 140 campaigns and 9,133 keywords against a few hundred each elsewhere. <strong>That explanation is wrong.</strong> A second run for the US alone over a ten-day window, roughly a third the size, failed all four report types the same way. MX has 23 campaigns and no spend at all and also failed all four. It is the region, not the request.</p>
+<p>Two things follow. The five missing days are <strong>not lost</strong>: they stay inside Amazon&#x27;s 31-day cap until 09-22 to 09-26, so any successful run in the next three and a half weeks recovers them. And <strong>fixing the scheduled task in 6.1 is necessary but not sufficient tonight</strong>: an un-killed loop would still have hit this wall. The 08-25 nightly pull failed with this exact 900-second timeout, so the two faults have been compounding, and only one of them is ours.</p>
+<p>Both re-pull runs preserved the market/day rows they did not cover rather than overwriting them, so nothing on disk was damaged by the failures. That is <code>decisions.json:guards_fail_closed</code> doing its job.</p>
+<p><strong>The half that did succeed added no rows, and that is itself a result.</strong> The twenty-eight returning reports were pushed to the warehouse behind a verified snapshot, and every <code>*_days</code> table came back with exactly the row count it had before. The newest day per market explains why:</p>
+<table>
+<tr><th>market</th><th>newest day with any row</th></tr>
+<tr><td>US</td><td>2026-08-22</td></tr>
+<tr><td>AU</td><td>2026-08-14</td></tr>
+<tr><td>UK, DE, FR, IT, ES, NL, CA</td><td>2026-08-13</td></tr>
+<tr><td>MX</td><td>2026-08-08</td></tr>
+</table>
+<p>Six European markets requested a full thirty-day window and returned <strong>nothing after 08-13</strong>, because that is the day they were paused. So the successful half of tonight&#x27;s pull independently confirms section 1 from a second angle: <strong>the foreign pause is total, with not one row of activity in any of those markets in the fourteen days since.</strong> The five missing days are a US problem alone.</p>
+<p>Continuity warnings fell from 39 to 11 on the re-pull. Three critical gaps survive, all of them warehouse snapshot coverage for 08-17, 08-20 and 08-25 to 08-27, and they will stay until a US pull succeeds.</p>
+<h3>6.3 What is live</h3>
 <p>Serving was read live this evening and is clean. Every market reports what we set:</p>
 <ul>
 <li><strong>US: 121 campaigns ENABLED and serving</strong>, 1 ended, 6 paused</li>
@@ -223,7 +245,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <p>Month to date is fine ($201.62 of $344.83, projected $240.39). The exposure is one Amazon relevance-score change away from being a problem, and right-sizing the budgets costs nothing because they are not binding today.</p>
 <hr>
 <h2>7. Data defects found today</h2>
-<p>1. <strong><code>catalog.csv</code> <code>price</code> mixes currencies.</strong> 27 of 92 rows carry an INR storefront price (499, 1002, 1499) in a column read as USD. Two live paperbacks read $0.00, one of them the flagship. KDP-read <code>royalty</code>, <code>list_price</code> and <code>print_cost</code> are unaffected, so the economics above are safe, but anything reading <code>price</code> as dollars is wrong. 2. <strong>The warehouse disagrees with itself on orders.</strong> Over the identical window 07-03 to 08-22, <code>asin_days</code> reports 40 orders and the four report-derived tables all report 36. Impressions, clicks and spend agree within 1%. The analysis above uses <code>asin_days</code>, the same source <code>brief.py</code> uses, so the numbers are internally consistent, and the direction of the gap makes the loss <strong>worse</strong> than stated, not better. 3. <strong>Five days of report-grain data are missing</strong> (08-23 to 08-27) and warehouse snapshots are missing for 08-17, 08-20 and 08-25 to 08-27. The cause is section 6.1, not the freeze. A re-pull was running as this was published: IT returned, <strong>MX and CA both timed out at 900s on all four report types</strong>, the rest were still building. 4. <strong>No KDP royalty export on disk.</strong> <code>brief.py</code> fails this check: every net figure is ad-attributed only until <code>fetch_royalties.py</code> runs. The warehouse copy used in section 5 is from the 08-14 export. 5. <strong>30 experiments are open and none has been read since 08-14</strong>, including five whose read dates passed 10 to 20 days ago.</p>
+<p>1. <strong><code>catalog.csv</code> <code>price</code> mixes currencies.</strong> 27 of 92 rows carry an INR storefront price (499, 1002, 1499) in a column read as USD. Two live paperbacks read $0.00, one of them the flagship. KDP-read <code>royalty</code>, <code>list_price</code> and <code>print_cost</code> are unaffected, so the economics above are safe, but anything reading <code>price</code> as dollars is wrong. 2. <strong>The warehouse disagrees with itself on orders.</strong> Over the identical window 07-03 to 08-22, <code>asin_days</code> reports 40 orders and the four report-derived tables all report 36. Impressions, clicks and spend agree within 1%. The analysis above uses <code>asin_days</code>, the same source <code>brief.py</code> uses, so the numbers are internally consistent, and the direction of the gap makes the loss <strong>worse</strong> than stated, not better. 3. <strong>Five days of report-grain data are missing</strong> (08-23 to 08-27). The cause is section 6.1, not the freeze. A re-pull ran tonight and section 6.2 has the result: everything outside North America returned, and <strong>every North American report failed</strong>, so the US, the only market with spend, is still short those five days. They stay recoverable until 09-22 to 09-26 under Amazon&#x27;s 31-day cap. 4. <strong>No KDP royalty export on disk.</strong> <code>brief.py</code> fails this check: every net figure is ad-attributed only until <code>fetch_royalties.py</code> runs. The warehouse copy used in section 5 is from the 08-14 export. 5. <strong>30 experiments are open and none has been read since 08-14</strong>, including five whose read dates passed 10 to 20 days ago.</p>
 <hr>
 <h2>8. The colouring 3x3 price test cannot be read, and should be stopped</h2>
 <p>Nine ASINs, three themes, three prices, one bid ($0.37) so that CTR is comparable. Since 2026-08-02:</p>
