@@ -205,8 +205,8 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <li><code>DisallowStartIfOnBatteries = True</code></li>
 <li><code>StopIfGoingOnBatteries = True</code></li>
 </ul>
-<p>Those are <code>schtasks /create</code> defaults and nobody chose them. <strong><code>kdp-ads-loop</code> fires at 02:00 on a laptop.</strong> <code>kdp-ads-daily</code> carries the identical settings, fires at 09:00 when the machine is plugged in and in use, and returns exit code <strong>0</strong> every time. That is why per-ASIN data is current to 08-26 while report grain and warehouse snapshots stopped on 08-24: the 09:00 task lives and the 02:00 task gets killed.</p>
-<p>It fits the evidence exactly: complete on the night it survived, killed one second in on the nights it did not, partial on the two in between.</p>
+<p>Those are <code>schtasks /create</code> defaults and nobody chose them. <strong><code>kdp-ads-loop</code> fires at 02:00 on a laptop.</strong> <code>kdp-ads-daily</code> carries the identical settings, fires at 09:00 when the machine is plugged in and in use, and returned exit code <strong>0</strong> on its last run. That is the pattern behind per-ASIN data being current to 08-26 while report grain and warehouse snapshots stopped on 08-24: the 09:00 task lives, the 02:00 task gets killed.</p>
+<p>The battery setting is the best explanation on the evidence and it is cheap to act on, but the exit code proves only that something outside the process terminated it, not what. If the loop still dies after the settings change, the next thing to read is Event Viewer under <code>Microsoft-Windows-TaskScheduler/Operational</code> for that task at 02:00.</p>
 <blockquote>The loop is the thing that would have reported the loop was down. Nothing else was watching,</blockquote>
 <blockquote>so a dead integrity pass is silent by construction. That is worth a separate alarm.</blockquote>
 <p><strong>Fix, one command, zero risk:</strong></p>
