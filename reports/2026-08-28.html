@@ -32,6 +32,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <hr>
 <h2>The one-line answer</h2>
 <p>The 2026-08-14 surgery cut the right lane and then lost more than it saved somewhere else. Net went from <strong>-$3.81/day to -$4.82/day</strong>. But that is the small story. The large story is in the KDP royalty export: <strong>the whole business, organic included, has not produced a royalty month outside its own pre-ads range in the three months since ads were switched on</strong>, while ad spend went from $0 to $201.62. And the reason is not bids and not price. It is that <strong>84 of 86 advertised books have fewer than five reviews, and a book with no reviews takes impressions nobody clicks.</strong></p>
+<p>And the reason nobody read any of this for fourteen days is in section 6.1: the nightly integrity loop has been dead since 08-24 because Windows kills it when the laptop is on battery, and the only thing that would have reported the loop was down is the loop.</p>
 <hr>
 <h2>1. What the 08-14 intervention actually did</h2>
 <p>The 08-14 pass paused 501 foreign campaigns, 46 ASIN auto targets and 1,359 broad/exact keywords, restored 3 winners to the delivery floor, and raised 19 targets on 10 high-royalty books into the auto-search lane. Then the account was re-frozen and left alone for 14 days.</p>
@@ -187,7 +188,31 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <p>July is the one clean, complete month with ads running. <strong>The entire business earned $43.98 and spent $65.15 on ads.</strong></p>
 <p>The five pre-ads months of 2026 (January to May, zero ad spend) ran $11.77 to $45.34, mean $31.01. <strong>July&#x27;s $43.98 is inside that range and below its top.</strong> Three months in, the ad program has not yet produced a royalty month the catalogue was not already producing on its own. Children&#x27;s books are seasonal and December is not comparable, but January to May against July is a fair like-for-like, and it does not show a lift.</p>
 <hr>
-<h2>6. Right now: what is live, and the one real operational risk</h2>
+<h2>6. Right now: what is live, and two operational problems</h2>
+<h3>6.1 The nightly loop has been dead for four nights, and Windows is killing it</h3>
+<p>This is the answer to &quot;how did the account go fourteen days without anyone reading it&quot;.</p>
+<p><code>daily_loop.py</code> is the data integrity pass: it plans the pull window, pulls, pushes the warehouse, proves continuity and runs the brief. It has <strong>not completed a run since 08-24</strong>.</p>
+<table>
+<tr><th>night</th><th>what <code>brain/loop/</code> holds</th><th>outcome</th></tr>
+<tr><td>08-24</td><td>7,788 byte log <strong>and</strong> a full run record</td><td>complete, 114.7 min, 13/16 steps OK</td></tr>
+<tr><td>08-25</td><td>3,370 byte log, no run record</td><td>got as far as <code>pull_all</code>, which <strong>FAILED at 47s</strong></td></tr>
+<tr><td>08-26</td><td><strong>502 byte log</strong>, no run record</td><td>died 1 second in</td></tr>
+<tr><td>08-27</td><td>3,064 byte log, no run record</td><td>got as far as starting Brave, then stopped</td></tr>
+<tr><td>08-28</td><td><strong>502 byte log</strong>, no run record</td><td>died 1 second in</td></tr>
+</table>
+<p>The scheduled task&#x27;s own exit code names the cause. <code>kdp-ads-loop</code> last returned <strong>3221225786 = 0xC000013A, STATUS_CONTROL_C_EXIT</strong>: the process was terminated from outside, not by an error in it. And the task is registered with:</p>
+<ul>
+<li><code>DisallowStartIfOnBatteries = True</code></li>
+<li><code>StopIfGoingOnBatteries = True</code></li>
+</ul>
+<p>Those are <code>schtasks /create</code> defaults and nobody chose them. <strong><code>kdp-ads-loop</code> fires at 02:00 on a laptop.</strong> <code>kdp-ads-daily</code> carries the identical settings, fires at 09:00 when the machine is plugged in and in use, and returns exit code <strong>0</strong> every time. That is why per-ASIN data is current to 08-26 while report grain and warehouse snapshots stopped on 08-24: the 09:00 task lives and the 02:00 task gets killed.</p>
+<p>It fits the evidence exactly: complete on the night it survived, killed one second in on the nights it did not, partial on the two in between.</p>
+<blockquote>The loop is the thing that would have reported the loop was down. Nothing else was watching,</blockquote>
+<blockquote>so a dead integrity pass is silent by construction. That is worth a separate alarm.</blockquote>
+<p><strong>Fix, one command, zero risk:</strong></p>
+<p><code>`</code> schtasks /change /tn kdp-ads-loop /rl highest powershell -c &quot;$s=(Get-ScheduledTask kdp-ads-loop).Settings; $s.DisallowStartIfOnBatteries=$false; $s.StopIfGoingOnBatteries=$false; Set-ScheduledTask kdp-ads-loop -Settings $s&quot; <code>`</code></p>
+<p>Do the same for <code>kdp-scout-loop</code>, which carries the same settings and the same 02:00 problem.</p>
+<h3>6.2 What is live</h3>
 <p>Serving was read live this evening and is clean. Every market reports what we set:</p>
 <ul>
 <li><strong>US: 121 campaigns ENABLED and serving</strong>, 1 ended, 6 paused</li>
@@ -198,7 +223,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <p>Month to date is fine ($201.62 of $344.83, projected $240.39). The exposure is one Amazon relevance-score change away from being a problem, and right-sizing the budgets costs nothing because they are not binding today.</p>
 <hr>
 <h2>7. Data defects found today</h2>
-<p>1. <strong><code>catalog.csv</code> <code>price</code> mixes currencies.</strong> 27 of 92 rows carry an INR storefront price (499, 1002, 1499) in a column read as USD. Two live paperbacks read $0.00, one of them the flagship. KDP-read <code>royalty</code>, <code>list_price</code> and <code>print_cost</code> are unaffected, so the economics above are safe, but anything reading <code>price</code> as dollars is wrong. 2. <strong>The warehouse disagrees with itself on orders.</strong> Over the identical window 07-03 to 08-22, <code>asin_days</code> reports 40 orders and the four report-derived tables all report 36. Impressions, clicks and spend agree within 1%. The analysis above uses <code>asin_days</code>, the same source <code>brief.py</code> uses, so the numbers are internally consistent, and the direction of the gap makes the loss <strong>worse</strong> than stated, not better. 3. <strong>Five days of report-grain data were missing</strong> (08-23 to 08-27) because the nightly loop has been exiting early on the freeze since 08-24. Re-pulled today. Warehouse snapshots are still missing 08-17, 08-20 and 08-25 to 08-27. 4. <strong>No KDP royalty export on disk.</strong> <code>brief.py</code> fails this check: every net figure is ad-attributed only until <code>fetch_royalties.py</code> runs. The warehouse copy used in section 5 is from the 08-14 export. 5. <strong>30 experiments are open and none has been read since 08-14</strong>, including five whose read dates passed 10 to 20 days ago.</p>
+<p>1. <strong><code>catalog.csv</code> <code>price</code> mixes currencies.</strong> 27 of 92 rows carry an INR storefront price (499, 1002, 1499) in a column read as USD. Two live paperbacks read $0.00, one of them the flagship. KDP-read <code>royalty</code>, <code>list_price</code> and <code>print_cost</code> are unaffected, so the economics above are safe, but anything reading <code>price</code> as dollars is wrong. 2. <strong>The warehouse disagrees with itself on orders.</strong> Over the identical window 07-03 to 08-22, <code>asin_days</code> reports 40 orders and the four report-derived tables all report 36. Impressions, clicks and spend agree within 1%. The analysis above uses <code>asin_days</code>, the same source <code>brief.py</code> uses, so the numbers are internally consistent, and the direction of the gap makes the loss <strong>worse</strong> than stated, not better. 3. <strong>Five days of report-grain data are missing</strong> (08-23 to 08-27) and warehouse snapshots are missing for 08-17, 08-20 and 08-25 to 08-27. The cause is section 6.1, not the freeze. A re-pull was running as this was published: IT returned, <strong>MX and CA both timed out at 900s on all four report types</strong>, the rest were still building. 4. <strong>No KDP royalty export on disk.</strong> <code>brief.py</code> fails this check: every net figure is ad-attributed only until <code>fetch_royalties.py</code> runs. The warehouse copy used in section 5 is from the 08-14 export. 5. <strong>30 experiments are open and none has been read since 08-14</strong>, including five whose read dates passed 10 to 20 days ago.</p>
 <hr>
 <h2>8. The colouring 3x3 price test cannot be read, and should be stopped</h2>
 <p>Nine ASINs, three themes, three prices, one bid ($0.37) so that CTR is comparable. Since 2026-08-02:</p>
@@ -213,6 +238,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <hr>
 <h2>9. What I would do, in order</h2>
 <p>Writes are frozen. These are proposals and each names what it needs.</p>
+<p><strong>0. Un-kill the nightly loop. Two lines, no risk, do it first.</strong> <code>kdp-ads-loop</code> and <code>kdp-scout-loop</code> are registered to stop when the laptop is on battery and they fire at 02:00. The integrity pass has not completed since 08-24 and nothing reported it, because the thing that reports it is the loop. Every other item on this list depends on the data being there tomorrow. *Needs: nothing. It touches no campaign.*</p>
 <p><strong>1. Run the free-book promotion on the 33 Kindle titles. This week.</strong> It is the only lever with a measured 2.4x effect, it costs nothing, the machine already exists, and it has been idle for two months. 58 advertised books have zero reviews and no amount of bidding fixes that. December&#x27;s run moved 402 free units across 34 books and produced the only reviewed title the account has. *Needs: your word to run it.*</p>
 <p><strong>2. Put B0DPQBJBMD&#x27;s interior through KDP&#x27;s print-cost calculator before touching its price.</strong> $4.94 of print cost on a $11.89 book is the reason it cannot afford its own clicks. Getting it to $2.60 does more than a price rise to $14.99 and risks no demand. If it cannot move, then $16.99 is the number, not $12.99 and not $14.99. *Needs: your word on the price, per CONTRACT.*</p>
 <p><strong>3. Right-size the enabled US budgets from $149.99/day to about $12/day.</strong> Actual delivery is $7.07/day. This changes nothing today and removes a 13x exposure. *Needs: nothing but a thaw. This is the safest change on the list.*</p>
